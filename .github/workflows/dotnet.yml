@@ -2,32 +2,26 @@ name: .NET Framework Windows Forms Build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-    # Checkout code
-    - uses: actions/checkout@v4
+      # Checkout code
+      - uses: actions/checkout@v4
 
-    # Setup MSBuild environment
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1
+      # Setup MSBuild environment
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1
 
-    # Restore NuGet packages
-    - name: Restore NuGet packages
-      run: nuget restore YourSolution.sln
+      # Restore NuGet packages
+      - name: Restore NuGet packages
+        run: nuget restore CMPG223_HomelessShelter.sln
 
-    # Build the project/solution
-    - name: Build
-      run: msbuild YourSolution.sln /p:Configuration=Release
-
-    # Optional: Run tests (if you have a test project)
-    - name: Run tests
-      run: |
-        msbuild YourTestProject.csproj /t:Build /p:Configuration=Release
-        vstest.console.exe bin\Release\YourTestProject.dll
+      # Build the project/solution
+      - name: Build
+        run: msbuild CMPG223_HomelessShelter.sln /p:Configuration=Release
