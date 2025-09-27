@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CMPG223_HomelessShelter
+namespace CMPG223_Project
 {
-    public partial class Form1 : Form
+    public partial class frmNewAdmin : Form
     {
-        public Form1()
+        public frmNewAdmin()
         {
             InitializeComponent();
+        }
+
+        private void lblHeader_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
