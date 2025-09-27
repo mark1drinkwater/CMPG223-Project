@@ -46,88 +46,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bookings.cs">
+    <Compile Include="frmMainDash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bookings.Designer.cs">
-      <DependentUpon>Bookings.cs</DependentUpon>
+    <Compile Include="frmMainDash.Designer.cs">
+      <DependentUpon>frmMainDash.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmEntryLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmEntryLogin.Designer.cs">
+      <DependentUpon>frmEntryLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="New Admin.cs">
+    <Compile Include="frmNewAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="New Admin.Designer.cs">
-      <DependentUpon>New Admin.cs</DependentUpon>
+    <Compile Include="frmNewAdmin.Designer.cs">
+      <DependentUpon>frmNewAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="New Beneficiary.cs">
+    <Compile Include="frmNewBeneficiaries.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="New Beneficiary.Designer.cs">
-      <DependentUpon>New Beneficiary.cs</DependentUpon>
+    <Compile Include="frmNewBeneficiaries.Designer.cs">
+      <DependentUpon>frmNewBeneficiaries.cs</DependentUpon>
     </Compile>
-    <Compile Include="New Bookings.cs">
+    <Compile Include="frmNewBookings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="New Bookings.Designer.cs">
-      <DependentUpon>New Bookings.cs</DependentUpon>
+    <Compile Include="frmNewBookings.Designer.cs">
+      <DependentUpon>frmNewBookings.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Remove Admin.cs">
+    <Compile Include="frmRemoveAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Remove Admin.Designer.cs">
-      <DependentUpon>Remove Admin.cs</DependentUpon>
+    <Compile Include="frmRemoveAdmin.Designer.cs">
+      <DependentUpon>frmRemoveAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Remove Beneficiary.cs">
+    <Compile Include="frmRemoveBeneficiaries.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Remove Beneficiary.Designer.cs">
-      <DependentUpon>Remove Beneficiary.cs</DependentUpon>
+    <Compile Include="frmRemoveBeneficiaries.Designer.cs">
+      <DependentUpon>frmRemoveBeneficiaries.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports.cs">
+    <Compile Include="frmReports.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports.Designer.cs">
-      <DependentUpon>Reports.cs</DependentUpon>
+    <Compile Include="frmReports.Designer.cs">
+      <DependentUpon>frmReports.cs</DependentUpon>
     </Compile>
-    <Compile Include="Update Admin.cs">
+    <Compile Include="frmUpdateAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Update Admin.Designer.cs">
-      <DependentUpon>Update Admin.cs</DependentUpon>
+    <Compile Include="frmUpdateAdmin.Designer.cs">
+      <DependentUpon>frmUpdateAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Update Beneficiary.cs">
+    <Compile Include="frmUpdateBeneficiaries.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Update Beneficiary.Designer.cs">
-      <DependentUpon>Update Beneficiary.cs</DependentUpon>
+    <Compile Include="frmUpdateBeneficiaries.Designer.cs">
+      <DependentUpon>frmUpdateBeneficiaries.cs</DependentUpon>
     </Compile>
-    <Compile Include="Update Bookings.cs">
+    <Compile Include="frmUpdateBookings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Update Bookings.Designer.cs">
-      <DependentUpon>Update Bookings.cs</DependentUpon>
+    <Compile Include="frmUpdateBookings.Designer.cs">
+      <DependentUpon>frmUpdateBookings.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Bookings.resx">
-      <DependentUpon>Bookings.cs</DependentUpon>
+    <EmbeddedResource Include="frmMainDash.resx">
+      <DependentUpon>frmMainDash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmEntryLogin.resx">
+      <DependentUpon>frmEntryLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="New Admin.resx">
-      <DependentUpon>New Admin.cs</DependentUpon>
+    <EmbeddedResource Include="frmNewAdmin.resx">
+      <DependentUpon>frmNewAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="New Beneficiary.resx">
-      <DependentUpon>New Beneficiary.cs</DependentUpon>
+    <EmbeddedResource Include="frmNewBeneficiaries.resx">
+      <DependentUpon>frmNewBeneficiaries.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="New Bookings.resx">
-      <DependentUpon>New Bookings.cs</DependentUpon>
+    <EmbeddedResource Include="frmNewBookings.resx">
+      <DependentUpon>frmNewBookings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -138,23 +138,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Remove Admin.resx">
-      <DependentUpon>Remove Admin.cs</DependentUpon>
+    <EmbeddedResource Include="frmRemoveAdmin.resx">
+      <DependentUpon>frmRemoveAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Remove Beneficiary.resx">
-      <DependentUpon>Remove Beneficiary.cs</DependentUpon>
+    <EmbeddedResource Include="frmRemoveBeneficiaries.resx">
+      <DependentUpon>frmRemoveBeneficiaries.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports.resx">
-      <DependentUpon>Reports.cs</DependentUpon>
+    <EmbeddedResource Include="frmReports.resx">
+      <DependentUpon>frmReports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Update Admin.resx">
-      <DependentUpon>Update Admin.cs</DependentUpon>
+    <EmbeddedResource Include="frmUpdateAdmin.resx">
+      <DependentUpon>frmUpdateAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Update Beneficiary.resx">
-      <DependentUpon>Update Beneficiary.cs</DependentUpon>
+    <EmbeddedResource Include="frmUpdateBeneficiaries.resx">
+      <DependentUpon>frmUpdateBeneficiaries.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Update Bookings.resx">
-      <DependentUpon>Update Bookings.cs</DependentUpon>
+    <EmbeddedResource Include="frmUpdateBookings.resx">
+      <DependentUpon>frmUpdateBookings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
