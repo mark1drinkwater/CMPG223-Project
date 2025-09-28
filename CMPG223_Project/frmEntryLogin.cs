@@ -19,6 +19,7 @@ namespace CMPG223_Project
 
 		private void btnSubmit_Click(object sender, EventArgs e)
 		{
+			// making a comment - wil lcheck for validation
 			//Change as necessary for validating login details etc.
 			this.Hide();
 			frmMainDash mainForm = new frmMainDash();
