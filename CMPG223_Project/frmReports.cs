@@ -26,6 +26,9 @@ namespace CMPG223_Project
 
         private void btnReport_Click(object sender, EventArgs e)
         {
+            lstReport.Items.Clear();
+
+
             using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
             {
                 if (rdoNumOfBen.Checked)
@@ -61,8 +64,6 @@ namespace CMPG223_Project
                         conn.Open();
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            lstReport.Items.Clear();
-
                             while (reader.Read())
                             {
                                 string description = reader["Description"].ToString();
