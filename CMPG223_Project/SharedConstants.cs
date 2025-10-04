@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace CMPG223_Project
 {
-    public class SharedConstants
+    public static class SharedConstants
     {
-        public const string connString = "Data Source=\"localhost, 1433\";Initial Catalog=Test;Persist Security Info=True;User ID=sa;Password=Password!;TrustServerCertificate=True";
+        //private static string dataSource = "DESKTOP-79PMUBS";
+        private static string dataSource = "\"localhost, 1433\"";
+        public static string connString = $"Data Source={dataSource};Initial Catalog=Shelter; Persist Security Info=True; User ID=sa;Password=Password!; TrustServerCertificate=True";
     }
 }
