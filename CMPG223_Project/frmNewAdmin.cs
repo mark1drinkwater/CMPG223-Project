@@ -13,11 +13,6 @@ namespace CMPG223_Project
 {
     public partial class frmNewAdmin : Form
     {
-
-        // Connection string
-
-        private string connString = "Data Source=DESKTOP-79PMUBS;Initial Catalog = Shelter; Integrated Security = True; TrustServerCertificate=True";
-
         public frmNewAdmin()
         {
             InitializeComponent();
@@ -81,7 +76,7 @@ namespace CMPG223_Project
 
             // Consider checking for duplicate names, but it's hard. Maybe later. "SELECT COUNT(*) FROM ADMIN_LOGIN WHERE Username = @Username"
 
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
             {
                 string sql = "INSERT INTO ADMIN_LOGIN (Username, Password, Role) VALUES (@Username, @Password, @Role)";
                 SqlCommand cmd = new SqlCommand(sql, conn);

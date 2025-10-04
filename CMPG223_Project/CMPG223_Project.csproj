@@ -130,6 +130,7 @@
     <Compile Include="frmUpdateBookings.Designer.cs">
       <DependentUpon>frmUpdateBookings.cs</DependentUpon>
     </Compile>
+    <Compile Include="SharedConstants.cs" />
     <EmbeddedResource Include="frmMainDash.resx">
       <DependentUpon>frmMainDash.cs</DependentUpon>
     </EmbeddedResource>
