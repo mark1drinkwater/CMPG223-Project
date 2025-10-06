@@ -14,8 +14,6 @@ namespace CMPG223_Project
     public partial class frmEntryLogin : Form
     {
 
-		private string connString = "Data Source=DESKTOP-79PMUBS;Initial Catalog=Shelter;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-
         public frmEntryLogin()
         {
             InitializeComponent();
@@ -35,7 +33,7 @@ namespace CMPG223_Project
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
             {
                 string sql = "SELECT Username FROM ADMIN_LOGIN WHERE Username = @username AND Password = @password";
                 SqlCommand cmd = new SqlCommand(sql, conn);

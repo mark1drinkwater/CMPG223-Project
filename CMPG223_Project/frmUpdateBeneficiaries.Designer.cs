@@ -41,27 +41,33 @@ namespace CMPG223_Project
             this.tbID = new System.Windows.Forms.TextBox();
             this.tbCell = new System.Windows.Forms.TextBox();
             this.tbEmail = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbDescription = new System.Windows.Forms.TextBox();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.lblGender = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.lblMaxAge = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbBenId = new System.Windows.Forms.TextBox();
             this.lblBenID = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.cmbBenType = new System.Windows.Forms.ComboBox();
+            this.lblBenType = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.rdoFemale = new System.Windows.Forms.RadioButton();
+            this.rdoMale = new System.Windows.Forms.RadioButton();
+            this.nudMaxAge = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMaxAge)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(175, 540);
+            this.btnUpdate.Location = new System.Drawing.Point(396, 607);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(250, 55);
             this.btnUpdate.TabIndex = 11;
             this.btnUpdate.Text = "Update Beneficiary";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // lblEmail
             // 
@@ -69,7 +75,7 @@ namespace CMPG223_Project
             this.lblEmail.Location = new System.Drawing.Point(18, 345);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(169, 29);
+            this.lblEmail.Size = new System.Drawing.Size(116, 19);
             this.lblEmail.TabIndex = 0;
             this.lblEmail.Text = "Email Address:";
             // 
@@ -79,7 +85,7 @@ namespace CMPG223_Project
             this.lblCellNum.Location = new System.Drawing.Point(18, 295);
             this.lblCellNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCellNum.Name = "lblCellNum";
-            this.lblCellNum.Size = new System.Drawing.Size(150, 29);
+            this.lblCellNum.Size = new System.Drawing.Size(103, 19);
             this.lblCellNum.TabIndex = 0;
             this.lblCellNum.Text = "Cell Number:";
             // 
@@ -89,7 +95,7 @@ namespace CMPG223_Project
             this.lblID.Location = new System.Drawing.Point(18, 245);
             this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(138, 29);
+            this.lblID.Size = new System.Drawing.Size(94, 19);
             this.lblID.TabIndex = 0;
             this.lblID.Text = "ID Number:";
             // 
@@ -99,7 +105,7 @@ namespace CMPG223_Project
             this.lblSurname.Location = new System.Drawing.Point(18, 195);
             this.lblSurname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(115, 29);
+            this.lblSurname.Size = new System.Drawing.Size(78, 19);
             this.lblSurname.TabIndex = 0;
             this.lblSurname.Text = "Surname:";
             // 
@@ -110,7 +116,7 @@ namespace CMPG223_Project
             this.lblHeader.Location = new System.Drawing.Point(13, 9);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(413, 49);
+            this.lblHeader.Size = new System.Drawing.Size(272, 33);
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "Update Beneficiary";
             // 
@@ -120,57 +126,57 @@ namespace CMPG223_Project
             this.lblName.Location = new System.Drawing.Point(18, 145);
             this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(83, 29);
+            this.lblName.Size = new System.Drawing.Size(56, 19);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name:";
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(143, 142);
+            this.tbName.Location = new System.Drawing.Point(162, 142);
             this.tbName.Margin = new System.Windows.Forms.Padding(4);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(245, 36);
+            this.tbName.Size = new System.Drawing.Size(202, 27);
             this.tbName.TabIndex = 3;
             // 
             // tbSurname
             // 
-            this.tbSurname.Location = new System.Drawing.Point(143, 192);
+            this.tbSurname.Location = new System.Drawing.Point(162, 192);
             this.tbSurname.Margin = new System.Windows.Forms.Padding(4);
             this.tbSurname.Name = "tbSurname";
-            this.tbSurname.Size = new System.Drawing.Size(245, 36);
+            this.tbSurname.Size = new System.Drawing.Size(202, 27);
             this.tbSurname.TabIndex = 4;
             // 
             // tbID
             // 
-            this.tbID.Location = new System.Drawing.Point(143, 242);
+            this.tbID.Location = new System.Drawing.Point(162, 242);
             this.tbID.Margin = new System.Windows.Forms.Padding(4);
             this.tbID.Name = "tbID";
-            this.tbID.Size = new System.Drawing.Size(245, 36);
+            this.tbID.Size = new System.Drawing.Size(202, 27);
             this.tbID.TabIndex = 5;
             // 
             // tbCell
             // 
-            this.tbCell.Location = new System.Drawing.Point(143, 292);
+            this.tbCell.Location = new System.Drawing.Point(162, 292);
             this.tbCell.Margin = new System.Windows.Forms.Padding(4);
             this.tbCell.Name = "tbCell";
-            this.tbCell.Size = new System.Drawing.Size(245, 36);
+            this.tbCell.Size = new System.Drawing.Size(202, 27);
             this.tbCell.TabIndex = 6;
             // 
             // tbEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(143, 342);
+            this.tbEmail.Location = new System.Drawing.Point(162, 342);
             this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(245, 36);
+            this.tbEmail.Size = new System.Drawing.Size(202, 27);
             this.tbEmail.TabIndex = 7;
             // 
-            // textBox1
+            // tbDescription
             // 
-            this.textBox1.Location = new System.Drawing.Point(143, 392);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(245, 36);
-            this.textBox1.TabIndex = 8;
+            this.tbDescription.Location = new System.Drawing.Point(162, 392);
+            this.tbDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.tbDescription.Name = "tbDescription";
+            this.tbDescription.Size = new System.Drawing.Size(202, 27);
+            this.tbDescription.TabIndex = 8;
             // 
             // lblDescription
             // 
@@ -178,18 +184,10 @@ namespace CMPG223_Project
             this.lblDescription.Location = new System.Drawing.Point(18, 395);
             this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(138, 29);
+            this.lblDescription.Size = new System.Drawing.Size(94, 19);
             this.lblDescription.TabIndex = 0;
             this.lblDescription.Text = "Description:";
             this.lblDescription.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(143, 442);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(245, 36);
-            this.textBox2.TabIndex = 9;
             // 
             // lblGender
             // 
@@ -197,17 +195,9 @@ namespace CMPG223_Project
             this.lblGender.Location = new System.Drawing.Point(18, 445);
             this.lblGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(98, 29);
+            this.lblGender.Size = new System.Drawing.Size(66, 19);
             this.lblGender.TabIndex = 0;
             this.lblGender.Text = "Gender:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(143, 492);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(245, 36);
-            this.textBox3.TabIndex = 10;
             // 
             // lblMaxAge
             // 
@@ -215,17 +205,17 @@ namespace CMPG223_Project
             this.lblMaxAge.Location = new System.Drawing.Point(18, 495);
             this.lblMaxAge.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMaxAge.Name = "lblMaxAge";
-            this.lblMaxAge.Size = new System.Drawing.Size(171, 29);
+            this.lblMaxAge.Size = new System.Drawing.Size(117, 19);
             this.lblMaxAge.TabIndex = 0;
             this.lblMaxAge.Text = "Maximum Age:";
             // 
-            // textBox4
+            // tbBenId
             // 
-            this.textBox4.Location = new System.Drawing.Point(143, 92);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(245, 36);
-            this.textBox4.TabIndex = 1;
+            this.tbBenId.Location = new System.Drawing.Point(162, 92);
+            this.tbBenId.Margin = new System.Windows.Forms.Padding(4);
+            this.tbBenId.Name = "tbBenId";
+            this.tbBenId.Size = new System.Drawing.Size(202, 27);
+            this.tbBenId.TabIndex = 1;
             // 
             // lblBenID
             // 
@@ -233,7 +223,7 @@ namespace CMPG223_Project
             this.lblBenID.Location = new System.Drawing.Point(18, 95);
             this.lblBenID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBenID.Name = "lblBenID";
-            this.lblBenID.Size = new System.Drawing.Size(170, 29);
+            this.lblBenID.Size = new System.Drawing.Size(113, 19);
             this.lblBenID.TabIndex = 0;
             this.lblBenID.Text = "Beneficiary ID:";
             // 
@@ -247,12 +237,106 @@ namespace CMPG223_Project
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search beneficiary";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // cmbBenType
+            // 
+            this.cmbBenType.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cmbBenType.FormattingEnabled = true;
+            this.cmbBenType.Items.AddRange(new object[] {
+            "Select Beneficiary Type",
+            "Single Adult",
+            "Family with Children",
+            "Single Parent",
+            "Couple",
+            "Youth (18-24)",
+            "Senior (65+)",
+            "Person with Disability"});
+            this.cmbBenType.Location = new System.Drawing.Point(162, 546);
+            this.cmbBenType.Name = "cmbBenType";
+            this.cmbBenType.Size = new System.Drawing.Size(184, 27);
+            this.cmbBenType.TabIndex = 12;
+            this.cmbBenType.Text = "Select Beneficiary Type";
+            // 
+            // lblBenType
+            // 
+            this.lblBenType.AutoSize = true;
+            this.lblBenType.Location = new System.Drawing.Point(18, 549);
+            this.lblBenType.Name = "lblBenType";
+            this.lblBenType.Size = new System.Drawing.Size(131, 19);
+            this.lblBenType.TabIndex = 13;
+            this.lblBenType.Text = "Beneficiary Type:";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(78, 607);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(250, 55);
+            this.btnClear.TabIndex = 14;
+            this.btnClear.Text = "Clear Form";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // rdoFemale
+            // 
+            this.rdoFemale.AutoSize = true;
+            this.rdoFemale.Location = new System.Drawing.Point(162, 443);
+            this.rdoFemale.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoFemale.Name = "rdoFemale";
+            this.rdoFemale.Size = new System.Drawing.Size(77, 23);
+            this.rdoFemale.TabIndex = 15;
+            this.rdoFemale.TabStop = true;
+            this.rdoFemale.Text = "Female";
+            this.rdoFemale.UseVisualStyleBackColor = true;
+            // 
+            // rdoMale
+            // 
+            this.rdoMale.AutoSize = true;
+            this.rdoMale.Location = new System.Drawing.Point(287, 443);
+            this.rdoMale.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoMale.Name = "rdoMale";
+            this.rdoMale.Size = new System.Drawing.Size(59, 23);
+            this.rdoMale.TabIndex = 16;
+            this.rdoMale.TabStop = true;
+            this.rdoMale.Text = "Male";
+            this.rdoMale.UseVisualStyleBackColor = true;
+            // 
+            // nudMaxAge
+            // 
+            this.nudMaxAge.Location = new System.Drawing.Point(162, 493);
+            this.nudMaxAge.Margin = new System.Windows.Forms.Padding(4);
+            this.nudMaxAge.Maximum = new decimal(new int[] {
+            80,
+            0,
+            0,
+            0});
+            this.nudMaxAge.Minimum = new decimal(new int[] {
+            18,
+            0,
+            0,
+            0});
+            this.nudMaxAge.Name = "nudMaxAge";
+            this.nudMaxAge.Size = new System.Drawing.Size(77, 27);
+            this.nudMaxAge.TabIndex = 17;
+            this.nudMaxAge.Value = new decimal(new int[] {
+            18,
+            0,
+            0,
+            0});
             // 
             // frmUpdateBeneficiaries
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 611);
+            this.ClientSize = new System.Drawing.Size(722, 675);
+            this.Controls.Add(this.nudMaxAge);
+            this.Controls.Add(this.rdoMale);
+            this.Controls.Add(this.rdoFemale);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.lblBenType);
+            this.Controls.Add(this.cmbBenType);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lblMaxAge);
@@ -264,15 +348,13 @@ namespace CMPG223_Project
             this.Controls.Add(this.lblSurname);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.lblBenID);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tbBenId);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.tbSurname);
             this.Controls.Add(this.tbID);
             this.Controls.Add(this.tbCell);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbDescription);
             this.Controls.Add(this.tbEmail);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -280,6 +362,7 @@ namespace CMPG223_Project
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Beneficiaries";
             this.Load += new System.EventHandler(this.Update_Beneficiary_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nudMaxAge)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,14 +382,18 @@ namespace CMPG223_Project
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.TextBox tbCell;
         private System.Windows.Forms.TextBox tbEmail;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbDescription;
         private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label lblGender;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label lblMaxAge;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbBenId;
         private System.Windows.Forms.Label lblBenID;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ComboBox cmbBenType;
+        private System.Windows.Forms.Label lblBenType;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.RadioButton rdoFemale;
+        private System.Windows.Forms.RadioButton rdoMale;
+        private System.Windows.Forms.NumericUpDown nudMaxAge;
     }
 }
