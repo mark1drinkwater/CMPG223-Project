@@ -39,7 +39,7 @@ namespace CMPG223_Project
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
             {
                 string sql = @"SELECT b.*, bt.Ben_Type_Id, bt.Description as Ben_Type_Description,
                                       bt.Gender, bt.Max_Age
@@ -121,7 +121,7 @@ namespace CMPG223_Project
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
             {
                 string getTypeIdSql = "SELECT Ben_Type_Id FROM Beneficiary_Type WHERE Description = @Description";
                 SqlCommand getTypeIdCmd = new SqlCommand(getTypeIdSql, conn);
@@ -180,7 +180,7 @@ namespace CMPG223_Project
 
         private void UpdateBeneficiaryTypeDetails(int benTypeId)
         {
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
             {
                 string gender = "";
                 if (rdoMale.Checked)
