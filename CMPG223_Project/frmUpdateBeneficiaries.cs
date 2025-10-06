@@ -160,7 +160,7 @@ namespace CMPG223_Project
 
                     if (rowsAffected > 0)
                     {
-                        // Update the beneficiary type details
+                        // Update beneficiary type details
                         UpdateBeneficiaryTypeDetails(benTypeId);
 
                         MessageBox.Show("Beneficiary updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
