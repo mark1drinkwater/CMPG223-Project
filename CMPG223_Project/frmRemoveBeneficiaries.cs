@@ -30,7 +30,7 @@ namespace CMPG223_Project
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
             {
                 string sql = @"SELECT b.Ben_Id, b.Name, b.Surname, b.Id_Number, b.Cell_Number, 
                                       b.Email_Address, bt.Description as Beneficiary_Type
@@ -97,7 +97,7 @@ namespace CMPG223_Project
 
         private void DeleteBeneficiary(string beneficiaryId)
         {
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
             {
                 string sql = "DELETE FROM Beneficiary WHERE Ben_Id = @BenId";
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -128,7 +128,7 @@ namespace CMPG223_Project
 
         private void LoadAllBeneficiaries()
         {
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
             {
                 string sql = @"SELECT b.Ben_Id, b.Name, b.Surname, b.Id_Number, b.Cell_Number, 
                                       b.Email_Address, bt.Description as Beneficiary_Type

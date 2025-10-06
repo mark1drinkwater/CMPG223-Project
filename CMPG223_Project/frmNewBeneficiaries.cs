@@ -51,7 +51,7 @@ namespace CMPG223_Project
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
             {
                 string getTypeIdSql = "SELECT Ben_Type_Id FROM Beneficiary_Type WHERE Description = @Description";
                 SqlCommand getTypeIdCmd = new SqlCommand(getTypeIdSql, conn);
@@ -109,7 +109,7 @@ namespace CMPG223_Project
         // Check for duplicate ID numbers
         private bool CheckDuplicateId(string idNumber)
         {
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
             {
                 string sql = "SELECT COUNT(*) FROM Beneficiary WHERE Id_Number = @IdNumber";
                 SqlCommand cmd = new SqlCommand(sql, conn);
