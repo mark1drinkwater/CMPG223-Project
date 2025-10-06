@@ -140,5 +140,10 @@ namespace CMPG223_Project
             rdoMale.Checked = false;
             cmbBenType.SelectedIndex = 0; 
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
