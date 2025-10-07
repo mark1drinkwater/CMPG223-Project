@@ -13,9 +13,6 @@ namespace CMPG223_Project
 {
     public partial class frmNewBookings : Form
     {
-        
-        private readonly string connectionString = ".....";//Connection string here please
-
         public frmNewBookings()
         {
             InitializeComponent();
@@ -43,9 +40,9 @@ namespace CMPG223_Project
 
         private void LoadComboBoxes()
         {
-            // Populate Beneficiary ComboBox
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
+			// Populate Beneficiary ComboBox
+			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
+			{
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand("SELECT Ben_Id, Name FROM BENEFICIARY", conn))
                 using (SqlDataReader reader = cmd.ExecuteReader())
@@ -58,9 +55,9 @@ namespace CMPG223_Project
                 }
             }
 
-            // Populate Room ComboBox
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
+			// Populate Room ComboBox
+			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
+			{
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand("SELECT Room_Id, Room_number FROM ROOM", conn))
                 using (SqlDataReader reader = cmd.ExecuteReader())
@@ -73,9 +70,9 @@ namespace CMPG223_Project
                 }
             }
 
-            // Populate Admin ComboBox 
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
+			// Populate Admin ComboBox 
+			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
+			{
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand("SELECT Admin_Id, Username FROM ADMIN_LOGIN", conn))
                 using (SqlDataReader reader = cmd.ExecuteReader())
@@ -112,8 +109,8 @@ namespace CMPG223_Project
 
             int bookingId = -1;
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
+			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
+			{
                 conn.Open();
                 // Insert into BOOKING
                 string insertBooking = "INSERT INTO BOOKING (Check_In, Check_Out, Ben_Id, Admin_Id, Room_Id) " +

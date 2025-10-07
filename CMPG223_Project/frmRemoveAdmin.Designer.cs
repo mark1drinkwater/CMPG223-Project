@@ -46,9 +46,9 @@ namespace CMPG223_Project
 			this.lblHeader.Location = new System.Drawing.Point(13, 9);
 			this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblHeader.Name = "lblHeader";
-			this.lblHeader.Size = new System.Drawing.Size(228, 33);
+			this.lblHeader.Size = new System.Drawing.Size(220, 33);
 			this.lblHeader.TabIndex = 0;
-			this.lblHeader.Text = "Remove  Admin";
+			this.lblHeader.Text = "Remove Admin";
 			// 
 			// lblAminID
 			// 
@@ -63,7 +63,7 @@ namespace CMPG223_Project
 			// txtAdminID
 			// 
 			this.txtAdminID.Location = new System.Drawing.Point(112, 478);
-			this.txtAdminID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.txtAdminID.Margin = new System.Windows.Forms.Padding(4);
 			this.txtAdminID.Name = "txtAdminID";
 			this.txtAdminID.Size = new System.Drawing.Size(276, 27);
 			this.txtAdminID.TabIndex = 1;
@@ -72,7 +72,7 @@ namespace CMPG223_Project
 			// 
 			this.dgvAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvAdmin.Location = new System.Drawing.Point(18, 70);
-			this.dgvAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.dgvAdmin.Margin = new System.Windows.Forms.Padding(4);
 			this.dgvAdmin.Name = "dgvAdmin";
 			this.dgvAdmin.Size = new System.Drawing.Size(553, 374);
 			this.dgvAdmin.TabIndex = 0;
@@ -123,7 +123,7 @@ namespace CMPG223_Project
 			this.Controls.Add(this.txtAdminID);
 			this.Controls.Add(this.dgvAdmin);
 			this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "frmRemoveAdmin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Remove Admin";

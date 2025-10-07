@@ -13,8 +13,6 @@ namespace CMPG223_Project
 {
     public partial class frmUpdateBookings : Form
     {
-        private readonly string connectionString = "......";
-
         public frmUpdateBookings()
         {
             InitializeComponent();
@@ -40,8 +38,8 @@ namespace CMPG223_Project
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
+			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
+			{
                 string query = "SELECT Check_In, Check_Out, Ben_Id, Admin_Id, Room_Id FROM BOOKING WHERE Booking_Id = @BookingId";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -88,8 +86,8 @@ namespace CMPG223_Project
             DateTime checkIn = dtpCheckIn.Value;
             DateTime checkOut = dtpCheckOut.Value;
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
+			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
+			{
                 string updateQuery = @"UPDATE BOOKING
                                        SET Check_In = @CheckIn,
                                            Check_Out = @CheckOut,

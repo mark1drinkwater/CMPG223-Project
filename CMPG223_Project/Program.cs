@@ -16,8 +16,8 @@ namespace CMPG223_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-			//Application.Run(new frmEntryLogin()); // Comment/uncomment to change starting form
-			Application.Run(new frmMainDash()); // Comment/uncomment to change starting form
+			Application.Run(new frmEntryLogin()); // Comment/uncomment to change starting form
+			//Application.Run(new frmMainDash()); // Comment/uncomment to change starting form
 		}
 	}
 }

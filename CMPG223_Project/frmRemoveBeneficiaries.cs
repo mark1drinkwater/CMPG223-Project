@@ -13,9 +13,6 @@ namespace CMPG223_Project
 {
     public partial class frmRemoveBeneficiaries : Form
     {
-        // TODO: Update connection string for final deployment
-        private string connString = @"Data Source=HAHLOLWE;Initial Catalog=Shelter;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
         public frmRemoveBeneficiaries()
         {
             InitializeComponent();

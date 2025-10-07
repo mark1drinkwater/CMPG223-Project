@@ -13,7 +13,6 @@ namespace CMPG223_Project
 {
     public partial class frmEntryLogin : Form
     {
-
         public frmEntryLogin()
         {
             InitializeComponent();
@@ -21,12 +20,6 @@ namespace CMPG223_Project
 
 		private void btnSubmit_Click(object sender, EventArgs e)
 		{
-			// making a comment - wil lcheck for validation
-			//Change as necessary for validating login details etc.
-			//this.Hide();
-			//frmMainDash mainForm = new frmMainDash();
-			//mainForm.Show();
-
 			if(string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text))
             {
                 MessageBox.Show("Please enter both username and password.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -35,7 +28,7 @@ namespace CMPG223_Project
 
             using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
             {
-                string sql = "SELECT Username FROM ADMIN_LOGIN WHERE Username = @username AND Password = @password";
+                string sql = "SELECT Username FROM ADMIN_LOGIN WHERE Username = @Username AND Password = @Password";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim());

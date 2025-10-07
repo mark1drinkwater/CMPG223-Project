@@ -18,11 +18,6 @@ namespace CMPG223_Project
             InitializeComponent();
         }
 
-        private void lblHeader_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cmbRole_SelectedIndexChanged(object sender, EventArgs e)
         {
 
