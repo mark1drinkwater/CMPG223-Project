@@ -187,7 +187,6 @@ namespace CMPG223_Project
 			this.lblDescription.Size = new System.Drawing.Size(94, 19);
 			this.lblDescription.TabIndex = 0;
 			this.lblDescription.Text = "Description:";
-			this.lblDescription.Click += new System.EventHandler(this.label1_Click);
 			// 
 			// lblGender
 			// 
@@ -361,7 +360,6 @@ namespace CMPG223_Project
 			this.Name = "frmUpdateBeneficiaries";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Update Beneficiaries";
-			this.Load += new System.EventHandler(this.Update_Beneficiary_Load);
 			((System.ComponentModel.ISupportInitialize)(this.nudMaxAge)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();

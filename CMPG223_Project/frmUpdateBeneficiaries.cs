@@ -18,16 +18,6 @@ namespace CMPG223_Project
             InitializeComponent();
         }
 
-        private void Update_Beneficiary_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(tbBenId.Text))
@@ -221,7 +211,7 @@ namespace CMPG223_Project
             cmbBenType.SelectedIndex = 0;
             rdoMale.Checked = false;
             rdoFemale.Checked = false;
-            nudMaxAge.Value = 0;
+            nudMaxAge.Value = 18;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
