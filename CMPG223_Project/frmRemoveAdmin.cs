@@ -42,15 +42,15 @@ namespace CMPG223_Project
         {
             if (string.IsNullOrWhiteSpace(txtAdminID.Text))
             {
-                MessageBox.Show("Please enter an Admin ID to filter.");
-                return;
+				MessageBox.Show("Please enter an Admin ID to filter.", "Empty field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
             }
 
             int adminId;
             if (!int.TryParse(txtAdminID.Text, out adminId))
             {
-                MessageBox.Show("Admin ID must be a number.");
-                return;
+				MessageBox.Show("Admin ID must be a number.", "Input error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
             }
 
 			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
@@ -69,16 +69,16 @@ namespace CMPG223_Project
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtAdminID.Text))
-            {
-                MessageBox.Show("Please enter an Admin ID to delete.");
-                return;
+            {                
+				MessageBox.Show("Please enter an Admin ID to delete.", "Empty field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
             }
 
             int adminId;
             if (!int.TryParse(txtAdminID.Text, out adminId))
             {
-                MessageBox.Show("Admin ID must be a number.");
-                return;
+				MessageBox.Show("Admin ID must be a number.", "Input error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
             }
 
             var confirm = MessageBox.Show("Are you sure you want to delete this admin?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -95,13 +95,13 @@ namespace CMPG223_Project
                     int rows = cmd.ExecuteNonQuery();
                     if (rows > 0)
                     {
-                        MessageBox.Show("Admin deleted successfully.");
+                        MessageBox.Show("Admin deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllAdmins();
                     }
                     else
                     {
-                        MessageBox.Show("No admin found with that ID.");
-                    }
+                        MessageBox.Show("No admin found with that ID.", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
                 }
             }
         }

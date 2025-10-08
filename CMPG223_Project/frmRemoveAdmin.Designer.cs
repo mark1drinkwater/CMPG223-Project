@@ -70,6 +70,7 @@ namespace CMPG223_Project
 			// 
 			// dgvAdmin
 			// 
+			this.dgvAdmin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
 			this.dgvAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvAdmin.Location = new System.Drawing.Point(18, 70);
 			this.dgvAdmin.Margin = new System.Windows.Forms.Padding(4);

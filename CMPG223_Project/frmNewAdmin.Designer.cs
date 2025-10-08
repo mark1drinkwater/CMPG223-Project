@@ -33,8 +33,8 @@ namespace CMPG223_Project
 			this.lblPassword = new System.Windows.Forms.Label();
 			this.lblHeader = new System.Windows.Forms.Label();
 			this.lblUsername = new System.Windows.Forms.Label();
-			this.tbName = new System.Windows.Forms.TextBox();
-			this.tbSurname = new System.Windows.Forms.TextBox();
+			this.txtName = new System.Windows.Forms.TextBox();
+			this.txtSurname = new System.Windows.Forms.TextBox();
 			this.lblRole = new System.Windows.Forms.Label();
 			this.cmbRole = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
@@ -82,23 +82,22 @@ namespace CMPG223_Project
 			this.lblUsername.TabIndex = 0;
 			this.lblUsername.Text = "Username:";
 			// 
-			// tbName
+			// txtName
 			// 
-			this.tbName.Location = new System.Drawing.Point(140, 92);
-			this.tbName.Margin = new System.Windows.Forms.Padding(4);
-			this.tbName.Name = "tbName";
-			this.tbName.Size = new System.Drawing.Size(255, 27);
-			this.tbName.TabIndex = 1;
-			this.tbName.TextChanged += new System.EventHandler(this.tbName_TextChanged);
+			this.txtName.Location = new System.Drawing.Point(140, 92);
+			this.txtName.Margin = new System.Windows.Forms.Padding(4);
+			this.txtName.Name = "txtName";
+			this.txtName.Size = new System.Drawing.Size(255, 27);
+			this.txtName.TabIndex = 1;
 			// 
-			// tbSurname
+			// txtSurname
 			// 
-			this.tbSurname.Location = new System.Drawing.Point(140, 142);
-			this.tbSurname.Margin = new System.Windows.Forms.Padding(4);
-			this.tbSurname.Name = "tbSurname";
-			this.tbSurname.ShortcutsEnabled = false;
-			this.tbSurname.Size = new System.Drawing.Size(255, 27);
-			this.tbSurname.TabIndex = 2;
+			this.txtSurname.Location = new System.Drawing.Point(140, 142);
+			this.txtSurname.Margin = new System.Windows.Forms.Padding(4);
+			this.txtSurname.Name = "txtSurname";
+			this.txtSurname.ShortcutsEnabled = false;
+			this.txtSurname.Size = new System.Drawing.Size(255, 27);
+			this.txtSurname.TabIndex = 2;
 			// 
 			// lblRole
 			// 
@@ -122,7 +121,6 @@ namespace CMPG223_Project
 			this.cmbRole.Size = new System.Drawing.Size(255, 27);
 			this.cmbRole.TabIndex = 3;
 			this.cmbRole.Text = "Select role";
-			this.cmbRole.SelectedIndexChanged += new System.EventHandler(this.cmbRole_SelectedIndexChanged);
 			// 
 			// frmNewAdmin
 			// 
@@ -135,8 +133,8 @@ namespace CMPG223_Project
 			this.Controls.Add(this.lblPassword);
 			this.Controls.Add(this.lblHeader);
 			this.Controls.Add(this.lblUsername);
-			this.Controls.Add(this.tbName);
-			this.Controls.Add(this.tbSurname);
+			this.Controls.Add(this.txtName);
+			this.Controls.Add(this.txtSurname);
 			this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "frmNewAdmin";
@@ -152,8 +150,8 @@ namespace CMPG223_Project
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.TextBox tbName;
-        private System.Windows.Forms.TextBox tbSurname;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.ComboBox cmbRole;
     }

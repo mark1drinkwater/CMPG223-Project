@@ -18,30 +18,19 @@ namespace CMPG223_Project
             InitializeComponent();
         }
 
-        private void cmbRole_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbName_TextChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // Validate input
             // Check for empty
             // Password -> tbSurname
 
-            if (string.IsNullOrWhiteSpace(tbName.Text))
+            if (string.IsNullOrWhiteSpace(txtName.Text))
             {
-                MessageBox.Show("Name cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Username cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(tbSurname.Text))
+            if (string.IsNullOrWhiteSpace(txtSurname.Text))
             {
                 MessageBox.Show("Password cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -49,13 +38,13 @@ namespace CMPG223_Project
 
             // check for password length and spaces
 
-            if (tbSurname.Text.Length < 7)
+            if (txtSurname.Text.Length < 7)
             {
                 MessageBox.Show("Password must be at least 7 characters long.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (tbSurname.Text.Contains(" "))
+            if (txtSurname.Text.Contains(" "))
             {
                 MessageBox.Show("Password cannot contain spaces.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -76,8 +65,8 @@ namespace CMPG223_Project
                 string sql = "INSERT INTO ADMIN_LOGIN (Username, Password, Role) VALUES (@Username, @Password, @Role)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
-                cmd.Parameters.AddWithValue("@Username", tbName.Text.Trim());
-                cmd.Parameters.AddWithValue("@Password", tbSurname.Text.Trim());
+                cmd.Parameters.AddWithValue("@Username", txtName.Text.Trim());
+                cmd.Parameters.AddWithValue("@Password", txtSurname.Text.Trim());
                 cmd.Parameters.AddWithValue("@Role", cmbRole.SelectedItem.ToString());
 
                 try
@@ -89,8 +78,8 @@ namespace CMPG223_Project
 
                     // clear fields
 
-                    tbName.Clear();
-                    tbSurname.Clear();
+                    txtName.Clear();
+                    txtSurname.Clear();
                     cmbRole.SelectedIndex = -1;
                 }
                 catch (SqlException ex)
