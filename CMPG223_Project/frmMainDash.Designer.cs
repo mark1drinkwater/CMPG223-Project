@@ -59,7 +59,7 @@ namespace CMPG223_Project
 			this.dgvBookings.Location = new System.Drawing.Point(12, 31);
 			this.dgvBookings.Name = "dgvBookings";
 			this.dgvBookings.RowHeadersWidth = 62;
-			this.dgvBookings.Size = new System.Drawing.Size(1038, 563);
+			this.dgvBookings.Size = new System.Drawing.Size(1060, 563);
 			this.dgvBookings.TabIndex = 0;
 			// 
 			// mnsOptions
@@ -74,7 +74,7 @@ namespace CMPG223_Project
             this.exitTSMI});
 			this.mnsOptions.Location = new System.Drawing.Point(0, 0);
 			this.mnsOptions.Name = "mnsOptions";
-			this.mnsOptions.Size = new System.Drawing.Size(1062, 27);
+			this.mnsOptions.Size = new System.Drawing.Size(1084, 27);
 			this.mnsOptions.TabIndex = 0;
 			this.mnsOptions.Text = "menuStrip1";
 			// 
@@ -229,7 +229,7 @@ namespace CMPG223_Project
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1062, 661);
+			this.ClientSize = new System.Drawing.Size(1084, 661);
 			this.Controls.Add(this.btnDeleteBooking);
 			this.Controls.Add(this.btnFilter);
 			this.Controls.Add(this.txtFilter);

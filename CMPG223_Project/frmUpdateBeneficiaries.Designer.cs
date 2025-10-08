@@ -41,10 +41,7 @@ namespace CMPG223_Project
 			this.tbID = new System.Windows.Forms.TextBox();
 			this.tbCell = new System.Windows.Forms.TextBox();
 			this.tbEmail = new System.Windows.Forms.TextBox();
-			this.tbDescription = new System.Windows.Forms.TextBox();
-			this.lblDescription = new System.Windows.Forms.Label();
 			this.lblGender = new System.Windows.Forms.Label();
-			this.lblMaxAge = new System.Windows.Forms.Label();
 			this.tbBenId = new System.Windows.Forms.TextBox();
 			this.lblBenID = new System.Windows.Forms.Label();
 			this.btnSearch = new System.Windows.Forms.Button();
@@ -53,8 +50,6 @@ namespace CMPG223_Project
 			this.btnClear = new System.Windows.Forms.Button();
 			this.rdoFemale = new System.Windows.Forms.RadioButton();
 			this.rdoMale = new System.Windows.Forms.RadioButton();
-			this.nudMaxAge = new System.Windows.Forms.NumericUpDown();
-			((System.ComponentModel.ISupportInitialize)(this.nudMaxAge)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btnUpdate
@@ -135,7 +130,7 @@ namespace CMPG223_Project
 			this.tbName.Location = new System.Drawing.Point(162, 142);
 			this.tbName.Margin = new System.Windows.Forms.Padding(4);
 			this.tbName.Name = "tbName";
-			this.tbName.Size = new System.Drawing.Size(202, 27);
+			this.tbName.Size = new System.Drawing.Size(261, 27);
 			this.tbName.TabIndex = 3;
 			// 
 			// tbSurname
@@ -143,7 +138,7 @@ namespace CMPG223_Project
 			this.tbSurname.Location = new System.Drawing.Point(162, 192);
 			this.tbSurname.Margin = new System.Windows.Forms.Padding(4);
 			this.tbSurname.Name = "tbSurname";
-			this.tbSurname.Size = new System.Drawing.Size(202, 27);
+			this.tbSurname.Size = new System.Drawing.Size(261, 27);
 			this.tbSurname.TabIndex = 4;
 			// 
 			// tbID
@@ -151,7 +146,7 @@ namespace CMPG223_Project
 			this.tbID.Location = new System.Drawing.Point(162, 242);
 			this.tbID.Margin = new System.Windows.Forms.Padding(4);
 			this.tbID.Name = "tbID";
-			this.tbID.Size = new System.Drawing.Size(202, 27);
+			this.tbID.Size = new System.Drawing.Size(261, 27);
 			this.tbID.TabIndex = 5;
 			// 
 			// tbCell
@@ -159,7 +154,7 @@ namespace CMPG223_Project
 			this.tbCell.Location = new System.Drawing.Point(162, 292);
 			this.tbCell.Margin = new System.Windows.Forms.Padding(4);
 			this.tbCell.Name = "tbCell";
-			this.tbCell.Size = new System.Drawing.Size(202, 27);
+			this.tbCell.Size = new System.Drawing.Size(261, 27);
 			this.tbCell.TabIndex = 6;
 			// 
 			// tbEmail
@@ -167,53 +162,25 @@ namespace CMPG223_Project
 			this.tbEmail.Location = new System.Drawing.Point(162, 342);
 			this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
 			this.tbEmail.Name = "tbEmail";
-			this.tbEmail.Size = new System.Drawing.Size(202, 27);
+			this.tbEmail.Size = new System.Drawing.Size(261, 27);
 			this.tbEmail.TabIndex = 7;
-			// 
-			// tbDescription
-			// 
-			this.tbDescription.Location = new System.Drawing.Point(162, 392);
-			this.tbDescription.Margin = new System.Windows.Forms.Padding(4);
-			this.tbDescription.Name = "tbDescription";
-			this.tbDescription.Size = new System.Drawing.Size(202, 27);
-			this.tbDescription.TabIndex = 8;
-			// 
-			// lblDescription
-			// 
-			this.lblDescription.AutoSize = true;
-			this.lblDescription.Location = new System.Drawing.Point(18, 395);
-			this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.lblDescription.Name = "lblDescription";
-			this.lblDescription.Size = new System.Drawing.Size(94, 19);
-			this.lblDescription.TabIndex = 0;
-			this.lblDescription.Text = "Description:";
 			// 
 			// lblGender
 			// 
 			this.lblGender.AutoSize = true;
-			this.lblGender.Location = new System.Drawing.Point(18, 445);
+			this.lblGender.Location = new System.Drawing.Point(18, 395);
 			this.lblGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblGender.Name = "lblGender";
 			this.lblGender.Size = new System.Drawing.Size(66, 19);
 			this.lblGender.TabIndex = 0;
 			this.lblGender.Text = "Gender:";
 			// 
-			// lblMaxAge
-			// 
-			this.lblMaxAge.AutoSize = true;
-			this.lblMaxAge.Location = new System.Drawing.Point(18, 495);
-			this.lblMaxAge.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.lblMaxAge.Name = "lblMaxAge";
-			this.lblMaxAge.Size = new System.Drawing.Size(117, 19);
-			this.lblMaxAge.TabIndex = 0;
-			this.lblMaxAge.Text = "Maximum Age:";
-			// 
 			// tbBenId
 			// 
 			this.tbBenId.Location = new System.Drawing.Point(162, 92);
 			this.tbBenId.Margin = new System.Windows.Forms.Padding(4);
 			this.tbBenId.Name = "tbBenId";
-			this.tbBenId.Size = new System.Drawing.Size(202, 27);
+			this.tbBenId.Size = new System.Drawing.Size(261, 27);
 			this.tbBenId.TabIndex = 1;
 			// 
 			// lblBenID
@@ -229,7 +196,7 @@ namespace CMPG223_Project
 			// btnSearch
 			// 
 			this.btnSearch.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSearch.Location = new System.Drawing.Point(396, 86);
+			this.btnSearch.Location = new System.Drawing.Point(433, 86);
 			this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
 			this.btnSearch.Name = "btnSearch";
 			this.btnSearch.Size = new System.Drawing.Size(175, 37);
@@ -244,23 +211,27 @@ namespace CMPG223_Project
 			this.cmbBenType.FormattingEnabled = true;
 			this.cmbBenType.Items.AddRange(new object[] {
             "Select Beneficiary Type",
-            "Single Adult",
-            "Family with Children",
-            "Single Parent",
-            "Couple",
-            "Youth (18-24)",
-            "Senior (65+)",
-            "Person with Disability"});
-			this.cmbBenType.Location = new System.Drawing.Point(162, 546);
+            "Female Youth (18-24)",
+            "Male Youth (18-24)",
+            "Single Female Adult (25-64)",
+            "Single Male Adult (25-64)",
+            "Single Female Senior (65+)",
+            "Single Male Senior (65+)",
+            "Person with Disability",
+            "Couple (no children)",
+            "Female Single Parent",
+            "Male Single Parent",
+            "Family (with children)"});
+			this.cmbBenType.Location = new System.Drawing.Point(162, 442);
 			this.cmbBenType.Name = "cmbBenType";
-			this.cmbBenType.Size = new System.Drawing.Size(184, 27);
+			this.cmbBenType.Size = new System.Drawing.Size(261, 27);
 			this.cmbBenType.TabIndex = 12;
 			this.cmbBenType.Text = "Select Beneficiary Type";
 			// 
 			// lblBenType
 			// 
 			this.lblBenType.AutoSize = true;
-			this.lblBenType.Location = new System.Drawing.Point(18, 549);
+			this.lblBenType.Location = new System.Drawing.Point(18, 445);
 			this.lblBenType.Name = "lblBenType";
 			this.lblBenType.Size = new System.Drawing.Size(131, 19);
 			this.lblBenType.TabIndex = 13;
@@ -281,7 +252,7 @@ namespace CMPG223_Project
 			// rdoFemale
 			// 
 			this.rdoFemale.AutoSize = true;
-			this.rdoFemale.Location = new System.Drawing.Point(162, 443);
+			this.rdoFemale.Location = new System.Drawing.Point(162, 393);
 			this.rdoFemale.Margin = new System.Windows.Forms.Padding(4);
 			this.rdoFemale.Name = "rdoFemale";
 			this.rdoFemale.Size = new System.Drawing.Size(77, 23);
@@ -293,7 +264,7 @@ namespace CMPG223_Project
 			// rdoMale
 			// 
 			this.rdoMale.AutoSize = true;
-			this.rdoMale.Location = new System.Drawing.Point(287, 443);
+			this.rdoMale.Location = new System.Drawing.Point(269, 393);
 			this.rdoMale.Margin = new System.Windows.Forms.Padding(4);
 			this.rdoMale.Name = "rdoMale";
 			this.rdoMale.Size = new System.Drawing.Size(59, 23);
@@ -302,35 +273,11 @@ namespace CMPG223_Project
 			this.rdoMale.Text = "Male";
 			this.rdoMale.UseVisualStyleBackColor = true;
 			// 
-			// nudMaxAge
-			// 
-			this.nudMaxAge.Location = new System.Drawing.Point(162, 493);
-			this.nudMaxAge.Margin = new System.Windows.Forms.Padding(4);
-			this.nudMaxAge.Maximum = new decimal(new int[] {
-            80,
-            0,
-            0,
-            0});
-			this.nudMaxAge.Minimum = new decimal(new int[] {
-            18,
-            0,
-            0,
-            0});
-			this.nudMaxAge.Name = "nudMaxAge";
-			this.nudMaxAge.Size = new System.Drawing.Size(77, 27);
-			this.nudMaxAge.TabIndex = 17;
-			this.nudMaxAge.Value = new decimal(new int[] {
-            18,
-            0,
-            0,
-            0});
-			// 
 			// frmUpdateBeneficiaries
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(722, 675);
-			this.Controls.Add(this.nudMaxAge);
 			this.Controls.Add(this.rdoMale);
 			this.Controls.Add(this.rdoFemale);
 			this.Controls.Add(this.btnClear);
@@ -338,9 +285,7 @@ namespace CMPG223_Project
 			this.Controls.Add(this.cmbBenType);
 			this.Controls.Add(this.btnSearch);
 			this.Controls.Add(this.btnUpdate);
-			this.Controls.Add(this.lblMaxAge);
 			this.Controls.Add(this.lblGender);
-			this.Controls.Add(this.lblDescription);
 			this.Controls.Add(this.lblEmail);
 			this.Controls.Add(this.lblCellNum);
 			this.Controls.Add(this.lblID);
@@ -353,14 +298,12 @@ namespace CMPG223_Project
 			this.Controls.Add(this.tbSurname);
 			this.Controls.Add(this.tbID);
 			this.Controls.Add(this.tbCell);
-			this.Controls.Add(this.tbDescription);
 			this.Controls.Add(this.tbEmail);
 			this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "frmUpdateBeneficiaries";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Update Beneficiaries";
-			((System.ComponentModel.ISupportInitialize)(this.nudMaxAge)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -380,10 +323,7 @@ namespace CMPG223_Project
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.TextBox tbCell;
         private System.Windows.Forms.TextBox tbEmail;
-        private System.Windows.Forms.TextBox tbDescription;
-        private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Label lblGender;
-        private System.Windows.Forms.Label lblMaxAge;
         private System.Windows.Forms.TextBox tbBenId;
         private System.Windows.Forms.Label lblBenID;
         private System.Windows.Forms.Button btnSearch;
@@ -392,6 +332,5 @@ namespace CMPG223_Project
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.RadioButton rdoFemale;
         private System.Windows.Forms.RadioButton rdoMale;
-        private System.Windows.Forms.NumericUpDown nudMaxAge;
     }
 }

@@ -68,17 +68,7 @@ namespace CMPG223_Project
                                     rdoMale.Checked = false;
                                     rdoFemale.Checked = false;
                                 }
-                            }
-
-                            if (reader["Max_Age"] != DBNull.Value)
-                            {
-                                int maxAge = Convert.ToInt32(reader["Max_Age"]);
-                                nudMaxAge.Value = maxAge;
-                            }
-                            else
-                            {
-                                nudMaxAge.Value = 0;
-                            }
+                            }                            
                         }
                         else
                         {
@@ -182,9 +172,7 @@ namespace CMPG223_Project
                                 WHERE Ben_Type_Id = @BenTypeId";
                 SqlCommand updateTypeCmd = new SqlCommand(updateTypeSql, conn);
 
-                updateTypeCmd.Parameters.AddWithValue("@Description", tbDescription.Text.Trim());
                 updateTypeCmd.Parameters.AddWithValue("@Gender", gender);
-                updateTypeCmd.Parameters.AddWithValue("@MaxAge", nudMaxAge.Value);
                 updateTypeCmd.Parameters.AddWithValue("@BenTypeId", benTypeId);
 
                 try
@@ -207,11 +195,9 @@ namespace CMPG223_Project
             tbID.Clear();
             tbCell.Clear();
             tbEmail.Clear();
-            tbDescription.Clear();
             cmbBenType.SelectedIndex = 0;
             rdoMale.Checked = false;
             rdoFemale.Checked = false;
-            nudMaxAge.Value = 18;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
