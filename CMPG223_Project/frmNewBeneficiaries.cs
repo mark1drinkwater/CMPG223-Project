@@ -19,32 +19,22 @@ namespace CMPG223_Project
 
         }
 
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSurname_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtSurname.Text) ||
-        string.IsNullOrEmpty(tbID.Text) || string.IsNullOrEmpty(tbCell.Text) ||
-        string.IsNullOrEmpty(tbEmail.Text) || (!rdoMale.Checked && !rdoFemale.Checked))
+        string.IsNullOrEmpty(txtID.Text) || string.IsNullOrEmpty(txtCell.Text) ||
+        string.IsNullOrEmpty(txtEmail.Text) || (!rdoMale.Checked && !rdoFemale.Checked))
             {
                 MessageBox.Show("Please fill in all required fields: Name, Surname, ID Number, Cell Number, Email, Beneficiary Type, and Gender.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Check for duplicate ID before inserting
-            if (CheckDuplicateId(tbID.Text.Trim()))
+            if (CheckDuplicateId(txtID.Text.Trim()))
             {
                 MessageBox.Show("A beneficiary with this ID number already exists.", "Duplicate Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                tbID.Focus();
-                tbID.SelectAll();
+                txtID.Focus();
+                txtID.SelectAll();
                 return;
             }
 
@@ -72,9 +62,9 @@ namespace CMPG223_Project
 
                     cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());
                     cmd.Parameters.AddWithValue("@Surname", txtSurname.Text.Trim());
-                    cmd.Parameters.AddWithValue("@IdNumber", tbID.Text.Trim());
-                    cmd.Parameters.AddWithValue("@CellNumber", tbCell.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Email", tbEmail.Text.Trim());
+                    cmd.Parameters.AddWithValue("@IdNumber", txtID.Text.Trim());
+                    cmd.Parameters.AddWithValue("@CellNumber", txtCell.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
                     cmd.Parameters.AddWithValue("@BenTypeId", benTypeId);
 
                     cmd.ExecuteNonQuery();
@@ -87,7 +77,7 @@ namespace CMPG223_Project
                 catch (SqlException ex)
                 {
                     // Backup duplicate check in case the first one failed
-                    if (CheckDuplicateId(tbID.Text.Trim()))
+                    if (CheckDuplicateId(txtID.Text.Trim()))
                     {
                         MessageBox.Show("A beneficiary with this ID number already exists.", "Duplicate Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -129,10 +119,10 @@ namespace CMPG223_Project
         {
             txtName.Clear();
             txtSurname.Clear();
-            tbID.Clear();
-            tbCell.Clear();
-            tbEmail.Clear();
-            tbDescription.Clear();
+            txtID.Clear();
+            txtCell.Clear();
+            txtEmail.Clear();
+            txtDescription.Clear();
             rdoFemale.Checked = false;
             rdoMale.Checked = false;
             cmbBenType.SelectedIndex = 0; 

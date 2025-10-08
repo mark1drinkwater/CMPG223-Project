@@ -97,7 +97,7 @@ namespace CMPG223_Project
         {
             if (cbBeneficiary.SelectedValue == null || cbRoom.SelectedValue == null || cbAdmin.SelectedValue == null)
             {
-                MessageBox.Show("Please select a beneficiary, room, and admin.");
+                MessageBox.Show("Please select a beneficiary, admin, and room.");
                 return;
             }
 
