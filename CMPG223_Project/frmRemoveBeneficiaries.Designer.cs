@@ -52,7 +52,7 @@ namespace CMPG223_Project
 			// btnFilter
 			// 
 			this.btnFilter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnFilter.Location = new System.Drawing.Point(613, 467);
+			this.btnFilter.Location = new System.Drawing.Point(608, 462);
 			this.btnFilter.Margin = new System.Windows.Forms.Padding(4);
 			this.btnFilter.Name = "btnFilter";
 			this.btnFilter.Size = new System.Drawing.Size(175, 37);
@@ -75,7 +75,7 @@ namespace CMPG223_Project
 			// lblBenID
 			// 
 			this.lblBenID.AutoSize = true;
-			this.lblBenID.Location = new System.Drawing.Point(165, 481);
+			this.lblBenID.Location = new System.Drawing.Point(160, 476);
 			this.lblBenID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblBenID.Name = "lblBenID";
 			this.lblBenID.Size = new System.Drawing.Size(113, 19);
@@ -84,7 +84,7 @@ namespace CMPG223_Project
 			// 
 			// txtBenID
 			// 
-			this.txtBenID.Location = new System.Drawing.Point(327, 473);
+			this.txtBenID.Location = new System.Drawing.Point(322, 468);
 			this.txtBenID.Margin = new System.Windows.Forms.Padding(4);
 			this.txtBenID.Name = "txtBenID";
 			this.txtBenID.Size = new System.Drawing.Size(247, 27);
@@ -93,7 +93,7 @@ namespace CMPG223_Project
 			// btnShowAll
 			// 
 			this.btnShowAll.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnShowAll.Location = new System.Drawing.Point(207, 538);
+			this.btnShowAll.Location = new System.Drawing.Point(164, 533);
 			this.btnShowAll.Margin = new System.Windows.Forms.Padding(4);
 			this.btnShowAll.Name = "btnShowAll";
 			this.btnShowAll.Size = new System.Drawing.Size(250, 55);
@@ -105,7 +105,7 @@ namespace CMPG223_Project
 			// btnDelete
 			// 
 			this.btnDelete.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnDelete.Location = new System.Drawing.Point(538, 538);
+			this.btnDelete.Location = new System.Drawing.Point(533, 533);
 			this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(250, 55);
