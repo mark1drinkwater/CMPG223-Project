@@ -58,7 +58,6 @@ namespace CMPG223_Project
             this.rdoNumOfBen.TabStop = true;
             this.rdoNumOfBen.Text = "Number of beneficiaries visited";
             this.rdoNumOfBen.UseVisualStyleBackColor = true;
-            this.rdoNumOfBen.CheckedChanged += new System.EventHandler(this.rbNumBeneficiaries_CheckedChanged);
             // 
             // rdoNumOfBenTypes
             // 
@@ -71,7 +70,6 @@ namespace CMPG223_Project
             this.rdoNumOfBenTypes.TabStop = true;
             this.rdoNumOfBenTypes.Text = "Number of beneficiary types visited";
             this.rdoNumOfBenTypes.UseVisualStyleBackColor = true;
-            this.rdoNumOfBenTypes.CheckedChanged += new System.EventHandler(this.rbNumBeneficiaries_CheckedChanged);
             // 
             // lstReport
             // 

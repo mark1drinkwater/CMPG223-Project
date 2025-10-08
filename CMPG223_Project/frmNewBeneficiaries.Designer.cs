@@ -129,7 +129,7 @@ namespace CMPG223_Project
 			// btnAdd
 			// 
 			this.btnAdd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAdd.Location = new System.Drawing.Point(592, 335);
+			this.btnAdd.Location = new System.Drawing.Point(588, 354);
 			this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
 			this.btnAdd.Name = "btnAdd";
 			this.btnAdd.Size = new System.Drawing.Size(250, 55);

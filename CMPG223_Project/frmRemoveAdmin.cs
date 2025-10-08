@@ -13,8 +13,6 @@ namespace CMPG223_Project
 {
     public partial class frmRemoveAdmin : Form
     {
-        private readonly string connectionString = "........";
-
         public frmRemoveAdmin()
         {
             InitializeComponent();
@@ -23,8 +21,8 @@ namespace CMPG223_Project
 
         private void LoadAllAdmins()
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
+			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
+			{
                 string query = "SELECT Admin_Id, Username, Role FROM ADMIN_LOGIN";
                 using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
                 {
@@ -55,8 +53,8 @@ namespace CMPG223_Project
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
+			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
+			{
                 string query = "SELECT Admin_Id, Username, Role FROM ADMIN_LOGIN WHERE Admin_Id = @AdminId";
                 using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
                 {
@@ -87,8 +85,8 @@ namespace CMPG223_Project
             if (confirm != DialogResult.Yes)
                 return;
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
+			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
+			{
                 string query = "DELETE FROM ADMIN_LOGIN WHERE Admin_Id = @AdminId";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
