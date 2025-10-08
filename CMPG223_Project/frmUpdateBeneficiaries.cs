@@ -29,7 +29,7 @@ namespace CMPG223_Project
             using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
             {
                 string sql = @"SELECT b.*, bt.Ben_Type_Id, bt.Description as Ben_Type_Description,
-                                      bt.Gender, bt.Max_Age
+                                      bt.Gender
                               FROM Beneficiary b 
                               LEFT JOIN Beneficiary_Type bt ON b.Ben_Type_Id = bt.Ben_Type_Id 
                               WHERE b.Ben_Id = @BenId";

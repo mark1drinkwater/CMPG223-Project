@@ -21,11 +21,9 @@ namespace CMPG223_Project
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtSurname.Text) ||
-        string.IsNullOrEmpty(txtID.Text) || string.IsNullOrEmpty(txtCell.Text) ||
-        string.IsNullOrEmpty(txtEmail.Text) || (!rdoMale.Checked && !rdoFemale.Checked))
+            if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtSurname.Text) || string.IsNullOrEmpty(txtID.Text) || string.IsNullOrEmpty(txtCell.Text) || string.IsNullOrEmpty(txtEmail.Text))
             {
-                MessageBox.Show("Please fill in all required fields: Name, Surname, ID Number, Cell Number, Email, Beneficiary Type, and Gender.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill in all required fields: Name, Surname, ID Number, Cell Number, Email, and Beneficiary Type.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -123,8 +121,6 @@ namespace CMPG223_Project
             txtCell.Clear();
             txtEmail.Clear();
             txtDescription.Clear();
-            rdoFemale.Checked = false;
-            rdoMale.Checked = false;
             cmbBenType.SelectedIndex = 0; 
         }
     }

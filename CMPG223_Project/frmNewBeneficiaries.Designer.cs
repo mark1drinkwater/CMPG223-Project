@@ -191,13 +191,17 @@ namespace CMPG223_Project
 			this.cmbBenType.FormattingEnabled = true;
 			this.cmbBenType.Items.AddRange(new object[] {
             "Select Beneficiary Type",
-            "Single Adult",
-            "Family with Children",
-            "Single Parent",
-            "Couple",
-            "Youth (18-24)",
-            "Senior (65+)",
-            "Person with Disability"});
+            "Female Youth (18-24)",
+            "Male Youth (18-24)",
+            "Single Female Adult (25-64)",
+            "Single Male Adult (25-64)",
+            "Single Female Senior (65+)",
+            "Single Male Senior (65+)",
+            "Person with Disability",
+            "Couple (no children)",
+            "Female Single Parent",
+            "Male Single Parent",
+            "Family (with children)"});
 			this.cmbBenType.Location = new System.Drawing.Point(76, 147);
 			this.cmbBenType.Name = "cmbBenType";
 			this.cmbBenType.Size = new System.Drawing.Size(318, 27);

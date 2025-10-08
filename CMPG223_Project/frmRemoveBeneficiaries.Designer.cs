@@ -41,18 +41,18 @@ namespace CMPG223_Project
 			// 
 			// dgvBenificiaries
 			// 
-			this.dgvBenificiaries.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dgvBenificiaries.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
 			this.dgvBenificiaries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvBenificiaries.Location = new System.Drawing.Point(18, 70);
 			this.dgvBenificiaries.Margin = new System.Windows.Forms.Padding(4);
 			this.dgvBenificiaries.Name = "dgvBenificiaries";
-			this.dgvBenificiaries.Size = new System.Drawing.Size(1066, 374);
+			this.dgvBenificiaries.Size = new System.Drawing.Size(903, 374);
 			this.dgvBenificiaries.TabIndex = 0;
 			// 
 			// btnFilter
 			// 
 			this.btnFilter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnFilter.Location = new System.Drawing.Point(677, 469);
+			this.btnFilter.Location = new System.Drawing.Point(613, 467);
 			this.btnFilter.Margin = new System.Windows.Forms.Padding(4);
 			this.btnFilter.Name = "btnFilter";
 			this.btnFilter.Size = new System.Drawing.Size(175, 37);
@@ -75,7 +75,7 @@ namespace CMPG223_Project
 			// lblBenID
 			// 
 			this.lblBenID.AutoSize = true;
-			this.lblBenID.Location = new System.Drawing.Point(229, 483);
+			this.lblBenID.Location = new System.Drawing.Point(165, 481);
 			this.lblBenID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblBenID.Name = "lblBenID";
 			this.lblBenID.Size = new System.Drawing.Size(113, 19);
@@ -84,7 +84,7 @@ namespace CMPG223_Project
 			// 
 			// txtBenID
 			// 
-			this.txtBenID.Location = new System.Drawing.Point(391, 475);
+			this.txtBenID.Location = new System.Drawing.Point(327, 473);
 			this.txtBenID.Margin = new System.Windows.Forms.Padding(4);
 			this.txtBenID.Name = "txtBenID";
 			this.txtBenID.Size = new System.Drawing.Size(247, 27);
@@ -93,7 +93,7 @@ namespace CMPG223_Project
 			// btnShowAll
 			// 
 			this.btnShowAll.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnShowAll.Location = new System.Drawing.Point(271, 540);
+			this.btnShowAll.Location = new System.Drawing.Point(207, 538);
 			this.btnShowAll.Margin = new System.Windows.Forms.Padding(4);
 			this.btnShowAll.Name = "btnShowAll";
 			this.btnShowAll.Size = new System.Drawing.Size(250, 55);
@@ -105,7 +105,7 @@ namespace CMPG223_Project
 			// btnDelete
 			// 
 			this.btnDelete.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnDelete.Location = new System.Drawing.Point(602, 540);
+			this.btnDelete.Location = new System.Drawing.Point(538, 538);
 			this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(250, 55);
@@ -118,7 +118,7 @@ namespace CMPG223_Project
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1097, 611);
+			this.ClientSize = new System.Drawing.Size(934, 611);
 			this.Controls.Add(this.btnShowAll);
 			this.Controls.Add(this.btnDelete);
 			this.Controls.Add(this.btnFilter);
