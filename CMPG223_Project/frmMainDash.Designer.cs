@@ -67,8 +67,8 @@ namespace CMPG223_Project
 			this.mnsOptions.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.mnsOptions.ImageScalingSize = new System.Drawing.Size(24, 24);
 			this.mnsOptions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bookingsTSMI,
             this.beneficiaryTSMI,
+            this.bookingsTSMI,
             this.adminTSMI,
             this.reportsTSMI,
             this.exitTSMI});
