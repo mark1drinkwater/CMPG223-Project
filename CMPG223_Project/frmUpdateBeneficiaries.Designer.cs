@@ -50,6 +50,7 @@ namespace CMPG223_Project
 			this.btnClear = new System.Windows.Forms.Button();
 			this.rdoFemale = new System.Windows.Forms.RadioButton();
 			this.rdoMale = new System.Windows.Forms.RadioButton();
+			this.rdoNA = new System.Windows.Forms.RadioButton();
 			this.SuspendLayout();
 			// 
 			// btnUpdate
@@ -225,7 +226,7 @@ namespace CMPG223_Project
 			this.cmbBenType.Location = new System.Drawing.Point(162, 442);
 			this.cmbBenType.Name = "cmbBenType";
 			this.cmbBenType.Size = new System.Drawing.Size(261, 27);
-			this.cmbBenType.TabIndex = 12;
+			this.cmbBenType.TabIndex = 11;
 			this.cmbBenType.Text = "Select Beneficiary Type";
 			// 
 			// lblBenType
@@ -256,7 +257,7 @@ namespace CMPG223_Project
 			this.rdoFemale.Margin = new System.Windows.Forms.Padding(4);
 			this.rdoFemale.Name = "rdoFemale";
 			this.rdoFemale.Size = new System.Drawing.Size(77, 23);
-			this.rdoFemale.TabIndex = 15;
+			this.rdoFemale.TabIndex = 8;
 			this.rdoFemale.TabStop = true;
 			this.rdoFemale.Text = "Female";
 			this.rdoFemale.UseVisualStyleBackColor = true;
@@ -268,16 +269,29 @@ namespace CMPG223_Project
 			this.rdoMale.Margin = new System.Windows.Forms.Padding(4);
 			this.rdoMale.Name = "rdoMale";
 			this.rdoMale.Size = new System.Drawing.Size(59, 23);
-			this.rdoMale.TabIndex = 16;
+			this.rdoMale.TabIndex = 9;
 			this.rdoMale.TabStop = true;
 			this.rdoMale.Text = "Male";
 			this.rdoMale.UseVisualStyleBackColor = true;
+			// 
+			// rdoNA
+			// 
+			this.rdoNA.AutoSize = true;
+			this.rdoNA.Location = new System.Drawing.Point(364, 393);
+			this.rdoNA.Margin = new System.Windows.Forms.Padding(4);
+			this.rdoNA.Name = "rdoNA";
+			this.rdoNA.Size = new System.Drawing.Size(55, 23);
+			this.rdoNA.TabIndex = 10;
+			this.rdoNA.TabStop = true;
+			this.rdoNA.Text = "N/A";
+			this.rdoNA.UseVisualStyleBackColor = true;
 			// 
 			// frmUpdateBeneficiaries
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(722, 675);
+			this.Controls.Add(this.rdoNA);
 			this.Controls.Add(this.rdoMale);
 			this.Controls.Add(this.rdoFemale);
 			this.Controls.Add(this.btnClear);
@@ -332,5 +346,6 @@ namespace CMPG223_Project
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.RadioButton rdoFemale;
         private System.Windows.Forms.RadioButton rdoMale;
-    }
+		private System.Windows.Forms.RadioButton rdoNA;
+	}
 }

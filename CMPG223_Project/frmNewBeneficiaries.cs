@@ -42,7 +42,7 @@ namespace CMPG223_Project
                 SqlCommand getTypeIdCmd = new SqlCommand(getTypeIdSql, conn);
                 getTypeIdCmd.Parameters.AddWithValue("@Description", cmbBenType.SelectedItem.ToString());
 
-                string insertSql = "INSERT INTO Beneficiary (Name, Surname, Id_Number, Cell_Number, Email_Address, Ben_Type_Id) VALUES (@Name, @Surname, @IdNumber, @CellNumber, @Email, @BenTypeId)";
+                string insertSql = "INSERT INTO Beneficiary (Name, Surname, Id_Number, Cell_Number, Email_Address, Notes, Ben_Type_Id) VALUES (@Name, @Surname, @IdNumber, @CellNumber, @Email, @Notes, @BenTypeId)";
                 SqlCommand cmd = new SqlCommand(insertSql, conn);
 
                 try
@@ -63,7 +63,8 @@ namespace CMPG223_Project
                     cmd.Parameters.AddWithValue("@IdNumber", txtID.Text.Trim());
                     cmd.Parameters.AddWithValue("@CellNumber", txtCell.Text.Trim());
                     cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
-                    cmd.Parameters.AddWithValue("@BenTypeId", benTypeId);
+					cmd.Parameters.AddWithValue("@Notes", txtNotes.Text.Trim());
+					cmd.Parameters.AddWithValue("@BenTypeId", benTypeId);
 
                     cmd.ExecuteNonQuery();
 
@@ -120,7 +121,7 @@ namespace CMPG223_Project
             txtID.Clear();
             txtCell.Clear();
             txtEmail.Clear();
-            txtDescription.Clear();
+            txtNotes.Clear();
             cmbBenType.SelectedIndex = 0; 
         }
     }
