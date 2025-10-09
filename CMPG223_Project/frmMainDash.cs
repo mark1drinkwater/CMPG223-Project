@@ -16,14 +16,21 @@ namespace CMPG223_Project
         public frmMainDash()
         {
             InitializeComponent();
+            this.Activated += frmMainDash_Activated;
         }
 
         private void frmMainDash_Load(object sender, EventArgs e)
         {
             LoadBookings();
-        }
+			
+		}
 
-        private void LoadBookings()
+		private void frmMainDash_Activated(object sender, EventArgs e)
+		{
+			LoadBookings();
+		}
+
+		private void LoadBookings()
         {
             try
             {

@@ -112,10 +112,10 @@ namespace CMPG223_Project
 			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
 			{
                 conn.Open();
-                // Insert into BOOKING
-                string insertBooking = "INSERT INTO BOOKING (Check_In, Check_Out, Ben_Id, Admin_Id, Room_Id) " +
-                                       "OUTPUT INSERTED.Booking_Id " +
-                                       "VALUES (@CheckIn, @CheckOut, @BenId, @AdminId, @RoomId)";
+				// Insert into BOOKING
+				string insertBooking = "INSERT INTO BOOKING (Check_In, Check_Out, Ben_Id, Admin_Id, Room_Id) " +
+					   "OUTPUT INSERTED.Booking_Id " +
+					   "VALUES (@CheckIn, @CheckOut, @BenId, @AdminId, @RoomId)";
                 using (SqlCommand cmd = new SqlCommand(insertBooking, conn))
                 {
                     cmd.Parameters.AddWithValue("@CheckIn", checkIn);
@@ -124,11 +124,19 @@ namespace CMPG223_Project
                     cmd.Parameters.AddWithValue("@AdminId", adminId);
                     cmd.Parameters.AddWithValue("@RoomId", roomId);
 
-                    bookingId = (int)cmd.ExecuteScalar();
+                    object result = cmd.ExecuteScalar();
+
+                    if (result == null || result == DBNull.Value)
+                    {
+                        MessageBox.Show("Insert failed: no Booking_Id returned.");
+                        return;
+                    }
+
+                    bookingId = Convert.ToInt32(result);
                 }
 
-                // If meal ticket is checked, insert into MEAL_TICKET
-                if (chkMealTicket.Checked)
+				// If meal ticket is checked, insert into MEAL_TICKET
+				if (chkMealTicket.Checked)
                 {
                     DateTime claimedDate = dtpMeal.Value;
                     string insertMeal = "INSERT INTO MEAL_TICKET (Claimed_date, Booking_Id) VALUES (@ClaimedDate, @BookingId)";

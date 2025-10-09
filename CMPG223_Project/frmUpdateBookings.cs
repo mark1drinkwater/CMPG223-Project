@@ -33,7 +33,7 @@ namespace CMPG223_Project
 
 			int bookingId;
 			if (!int.TryParse(txtBookingID.Text, out bookingId))
-			{				
+			{
 				MessageBox.Show("Booking ID must be a number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
@@ -49,11 +49,23 @@ namespace CMPG223_Project
 					{
 						if (reader.Read())
 						{
-							dtpCheckIn.Value = reader.GetDateTime(0);
-							dtpCheckOut.Value = reader.GetDateTime(1);
-							txtBenID.Text = reader.GetInt32(2).ToString();
-							tbAdmin.Text = reader.GetInt32(3).ToString();
-							tbRoom.Text = reader.GetInt32(4).ToString();
+							// Dates (guard against NULL)
+							if (!reader.IsDBNull(0))
+								dtpCheckIn.Value = reader.GetDateTime(0);
+							else
+								dtpCheckIn.Value = DateTime.Today;
+
+							if (!reader.IsDBNull(1))
+								dtpCheckOut.Value = reader.GetDateTime(1);
+							else
+								dtpCheckOut.Value = DateTime.Today;
+
+							// Ben_Id is bigint -> use GetInt64 and convert to string for the textbox
+							txtBenID.Text = reader.IsDBNull(2) ? string.Empty : reader.GetInt64(2).ToString();
+
+							// Admin_Id and Room_Id: read safely as string (handles int/bigint/varchar)
+							tbAdmin.Text = reader.IsDBNull(3) ? string.Empty : reader["Admin_Id"].ToString();
+							tbRoom.Text = reader.IsDBNull(4) ? string.Empty : reader["Room_Id"].ToString();
 						}
 						else
 						{
@@ -64,6 +76,7 @@ namespace CMPG223_Project
 				}
 			}
 		}
+
 
 		private void btnUpdateBooking_Click(object sender, EventArgs e)
 		{
