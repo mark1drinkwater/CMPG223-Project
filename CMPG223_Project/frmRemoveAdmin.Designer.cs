@@ -46,9 +46,9 @@ namespace CMPG223_Project
 			this.lblHeader.Location = new System.Drawing.Point(13, 9);
 			this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblHeader.Name = "lblHeader";
-			this.lblHeader.Size = new System.Drawing.Size(317, 33);
+			this.lblHeader.Size = new System.Drawing.Size(196, 33);
 			this.lblHeader.TabIndex = 0;
-			this.lblHeader.Text = "Remove Staff Member";
+			this.lblHeader.Text = "Remove User";
 			// 
 			// lblAminID
 			// 
@@ -56,16 +56,16 @@ namespace CMPG223_Project
 			this.lblAminID.Location = new System.Drawing.Point(20, 481);
 			this.lblAminID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblAminID.Name = "lblAminID";
-			this.lblAminID.Size = new System.Drawing.Size(69, 19);
+			this.lblAminID.Size = new System.Drawing.Size(84, 19);
 			this.lblAminID.TabIndex = 0;
-			this.lblAminID.Text = "Staff ID:";
+			this.lblAminID.Text = "Admin ID:";
 			// 
 			// txtAdminID
 			// 
 			this.txtAdminID.Location = new System.Drawing.Point(112, 478);
 			this.txtAdminID.Margin = new System.Windows.Forms.Padding(4);
 			this.txtAdminID.Name = "txtAdminID";
-			this.txtAdminID.Size = new System.Drawing.Size(276, 27);
+			this.txtAdminID.Size = new System.Drawing.Size(240, 27);
 			this.txtAdminID.TabIndex = 1;
 			// 
 			// dgvAdmin
@@ -81,12 +81,12 @@ namespace CMPG223_Project
 			// btnFilter
 			// 
 			this.btnFilter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnFilter.Location = new System.Drawing.Point(396, 472);
+			this.btnFilter.Location = new System.Drawing.Point(360, 472);
 			this.btnFilter.Margin = new System.Windows.Forms.Padding(4);
 			this.btnFilter.Name = "btnFilter";
-			this.btnFilter.Size = new System.Drawing.Size(175, 37);
+			this.btnFilter.Size = new System.Drawing.Size(211, 37);
 			this.btnFilter.TabIndex = 2;
-			this.btnFilter.Text = "Filter staff";
+			this.btnFilter.Text = "Filter by Admin ID";
 			this.btnFilter.UseVisualStyleBackColor = true;
 			// 
 			// btnShowAll
@@ -97,7 +97,7 @@ namespace CMPG223_Project
 			this.btnShowAll.Name = "btnShowAll";
 			this.btnShowAll.Size = new System.Drawing.Size(250, 55);
 			this.btnShowAll.TabIndex = 3;
-			this.btnShowAll.Text = "Show All Staff";
+			this.btnShowAll.Text = "Show All Users";
 			this.btnShowAll.UseVisualStyleBackColor = true;
 			// 
 			// btnDelete
@@ -108,7 +108,7 @@ namespace CMPG223_Project
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(250, 55);
 			this.btnDelete.TabIndex = 4;
-			this.btnDelete.Text = "Delete Staff Member";
+			this.btnDelete.Text = "Delete User";
 			this.btnDelete.UseVisualStyleBackColor = true;
 			// 
 			// frmRemoveAdmin
@@ -127,7 +127,7 @@ namespace CMPG223_Project
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "frmRemoveAdmin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Remove Staff";
+			this.Text = "Remove Admin";
 			((System.ComponentModel.ISupportInitialize)(this.dgvAdmin)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();

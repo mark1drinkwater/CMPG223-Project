@@ -21,181 +21,99 @@ namespace CMPG223_Project
 
 		private void btnSearch_Click(object sender, EventArgs e)
 		{
-			if (string.IsNullOrEmpty(tbBenId.Text))
+			if (!long.TryParse(tbBenId.Text.Trim(), out long benId))
 			{
-				MessageBox.Show("Please enter a Beneficiary ID to search.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Please enter a valid Beneficiary ID to search.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 
 			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
 			{
-				string sql = @"SELECT b.*, bt.Ben_Type_Id, bt.Description as Ben_Type_Description,
-                                      bt.Gender
-                              FROM Beneficiary b 
-                              LEFT JOIN Beneficiary_Type bt ON b.Ben_Type_Id = bt.Ben_Type_Id 
-                              WHERE b.Ben_Id = @BenId";
-				SqlCommand cmd = new SqlCommand(sql, conn);
-
-				cmd.Parameters.AddWithValue("@BenId", tbBenId.Text.Trim());
-
-				try
+				string sql = @"SELECT Name, Surname, Id_Number, Cell_Number, Email_Address
+                               FROM Beneficiary
+                               WHERE Ben_Id = @BenId";
+				using (SqlCommand cmd = new SqlCommand(sql, conn))
 				{
-					conn.Open();
-					using (SqlDataReader reader = cmd.ExecuteReader())
+					cmd.Parameters.Add("@BenId", SqlDbType.BigInt).Value = benId;
+
+					try
 					{
-						if (reader.Read())
+						conn.Open();
+						using (SqlDataReader reader = cmd.ExecuteReader())
 						{
-							tbName.Text = reader["Name"].ToString();
-							tbSurname.Text = reader["Surname"].ToString();
-							tbID.Text = reader["Id_Number"].ToString();
-							tbCell.Text = reader["Cell_Number"].ToString();
-							tbEmail.Text = reader["Email_Address"].ToString();
-
-							if (reader["Gender"] != DBNull.Value)
+							if (reader.Read())
 							{
-								string gender = reader["Gender"].ToString().ToLower();
-								if (gender == "male")
-								{
-									rdoMale.Checked = true;
-									rdoFemale.Checked = false;
-								}
-								else if (gender == "female")
-								{
-									rdoFemale.Checked = true;
-									rdoMale.Checked = false;
-								}
-								else
-								{
-									rdoMale.Checked = false;
-									rdoFemale.Checked = false;
-								}
-							}
-
-							/*if (reader["Max_Age"] != DBNull.Value)
-							{
-								int maxAge = Convert.ToInt32(reader["Max_Age"]);
-								nudMaxAge.Value = maxAge;
+								tbName.Text = reader["Name"].ToString();
+								tbSurname.Text = reader["Surname"].ToString();
+								tbID.Text = reader["Id_Number"].ToString();
+								tbCell.Text = reader["Cell_Number"].ToString();
+								tbEmail.Text = reader["Email_Address"].ToString();
 							}
 							else
 							{
-								nudMaxAge.Value = 0;
-							}*/
-						}
-						else
-						{
-							MessageBox.Show("Beneficiary not found.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+								MessageBox.Show("Beneficiary not found.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							}
 						}
 					}
-				}
-				catch (SqlException ex)
-				{
-					MessageBox.Show($"An error occurred while connecting to the database: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					catch (SqlException ex)
+					{
+						MessageBox.Show($"An error occurred while connecting to the database: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
 				}
 			}
 		}
 
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
-			if (string.IsNullOrEmpty(tbBenId.Text) || string.IsNullOrEmpty(tbName.Text) || string.IsNullOrEmpty(tbSurname.Text))
+			if (!long.TryParse(tbBenId.Text.Trim(), out long benId))
 			{
-				MessageBox.Show("Please fill in all required fields.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Please enter a valid Beneficiary ID.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 
-			// Validate beneficiary type selection
-			if (cmbBenType.SelectedIndex <= 0)
+			if (string.IsNullOrWhiteSpace(tbName.Text) || string.IsNullOrWhiteSpace(tbSurname.Text))
 			{
-				MessageBox.Show("Please select a beneficiary type.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Please fill in required fields (Name and Surname).", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 
 			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
 			{
-				string getTypeIdSql = "SELECT Ben_Type_Id FROM Beneficiary_Type WHERE Description = @Description";
-				SqlCommand getTypeIdCmd = new SqlCommand(getTypeIdSql, conn);
-				getTypeIdCmd.Parameters.AddWithValue("@Description", cmbBenType.SelectedItem.ToString());
-
-				string updateSql = @"UPDATE Beneficiary 
-                              SET Name = @Name, Surname = @Surname, Id_Number = @IdNumber, 
-                                  Cell_Number = @CellNumber, Email_Address = @Email, 
-                                  Ben_Type_Id = @BenTypeId 
-                              WHERE Ben_Id = @BenId";
-				SqlCommand updateCmd = new SqlCommand(updateSql, conn);
-
-				try
+				string updateSql = @"UPDATE Beneficiary
+                                     SET Name = @Name,
+                                         Surname = @Surname,
+                                         Id_Number = @IdNumber,
+                                         Cell_Number = @CellNumber,
+                                         Email_Address = @Email
+                                     WHERE Ben_Id = @BenId";
+				using (SqlCommand updateCmd = new SqlCommand(updateSql, conn))
 				{
-					conn.Open();
+					updateCmd.Parameters.Add("@Name", SqlDbType.NVarChar, 50).Value = tbName.Text.Trim();
+					updateCmd.Parameters.Add("@Surname", SqlDbType.NVarChar, 50).Value = tbSurname.Text.Trim();
+					updateCmd.Parameters.Add("@IdNumber", SqlDbType.NVarChar, 13).Value = tbID.Text.Trim();
+					updateCmd.Parameters.Add("@CellNumber", SqlDbType.VarChar, 10).Value = tbCell.Text.Trim();
+					updateCmd.Parameters.Add("@Email", SqlDbType.NVarChar, 200).Value = tbEmail.Text.Trim();
+					updateCmd.Parameters.Add("@BenId", SqlDbType.BigInt).Value = benId;
 
-					// Get the beneficiary type
-					object result = getTypeIdCmd.ExecuteScalar();
-					if (result == null)
+					try
 					{
-						MessageBox.Show("Please select beneficiary type.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-						return;
+						conn.Open();
+						int rowsAffected = updateCmd.ExecuteNonQuery();
+
+						if (rowsAffected > 0)
+						{
+							MessageBox.Show("Beneficiary personal details updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							ClearForm();
+						}
+						else
+						{
+							MessageBox.Show("No beneficiary was updated. Please check the Beneficiary ID.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						}
 					}
-
-					int benTypeId = Convert.ToInt32(result);
-
-					updateCmd.Parameters.AddWithValue("@Name", tbName.Text.Trim());
-					updateCmd.Parameters.AddWithValue("@Surname", tbSurname.Text.Trim());
-					updateCmd.Parameters.AddWithValue("@IdNumber", tbID.Text.Trim());
-					updateCmd.Parameters.AddWithValue("@CellNumber", tbCell.Text.Trim());
-					updateCmd.Parameters.AddWithValue("@Email", tbEmail.Text.Trim());
-					updateCmd.Parameters.AddWithValue("@BenTypeId", benTypeId);
-					updateCmd.Parameters.AddWithValue("@BenId", tbBenId.Text.Trim());
-
-					int rowsAffected = updateCmd.ExecuteNonQuery();
-
-					if (rowsAffected > 0)
+					catch (SqlException ex)
 					{
-						// Update beneficiary type details
-						UpdateBeneficiaryTypeDetails(benTypeId);
-
-						MessageBox.Show("Beneficiary updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-						ClearForm();
+						MessageBox.Show($"An error occurred while updating the beneficiary: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
-					else
-					{
-						MessageBox.Show("No beneficiary was updated. Please check the Beneficiary ID.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-					}
-				}
-				catch (SqlException ex)
-				{
-					MessageBox.Show($"An error occurred while updating the beneficiary: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				}
-			}
-		}
-
-		private void UpdateBeneficiaryTypeDetails(int benTypeId)
-		{
-			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
-			{
-				string gender = "";
-				if (rdoMale.Checked)
-					gender = "Male";
-				else if (rdoFemale.Checked)
-					gender = "Female";
-				else
-					gender = "Any";
-
-				string updateTypeSql = @"UPDATE Beneficiary_Type
-								SET Description = @Description, Gender = @Gender
-                                WHERE Ben_Type_Id = @BenTypeId";
-				SqlCommand updateTypeCmd = new SqlCommand(updateTypeSql, conn);
-
-				updateTypeCmd.Parameters.AddWithValue("@Description", cmbBenType.Text.Trim());
-				updateTypeCmd.Parameters.AddWithValue("@Gender", gender);
-				//updateTypeCmd.Parameters.AddWithValue("@MaxAge", nudMaxAge.Value);
-				updateTypeCmd.Parameters.AddWithValue("@BenTypeId", benTypeId);
-
-				try
-				{
-					conn.Open();
-					updateTypeCmd.ExecuteNonQuery();
-				}
-				catch (SqlException ex)
-				{
-					MessageBox.Show($"Beneficiary updated but could not update type details: {ex.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				}
 			}
 		}
@@ -208,17 +126,11 @@ namespace CMPG223_Project
 			tbID.Clear();
 			tbCell.Clear();
 			tbEmail.Clear();
-			//tbDescription.Clear();
-			cmbBenType.SelectedIndex = 0;
-			rdoMale.Checked = false;
-			rdoFemale.Checked = false;
-			//nudMaxAge.Value = 18;
 		}
 
 		private void btnClear_Click(object sender, EventArgs e)
 		{
 			ClearForm();
 		}
-
 	}
 }

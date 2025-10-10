@@ -74,7 +74,7 @@ namespace CMPG223_Project
                     conn.Open();
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("New admin added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("New user added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // clear fields
 
@@ -84,7 +84,7 @@ namespace CMPG223_Project
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show("An error occurred while adding the new admin: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("An error occurred while adding the new user: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

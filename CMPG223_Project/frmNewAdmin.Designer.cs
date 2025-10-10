@@ -68,9 +68,9 @@ namespace CMPG223_Project
 			this.lblHeader.Location = new System.Drawing.Point(13, 9);
 			this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblHeader.Name = "lblHeader";
-			this.lblHeader.Size = new System.Drawing.Size(327, 33);
+			this.lblHeader.Size = new System.Drawing.Size(206, 33);
 			this.lblHeader.TabIndex = 0;
-			this.lblHeader.Text = "Add New Staff Member";
+			this.lblHeader.Text = "Add New User";
 			// 
 			// lblUsername
 			// 
@@ -139,7 +139,7 @@ namespace CMPG223_Project
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "frmNewAdmin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "New Staff";
+			this.Text = "New Admin";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

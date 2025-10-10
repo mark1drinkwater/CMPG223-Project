@@ -51,7 +51,7 @@ namespace CMPG223_Project
                     }
                     else
                     {
-                        MessageBox.Show("No admin found with that ID.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("No user found with that Admin ID.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtUsername.Clear();
                         txtPassword.Clear();
                         cmbRole.SelectedIndex = -1;
@@ -96,16 +96,16 @@ namespace CMPG223_Project
 
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("Admin updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("User details updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("No record found with that ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No record found with that Admin ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show($"Error updating admin: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error updating user: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

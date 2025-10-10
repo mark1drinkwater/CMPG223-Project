@@ -36,6 +36,7 @@ namespace CMPG223_Project
         private void btnShowAll_Click(object sender, EventArgs e)
         {
             LoadAllAdmins();
+            txtAdminID.Clear();
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
@@ -81,7 +82,7 @@ namespace CMPG223_Project
 				return;
             }
 
-            var confirm = MessageBox.Show("Are you sure you want to delete this admin?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            var confirm = MessageBox.Show("Are you sure you want to delete this user?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (confirm != DialogResult.Yes)
                 return;
 
@@ -95,12 +96,12 @@ namespace CMPG223_Project
                     int rows = cmd.ExecuteNonQuery();
                     if (rows > 0)
                     {
-                        MessageBox.Show("Admin deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("User deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAllAdmins();
                     }
                     else
                     {
-                        MessageBox.Show("No admin found with that ID.", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No user found with that ID.", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
                 }
             }

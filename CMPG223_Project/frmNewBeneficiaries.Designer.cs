@@ -45,8 +45,6 @@ namespace CMPG223_Project
 			this.lblInstructHeading = new System.Windows.Forms.Label();
 			this.cmbBenType = new System.Windows.Forms.ComboBox();
 			this.lblType = new System.Windows.Forms.Label();
-			this.txtNotes = new System.Windows.Forms.TextBox();
-			this.lblNotes = new System.Windows.Forms.Label();
 			this.txtID = new System.Windows.Forms.TextBox();
 			this.grpBenDetails = new System.Windows.Forms.GroupBox();
 			this.grpBenType.SuspendLayout();
@@ -59,7 +57,7 @@ namespace CMPG223_Project
 			this.txtEmail.Location = new System.Drawing.Point(144, 237);
 			this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
 			this.txtEmail.Name = "txtEmail";
-			this.txtEmail.Size = new System.Drawing.Size(318, 27);
+			this.txtEmail.Size = new System.Drawing.Size(273, 27);
 			this.txtEmail.TabIndex = 5;
 			// 
 			// lblName
@@ -131,7 +129,7 @@ namespace CMPG223_Project
 			// btnAdd
 			// 
 			this.btnAdd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAdd.Location = new System.Drawing.Point(588, 367);
+			this.btnAdd.Location = new System.Drawing.Point(598, 324);
 			this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
 			this.btnAdd.Name = "btnAdd";
 			this.btnAdd.Size = new System.Drawing.Size(250, 55);
@@ -147,7 +145,7 @@ namespace CMPG223_Project
 			this.txtCell.Margin = new System.Windows.Forms.Padding(4);
 			this.txtCell.MaxLength = 10;
 			this.txtCell.Name = "txtCell";
-			this.txtCell.Size = new System.Drawing.Size(318, 27);
+			this.txtCell.Size = new System.Drawing.Size(273, 27);
 			this.txtCell.TabIndex = 4;
 			// 
 			// txtSurname
@@ -156,7 +154,7 @@ namespace CMPG223_Project
 			this.txtSurname.Location = new System.Drawing.Point(144, 87);
 			this.txtSurname.Margin = new System.Windows.Forms.Padding(4);
 			this.txtSurname.Name = "txtSurname";
-			this.txtSurname.Size = new System.Drawing.Size(318, 27);
+			this.txtSurname.Size = new System.Drawing.Size(273, 27);
 			this.txtSurname.TabIndex = 2;
 			// 
 			// txtName
@@ -165,7 +163,7 @@ namespace CMPG223_Project
 			this.txtName.Location = new System.Drawing.Point(144, 37);
 			this.txtName.Margin = new System.Windows.Forms.Padding(4);
 			this.txtName.Name = "txtName";
-			this.txtName.Size = new System.Drawing.Size(318, 27);
+			this.txtName.Size = new System.Drawing.Size(273, 27);
 			this.txtName.TabIndex = 1;
 			// 
 			// grpBenType
@@ -175,32 +173,32 @@ namespace CMPG223_Project
 			this.grpBenType.Controls.Add(this.cmbBenType);
 			this.grpBenType.Controls.Add(this.lblType);
 			this.grpBenType.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.grpBenType.Location = new System.Drawing.Point(512, 95);
+			this.grpBenType.Location = new System.Drawing.Point(479, 95);
 			this.grpBenType.Margin = new System.Windows.Forms.Padding(4);
 			this.grpBenType.Name = "grpBenType";
 			this.grpBenType.Padding = new System.Windows.Forms.Padding(4);
-			this.grpBenType.Size = new System.Drawing.Size(409, 232);
+			this.grpBenType.Size = new System.Drawing.Size(469, 209);
 			this.grpBenType.TabIndex = 0;
 			this.grpBenType.TabStop = false;
-			this.grpBenType.Text = "Beneficiary Type (based on main beneficiary)";
+			this.grpBenType.Text = "Beneficiary Type (based on registered beneficiary)";
 			// 
 			// lblInstructions
 			// 
 			this.lblInstructions.AutoSize = true;
 			this.lblInstructions.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblInstructions.Location = new System.Drawing.Point(20, 69);
+			this.lblInstructions.Location = new System.Drawing.Point(33, 69);
 			this.lblInstructions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblInstructions.Name = "lblInstructions";
-			this.lblInstructions.Size = new System.Drawing.Size(351, 38);
+			this.lblInstructions.Size = new System.Drawing.Size(395, 38);
 			this.lblInstructions.TabIndex = 8;
-			this.lblInstructions.Text = "Choose the beneficiary type based on the info of\r\nthe main beneficiary\'s informat" +
-    "ion.\r\n";
+			this.lblInstructions.Text = "Choose the beneficiary type best suited to beneficiary\'s\r\ncircumstances when addi" +
+    "ng to the Shelter\'s databse.\r\n";
 			// 
 			// lblInstructHeading
 			// 
 			this.lblInstructHeading.AutoSize = true;
 			this.lblInstructHeading.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblInstructHeading.Location = new System.Drawing.Point(20, 40);
+			this.lblInstructHeading.Location = new System.Drawing.Point(33, 40);
 			this.lblInstructHeading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblInstructHeading.Name = "lblInstructHeading";
 			this.lblInstructHeading.Size = new System.Drawing.Size(112, 19);
@@ -216,16 +214,17 @@ namespace CMPG223_Project
             "Select Beneficiary Type",
             "Female Youth (18-24)",
             "Male Youth (18-24)",
-            "Single Female Adult (25-64)",
-            "Single Male Adult (25-64)",
-            "Single Female Senior (65+)",
-            "Single Male Senior (65+)",
-            "Person with Disability",
+            "Female Adult (25-64)",
+            "Male Adult (25-64)",
+            "Female Senior (65+)",
+            "Male Senior (65+)",
+            "Female Person with Disability",
+            "Male Person with Disability",
             "Couple (no children)",
             "Female Single Parent",
             "Male Single Parent",
             "Family (with children)"});
-			this.cmbBenType.Location = new System.Drawing.Point(76, 147);
+			this.cmbBenType.Location = new System.Drawing.Point(89, 147);
 			this.cmbBenType.Name = "cmbBenType";
 			this.cmbBenType.Size = new System.Drawing.Size(318, 27);
 			this.cmbBenType.TabIndex = 7;
@@ -235,32 +234,12 @@ namespace CMPG223_Project
 			// 
 			this.lblType.AutoSize = true;
 			this.lblType.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblType.Location = new System.Drawing.Point(20, 150);
+			this.lblType.Location = new System.Drawing.Point(33, 150);
 			this.lblType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblType.Name = "lblType";
 			this.lblType.Size = new System.Drawing.Size(50, 19);
 			this.lblType.TabIndex = 0;
 			this.lblType.Text = "Type:";
-			// 
-			// txtNotes
-			// 
-			this.txtNotes.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtNotes.Location = new System.Drawing.Point(144, 287);
-			this.txtNotes.Margin = new System.Windows.Forms.Padding(4);
-			this.txtNotes.Name = "txtNotes";
-			this.txtNotes.Size = new System.Drawing.Size(318, 27);
-			this.txtNotes.TabIndex = 6;
-			// 
-			// lblNotes
-			// 
-			this.lblNotes.AutoSize = true;
-			this.lblNotes.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNotes.Location = new System.Drawing.Point(20, 290);
-			this.lblNotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.lblNotes.Name = "lblNotes";
-			this.lblNotes.Size = new System.Drawing.Size(60, 19);
-			this.lblNotes.TabIndex = 0;
-			this.lblNotes.Text = "Notes: ";
 			// 
 			// txtID
 			// 
@@ -269,7 +248,7 @@ namespace CMPG223_Project
 			this.txtID.Margin = new System.Windows.Forms.Padding(4);
 			this.txtID.MaxLength = 13;
 			this.txtID.Name = "txtID";
-			this.txtID.Size = new System.Drawing.Size(318, 27);
+			this.txtID.Size = new System.Drawing.Size(273, 27);
 			this.txtID.TabIndex = 3;
 			// 
 			// grpBenDetails
@@ -279,11 +258,9 @@ namespace CMPG223_Project
 			this.grpBenDetails.Controls.Add(this.txtCell);
 			this.grpBenDetails.Controls.Add(this.lblEmail);
 			this.grpBenDetails.Controls.Add(this.txtID);
-			this.grpBenDetails.Controls.Add(this.txtNotes);
 			this.grpBenDetails.Controls.Add(this.lblCellNum);
 			this.grpBenDetails.Controls.Add(this.txtSurname);
 			this.grpBenDetails.Controls.Add(this.lblID);
-			this.grpBenDetails.Controls.Add(this.lblNotes);
 			this.grpBenDetails.Controls.Add(this.txtName);
 			this.grpBenDetails.Controls.Add(this.lblSurname);
 			this.grpBenDetails.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -291,16 +268,16 @@ namespace CMPG223_Project
 			this.grpBenDetails.Margin = new System.Windows.Forms.Padding(4);
 			this.grpBenDetails.Name = "grpBenDetails";
 			this.grpBenDetails.Padding = new System.Windows.Forms.Padding(4);
-			this.grpBenDetails.Size = new System.Drawing.Size(474, 344);
+			this.grpBenDetails.Size = new System.Drawing.Size(440, 289);
 			this.grpBenDetails.TabIndex = 0;
 			this.grpBenDetails.TabStop = false;
-			this.grpBenDetails.Text = "Main Beneficiary Info";
+			this.grpBenDetails.Text = "Register Beneficiary Info (as applicable)";
 			// 
 			// frmNewBeneficiaries
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(982, 466);
+			this.ClientSize = new System.Drawing.Size(961, 402);
 			this.Controls.Add(this.grpBenDetails);
 			this.Controls.Add(this.grpBenType);
 			this.Controls.Add(this.btnAdd);
@@ -333,8 +310,6 @@ namespace CMPG223_Project
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.GroupBox grpBenType;
-        private System.Windows.Forms.TextBox txtNotes;
-        private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.TextBox txtID;
 		private System.Windows.Forms.GroupBox grpBenDetails;
         private System.Windows.Forms.Label lblType;

@@ -112,6 +112,60 @@ namespace CMPG223_Project
 			}
 		}
 
+		private void newAdminTSMI_Click(object sender, EventArgs e)
+		{
+			frmNewAdmin mainForm = new frmNewAdmin();
+			mainForm.Show();
+		}
+				
+		private void removeAdminTSMI_Click(object sender, EventArgs e)
+		{
+			frmRemoveAdmin mainForm = new frmRemoveAdmin();
+			mainForm.Show();
+		}
+
+		private void updateAdminTSMI_Click(object sender, EventArgs e)
+		{
+			frmUpdateAdmin mainForm = new frmUpdateAdmin();
+			mainForm.Show();
+		}
+
+		private void newBeneficiaryTSMI_Click(object sender, EventArgs e)
+		{
+			frmNewBeneficiaries mainForm = new frmNewBeneficiaries();
+			mainForm.Show();
+		}	
+
+		private void removeBeneficiaryTSMI_Click(object sender, EventArgs e)
+		{
+			frmRemoveBeneficiaries mainForm = new frmRemoveBeneficiaries();
+			mainForm.Show();
+		}
+
+		private void updateBeneficiariesTSMI_Click(object sender, EventArgs e)
+		{
+			frmUpdateBeneficiaries mainForm = new frmUpdateBeneficiaries();
+			mainForm.Show();
+		}
+
+		private void newRoomTSMI_Click(object sender, EventArgs e)
+		{
+			frmNewRoom mainForm = new frmNewRoom();
+			mainForm.Show();
+		}
+
+		private void removeRoomTSMI_Click(object sender, EventArgs e)
+		{
+			frmRemoveRoom mainForm = new frmRemoveRoom();
+			mainForm.Show();
+		}
+
+		private void updateRoomTSMI_Click(object sender, EventArgs e)
+		{
+			frmUpdateRoom mainForm = new frmUpdateRoom();
+			mainForm.Show();
+		}
+		
 		private void newBookingsTSMI_Click(object sender, EventArgs e)
 		{			
 			frmNewBookings mainForm = new frmNewBookings();
@@ -122,43 +176,7 @@ namespace CMPG223_Project
 		{		
 			frmUpdateBookings mainForm = new frmUpdateBookings();
 			mainForm.Show();
-		}
-
-		private void newBeneficiaryTSMI_Click(object sender, EventArgs e)
-		{		
-			frmNewBeneficiaries mainForm = new frmNewBeneficiaries();
-			mainForm.Show();
-		}
-
-		private void updateBeneficiariesTSMI_Click(object sender, EventArgs e)
-		{		
-			frmUpdateBeneficiaries mainForm = new frmUpdateBeneficiaries();
-			mainForm.Show();
-		}
-
-		private void removeBeneficiaryTSMI_Click(object sender, EventArgs e)
-		{			
-			frmRemoveBeneficiaries mainForm = new frmRemoveBeneficiaries();
-			mainForm.Show();
-		}
-
-		private void newAdminTSMI_Click(object sender, EventArgs e)
-		{			
-			frmNewAdmin mainForm = new frmNewAdmin();
-			mainForm.Show();
-		}
-
-		private void updateAdminTSMI_Click(object sender, EventArgs e)
-		{			
-			frmUpdateAdmin mainForm = new frmUpdateAdmin();
-			mainForm.Show();
-		}
-
-		private void removeAdminTSMI_Click(object sender, EventArgs e)
-		{			
-			frmRemoveAdmin mainForm = new frmRemoveAdmin();
-			mainForm.Show();
-		}
+		}				
 
 		private void generateReportsTSMI_Click(object sender, EventArgs e)
 		{			
@@ -369,6 +387,6 @@ namespace CMPG223_Project
 		{
 			LoadBookings();
             txtFilter.Clear();
-		}
+		}		
 	}
 }

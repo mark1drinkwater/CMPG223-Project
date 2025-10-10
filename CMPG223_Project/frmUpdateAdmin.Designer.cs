@@ -48,21 +48,21 @@ namespace CMPG223_Project
 			this.btnSearch.Location = new System.Drawing.Point(396, 86);
 			this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
 			this.btnSearch.Name = "btnSearch";
-			this.btnSearch.Size = new System.Drawing.Size(175, 37);
+			this.btnSearch.Size = new System.Drawing.Size(186, 37);
 			this.btnSearch.TabIndex = 2;
-			this.btnSearch.Text = "Search staff";
+			this.btnSearch.Text = "Filter by Admin ID";
 			this.btnSearch.UseVisualStyleBackColor = true;
 			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
 			// 
 			// btnUpdate
 			// 
 			this.btnUpdate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnUpdate.Location = new System.Drawing.Point(175, 332);
+			this.btnUpdate.Location = new System.Drawing.Point(174, 332);
 			this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
 			this.btnUpdate.Name = "btnUpdate";
 			this.btnUpdate.Size = new System.Drawing.Size(250, 55);
 			this.btnUpdate.TabIndex = 6;
-			this.btnUpdate.Text = "Update Staff Member";
+			this.btnUpdate.Text = "Update User Details";
 			this.btnUpdate.UseVisualStyleBackColor = true;
 			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
@@ -83,9 +83,9 @@ namespace CMPG223_Project
 			this.lblHeader.Location = new System.Drawing.Point(13, 9);
 			this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblHeader.Name = "lblHeader";
-			this.lblHeader.Size = new System.Drawing.Size(303, 33);
+			this.lblHeader.Size = new System.Drawing.Size(283, 33);
 			this.lblHeader.TabIndex = 0;
-			this.lblHeader.Text = "Update Staff Member";
+			this.lblHeader.Text = "Update User Details";
 			// 
 			// lblAdminID
 			// 
@@ -93,9 +93,9 @@ namespace CMPG223_Project
 			this.lblAdminID.Location = new System.Drawing.Point(18, 95);
 			this.lblAdminID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblAdminID.Name = "lblAdminID";
-			this.lblAdminID.Size = new System.Drawing.Size(69, 19);
+			this.lblAdminID.Size = new System.Drawing.Size(84, 19);
 			this.lblAdminID.TabIndex = 0;
-			this.lblAdminID.Text = "Staff ID:";
+			this.lblAdminID.Text = "Admin ID:";
 			// 
 			// txtAdminID
 			// 
@@ -158,7 +158,7 @@ namespace CMPG223_Project
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(584, 421);
+			this.ClientSize = new System.Drawing.Size(595, 421);
 			this.Controls.Add(this.cmbRole);
 			this.Controls.Add(this.btnSearch);
 			this.Controls.Add(this.btnUpdate);
@@ -174,7 +174,7 @@ namespace CMPG223_Project
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "frmUpdateAdmin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Update Staff";
+			this.Text = "Update Admin";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
