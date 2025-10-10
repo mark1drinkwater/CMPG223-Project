@@ -104,6 +104,8 @@ namespace CMPG223_Project
 					}
                 }
             }
+
+            txtAdminID.Clear();
         }
 
         // Wire up events in constructor or designer if not already done

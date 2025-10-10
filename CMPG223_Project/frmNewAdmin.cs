@@ -87,6 +87,8 @@ namespace CMPG223_Project
                     MessageBox.Show("An error occurred while adding the new admin: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+            this.Close();
         }
     }
 }

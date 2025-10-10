@@ -31,8 +31,7 @@ namespace CMPG223_Project
 				return;
 			}
 
-			int bookingId;
-			if (!int.TryParse(txtBookingID.Text, out bookingId))
+			if (!int.TryParse(txtBookingID.Text, out int bookingId))
 			{
 				MessageBox.Show("Booking ID must be a number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
@@ -40,10 +39,16 @@ namespace CMPG223_Project
 
 			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
 			{
-				string query = "SELECT Check_In, Check_Out, Ben_Id, Admin_Id, Room_Id FROM BOOKING WHERE Booking_Id = @BookingId";
+				// Join with Beneficiary to get Name + Surname
+				string query = @"
+            SELECT b.Check_In, b.Check_Out, b.Ben_Id, ben.Name, ben.Surname
+            FROM BOOKING b
+            LEFT JOIN Beneficiary ben ON b.Ben_Id = ben.Ben_Id
+            WHERE b.Booking_Id = @BookingId";
+
 				using (SqlCommand cmd = new SqlCommand(query, conn))
 				{
-					cmd.Parameters.AddWithValue("@BookingId", bookingId);
+					cmd.Parameters.Add("@BookingId", System.Data.SqlDbType.Int).Value = bookingId;
 					conn.Open();
 					using (SqlDataReader reader = cmd.ExecuteReader())
 					{
@@ -60,23 +65,36 @@ namespace CMPG223_Project
 							else
 								dtpCheckOut.Value = DateTime.Today;
 
-							// Ben_Id is bigint -> use GetInt64 and convert to string for the textbox
-							txtBenID.Text = reader.IsDBNull(2) ? string.Empty : reader.GetInt64(2).ToString();
+							// Ben_Id (may be bigint in DB) - store in Tag for later use
+							long? benId = reader.IsDBNull(2) ? (long?)null : reader.GetInt64(2);
+							txtBenID.Tag = benId;
 
-							// Admin_Id and Room_Id: read safely as string (handles int/bigint/varchar)
-							tbAdmin.Text = reader.IsDBNull(3) ? string.Empty : reader["Admin_Id"].ToString();
-							tbRoom.Text = reader.IsDBNull(4) ? string.Empty : reader["Room_Id"].ToString();
+							// Name and surname columns
+							string firstName = reader.IsDBNull(3) ? string.Empty : reader.GetString(3);
+							string lastName = reader.IsDBNull(4) ? string.Empty : reader.GetString(4);
+
+							// If we have names, show "Name Surname"; otherwise fallback to the ID (or empty)
+							string display;
+							if (!string.IsNullOrWhiteSpace(firstName) || !string.IsNullOrWhiteSpace(lastName))
+							{
+								display = $"{firstName} {lastName}".Trim();
+							}
+							else
+							{
+								display = benId.HasValue ? benId.Value.ToString() : string.Empty;
+							}
+
+							txtBenID.Text = display;
 						}
 						else
 						{
-							MessageBox.Show("Booking not found.");
+							MessageBox.Show("Booking not found.", "No booking", MessageBoxButtons.OK, MessageBoxIcon.Error);
 							ClearFields();
 						}
 					}
 				}
 			}
 		}
-
 
 		private void btnUpdateBooking_Click(object sender, EventArgs e)
 		{
@@ -86,36 +104,34 @@ namespace CMPG223_Project
 				return;
 			}
 
-			int bookingId, benId, adminId, roomId;
-			if (!int.TryParse(txtBookingID.Text, out bookingId) ||
-				!int.TryParse(txtBenID.Text, out benId) ||
-				!int.TryParse(tbAdmin.Text, out adminId) ||
-				!int.TryParse(tbRoom.Text, out roomId))
+			// Parse Booking ID
+			if (!int.TryParse(txtBookingID.Text, out int bookingId))
 			{
-				MessageBox.Show("Booking ID, Beneficiary ID, Admin ID, and Room ID must be numbers.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Booking ID must be a number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 
-			DateTime checkIn = dtpCheckIn.Value;
-			DateTime checkOut = dtpCheckOut.Value;
+			DateTime checkIn = dtpCheckIn.Value.Date;
+			DateTime checkOut = dtpCheckOut.Value.Date;
+
+			if (checkOut < checkIn)
+			{
+				MessageBox.Show("Check-out date cannot be earlier than check-in date.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
 
 			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
 			{
 				string updateQuery = @"UPDATE BOOKING
-                                       SET Check_In = @CheckIn,
-                                           Check_Out = @CheckOut,
-                                           Ben_Id = @BenId,
-                                           Admin_Id = @AdminId,
-                                           Room_Id = @RoomId
-                                       WHERE Booking_Id = @BookingId";
+                               SET Check_In = @CheckIn,
+                                   Check_Out = @CheckOut
+                               WHERE Booking_Id = @BookingId";
+
 				using (SqlCommand cmd = new SqlCommand(updateQuery, conn))
-				{
-					cmd.Parameters.AddWithValue("@CheckIn", checkIn);
-					cmd.Parameters.AddWithValue("@CheckOut", checkOut);
-					cmd.Parameters.AddWithValue("@BenId", benId);
-					cmd.Parameters.AddWithValue("@AdminId", adminId);
-					cmd.Parameters.AddWithValue("@RoomId", roomId);
-					cmd.Parameters.AddWithValue("@BookingId", bookingId);
+				{					
+					cmd.Parameters.Add("@CheckIn", System.Data.SqlDbType.DateTime).Value = checkIn;
+					cmd.Parameters.Add("@CheckOut", System.Data.SqlDbType.DateTime).Value = checkOut;				
+					cmd.Parameters.Add("@BookingId", System.Data.SqlDbType.Int).Value = bookingId;				
 
 					conn.Open();
 					int rows = cmd.ExecuteNonQuery();
@@ -132,14 +148,14 @@ namespace CMPG223_Project
 			}
 		}
 
+
 		private void ClearFields()
-        {
-            txtBookingID.Clear();
-            dtpCheckIn.Value = DateTime.Today;
-            dtpCheckOut.Value = DateTime.Today;
-            txtBenID.Clear();
-            tbAdmin.Clear();
-            tbRoom.Clear();
-        }		
+		{
+			txtBookingID.Clear();
+			dtpCheckIn.Value = DateTime.Today;
+			dtpCheckOut.Value = DateTime.Today;
+			txtBenID.Clear();
+			txtBenID.Tag = null;
+		}
 	}
 }

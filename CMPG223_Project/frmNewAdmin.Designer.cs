@@ -42,7 +42,7 @@ namespace CMPG223_Project
 			// btnAdd
 			// 
 			this.btnAdd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAdd.Location = new System.Drawing.Point(175, 332);
+			this.btnAdd.Location = new System.Drawing.Point(90, 312);
 			this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
 			this.btnAdd.Name = "btnAdd";
 			this.btnAdd.Size = new System.Drawing.Size(250, 55);
@@ -68,9 +68,9 @@ namespace CMPG223_Project
 			this.lblHeader.Location = new System.Drawing.Point(13, 9);
 			this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblHeader.Name = "lblHeader";
-			this.lblHeader.Size = new System.Drawing.Size(230, 33);
+			this.lblHeader.Size = new System.Drawing.Size(327, 33);
 			this.lblHeader.TabIndex = 0;
-			this.lblHeader.Text = "Add New Admin";
+			this.lblHeader.Text = "Add New Staff Member";
 			// 
 			// lblUsername
 			// 
@@ -126,7 +126,7 @@ namespace CMPG223_Project
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(584, 421);
+			this.ClientSize = new System.Drawing.Size(427, 421);
 			this.Controls.Add(this.cmbRole);
 			this.Controls.Add(this.btnAdd);
 			this.Controls.Add(this.lblRole);
@@ -139,7 +139,7 @@ namespace CMPG223_Project
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "frmNewAdmin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "New Admin";
+			this.Text = "New Staff";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

@@ -50,7 +50,7 @@ namespace CMPG223_Project
 			this.btnSearch.Name = "btnSearch";
 			this.btnSearch.Size = new System.Drawing.Size(175, 37);
 			this.btnSearch.TabIndex = 2;
-			this.btnSearch.Text = "Search admin";
+			this.btnSearch.Text = "Search staff";
 			this.btnSearch.UseVisualStyleBackColor = true;
 			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
 			// 
@@ -62,7 +62,7 @@ namespace CMPG223_Project
 			this.btnUpdate.Name = "btnUpdate";
 			this.btnUpdate.Size = new System.Drawing.Size(250, 55);
 			this.btnUpdate.TabIndex = 6;
-			this.btnUpdate.Text = "Update Admin";
+			this.btnUpdate.Text = "Update Staff Member";
 			this.btnUpdate.UseVisualStyleBackColor = true;
 			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
@@ -83,9 +83,9 @@ namespace CMPG223_Project
 			this.lblHeader.Location = new System.Drawing.Point(13, 9);
 			this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblHeader.Name = "lblHeader";
-			this.lblHeader.Size = new System.Drawing.Size(206, 33);
+			this.lblHeader.Size = new System.Drawing.Size(303, 33);
 			this.lblHeader.TabIndex = 0;
-			this.lblHeader.Text = "Update Admin";
+			this.lblHeader.Text = "Update Staff Member";
 			// 
 			// lblAdminID
 			// 
@@ -93,9 +93,9 @@ namespace CMPG223_Project
 			this.lblAdminID.Location = new System.Drawing.Point(18, 95);
 			this.lblAdminID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblAdminID.Name = "lblAdminID";
-			this.lblAdminID.Size = new System.Drawing.Size(84, 19);
+			this.lblAdminID.Size = new System.Drawing.Size(69, 19);
 			this.lblAdminID.TabIndex = 0;
-			this.lblAdminID.Text = "Admin ID:";
+			this.lblAdminID.Text = "Staff ID:";
 			// 
 			// txtAdminID
 			// 
@@ -174,7 +174,7 @@ namespace CMPG223_Project
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "frmUpdateAdmin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Update Admin";
+			this.Text = "Update Staff";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

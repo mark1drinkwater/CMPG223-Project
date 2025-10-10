@@ -46,9 +46,9 @@ namespace CMPG223_Project
 			this.lblHeader.Location = new System.Drawing.Point(13, 9);
 			this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblHeader.Name = "lblHeader";
-			this.lblHeader.Size = new System.Drawing.Size(220, 33);
+			this.lblHeader.Size = new System.Drawing.Size(317, 33);
 			this.lblHeader.TabIndex = 0;
-			this.lblHeader.Text = "Remove Admin";
+			this.lblHeader.Text = "Remove Staff Member";
 			// 
 			// lblAminID
 			// 
@@ -56,9 +56,9 @@ namespace CMPG223_Project
 			this.lblAminID.Location = new System.Drawing.Point(20, 481);
 			this.lblAminID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblAminID.Name = "lblAminID";
-			this.lblAminID.Size = new System.Drawing.Size(84, 19);
+			this.lblAminID.Size = new System.Drawing.Size(69, 19);
 			this.lblAminID.TabIndex = 0;
-			this.lblAminID.Text = "Admin ID:";
+			this.lblAminID.Text = "Staff ID:";
 			// 
 			// txtAdminID
 			// 
@@ -86,7 +86,7 @@ namespace CMPG223_Project
 			this.btnFilter.Name = "btnFilter";
 			this.btnFilter.Size = new System.Drawing.Size(175, 37);
 			this.btnFilter.TabIndex = 2;
-			this.btnFilter.Text = "Filter admin";
+			this.btnFilter.Text = "Filter staff";
 			this.btnFilter.UseVisualStyleBackColor = true;
 			// 
 			// btnShowAll
@@ -97,7 +97,7 @@ namespace CMPG223_Project
 			this.btnShowAll.Name = "btnShowAll";
 			this.btnShowAll.Size = new System.Drawing.Size(250, 55);
 			this.btnShowAll.TabIndex = 3;
-			this.btnShowAll.Text = "Show All Admin";
+			this.btnShowAll.Text = "Show All Staff";
 			this.btnShowAll.UseVisualStyleBackColor = true;
 			// 
 			// btnDelete
@@ -108,7 +108,7 @@ namespace CMPG223_Project
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(250, 55);
 			this.btnDelete.TabIndex = 4;
-			this.btnDelete.Text = "Delete Admin";
+			this.btnDelete.Text = "Delete Staff Member";
 			this.btnDelete.UseVisualStyleBackColor = true;
 			// 
 			// frmRemoveAdmin
@@ -127,7 +127,7 @@ namespace CMPG223_Project
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "frmRemoveAdmin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Remove Admin";
+			this.Text = "Remove Staff";
 			((System.ComponentModel.ISupportInitialize)(this.dgvAdmin)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();

@@ -86,28 +86,28 @@ namespace CMPG223_Project
             this.removeAdminTSMI,
             this.updateAdminTSMI});
 			this.adminTSMI.Name = "adminTSMI";
-			this.adminTSMI.Size = new System.Drawing.Size(68, 23);
-			this.adminTSMI.Text = "Admin";
+			this.adminTSMI.Size = new System.Drawing.Size(53, 23);
+			this.adminTSMI.Text = "Staff";
 			// 
 			// newAdminTSMI
 			// 
 			this.newAdminTSMI.Name = "newAdminTSMI";
-			this.newAdminTSMI.Size = new System.Drawing.Size(187, 24);
-			this.newAdminTSMI.Text = "New Admin";
+			this.newAdminTSMI.Size = new System.Drawing.Size(180, 24);
+			this.newAdminTSMI.Text = "New Staff";
 			this.newAdminTSMI.Click += new System.EventHandler(this.newAdminTSMI_Click);
 			// 
 			// removeAdminTSMI
 			// 
 			this.removeAdminTSMI.Name = "removeAdminTSMI";
-			this.removeAdminTSMI.Size = new System.Drawing.Size(187, 24);
-			this.removeAdminTSMI.Text = "Remove Admin";
+			this.removeAdminTSMI.Size = new System.Drawing.Size(180, 24);
+			this.removeAdminTSMI.Text = "Remove Staff";
 			this.removeAdminTSMI.Click += new System.EventHandler(this.removeAdminTSMI_Click);
 			// 
 			// updateAdminTSMI
 			// 
 			this.updateAdminTSMI.Name = "updateAdminTSMI";
-			this.updateAdminTSMI.Size = new System.Drawing.Size(187, 24);
-			this.updateAdminTSMI.Text = "Update Admin";
+			this.updateAdminTSMI.Size = new System.Drawing.Size(180, 24);
+			this.updateAdminTSMI.Text = "Update Staff";
 			this.updateAdminTSMI.Click += new System.EventHandler(this.updateAdminTSMI_Click);
 			// 
 			// beneficiaryTSMI
