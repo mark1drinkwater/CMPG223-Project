@@ -182,6 +182,12 @@
     <EmbeddedResource Include="frmNewRoom.resx">
       <DependentUpon>frmNewRoom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRemoveRoom.resx">
+      <DependentUpon>frmRemoveRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateRoom.resx">
+      <DependentUpon>frmUpdateRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

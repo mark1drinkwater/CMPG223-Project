@@ -108,5 +108,14 @@ namespace CMPG223_Project
 
             txtAdminID.Clear();
         }
+
+        // Wire up events in constructor or designer if not already done
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            btnShowAll.Click += btnShowAll_Click;
+            btnFilter.Click += btnFilter_Click;
+            btnDelete.Click += btnDelete_Click;
+        }
     }
 }

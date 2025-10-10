@@ -45,7 +45,7 @@ namespace CMPG223_Project
 			// btnSearch
 			// 
 			this.btnSearch.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSearch.Location = new System.Drawing.Point(396, 86);
+			this.btnSearch.Location = new System.Drawing.Point(319, 86);
 			this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
 			this.btnSearch.Name = "btnSearch";
 			this.btnSearch.Size = new System.Drawing.Size(186, 37);
@@ -57,7 +57,7 @@ namespace CMPG223_Project
 			// btnUpdate
 			// 
 			this.btnUpdate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnUpdate.Location = new System.Drawing.Point(174, 332);
+			this.btnUpdate.Location = new System.Drawing.Point(133, 331);
 			this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
 			this.btnUpdate.Name = "btnUpdate";
 			this.btnUpdate.Size = new System.Drawing.Size(250, 55);
@@ -102,7 +102,7 @@ namespace CMPG223_Project
 			this.txtAdminID.Location = new System.Drawing.Point(133, 92);
 			this.txtAdminID.Margin = new System.Windows.Forms.Padding(4);
 			this.txtAdminID.Name = "txtAdminID";
-			this.txtAdminID.Size = new System.Drawing.Size(255, 27);
+			this.txtAdminID.Size = new System.Drawing.Size(178, 27);
 			this.txtAdminID.TabIndex = 1;
 			// 
 			// lblPassword
@@ -120,7 +120,7 @@ namespace CMPG223_Project
 			this.txtUsername.Location = new System.Drawing.Point(133, 167);
 			this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
 			this.txtUsername.Name = "txtUsername";
-			this.txtUsername.Size = new System.Drawing.Size(255, 27);
+			this.txtUsername.Size = new System.Drawing.Size(314, 27);
 			this.txtUsername.TabIndex = 3;
 			// 
 			// txtPassword
@@ -128,7 +128,7 @@ namespace CMPG223_Project
 			this.txtPassword.Location = new System.Drawing.Point(133, 217);
 			this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
 			this.txtPassword.Name = "txtPassword";
-			this.txtPassword.Size = new System.Drawing.Size(255, 27);
+			this.txtPassword.Size = new System.Drawing.Size(314, 27);
 			this.txtPassword.TabIndex = 4;
 			// 
 			// lblRole
@@ -150,7 +150,7 @@ namespace CMPG223_Project
 			this.cmbRole.Location = new System.Drawing.Point(133, 267);
 			this.cmbRole.Margin = new System.Windows.Forms.Padding(4);
 			this.cmbRole.Name = "cmbRole";
-			this.cmbRole.Size = new System.Drawing.Size(255, 27);
+			this.cmbRole.Size = new System.Drawing.Size(314, 27);
 			this.cmbRole.TabIndex = 5;
 			this.cmbRole.Text = "Select role";
 			// 
@@ -158,7 +158,7 @@ namespace CMPG223_Project
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(595, 421);
+			this.ClientSize = new System.Drawing.Size(518, 421);
 			this.Controls.Add(this.cmbRole);
 			this.Controls.Add(this.btnSearch);
 			this.Controls.Add(this.btnUpdate);

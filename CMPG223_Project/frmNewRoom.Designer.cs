@@ -31,15 +31,15 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewRoom));
 			this.lblHeader = new System.Windows.Forms.Label();
 			this.lblRoom = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.txtRoom = new System.Windows.Forms.TextBox();
 			this.lblBeds = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.txtBedCount = new System.Windows.Forms.TextBox();
 			this.btnAddRoom = new System.Windows.Forms.Button();
 			this.grpNamingConventions = new System.Windows.Forms.GroupBox();
-			this.lblNamingConventions = new System.Windows.Forms.Label();
-			this.lblRoomType = new System.Windows.Forms.Label();
-			this.lblRoomTypeSuggestion = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
+			this.lblRoomTypeSuggestion = new System.Windows.Forms.Label();
+			this.lblRoomType = new System.Windows.Forms.Label();
+			this.lblNamingConventions = new System.Windows.Forms.Label();
 			this.grpNamingConventions.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -62,12 +62,13 @@
 			this.lblRoom.TabIndex = 0;
 			this.lblRoom.Text = "Room number:";
 			// 
-			// textBox1
+			// txtRoom
 			// 
-			this.textBox1.Location = new System.Drawing.Point(141, 97);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(199, 27);
-			this.textBox1.TabIndex = 1;
+			this.txtRoom.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtRoom.Location = new System.Drawing.Point(141, 97);
+			this.txtRoom.Name = "txtRoom";
+			this.txtRoom.Size = new System.Drawing.Size(199, 27);
+			this.txtRoom.TabIndex = 1;
 			// 
 			// lblBeds
 			// 
@@ -75,15 +76,15 @@
 			this.lblBeds.Location = new System.Drawing.Point(18, 150);
 			this.lblBeds.Name = "lblBeds";
 			this.lblBeds.Size = new System.Drawing.Size(85, 19);
-			this.lblBeds.TabIndex = 2;
+			this.lblBeds.TabIndex = 0;
 			this.lblBeds.Text = "Bed count:";
 			// 
-			// textBox2
+			// txtBedCount
 			// 
-			this.textBox2.Location = new System.Drawing.Point(141, 147);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(199, 27);
-			this.textBox2.TabIndex = 2;
+			this.txtBedCount.Location = new System.Drawing.Point(141, 147);
+			this.txtBedCount.Name = "txtBedCount";
+			this.txtBedCount.Size = new System.Drawing.Size(199, 27);
+			this.txtBedCount.TabIndex = 2;
 			// 
 			// btnAddRoom
 			// 
@@ -102,12 +103,42 @@
 			this.grpNamingConventions.Controls.Add(this.lblRoomType);
 			this.grpNamingConventions.Controls.Add(this.lblNamingConventions);
 			this.grpNamingConventions.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.grpNamingConventions.Location = new System.Drawing.Point(22, 215);
+			this.grpNamingConventions.Location = new System.Drawing.Point(22, 225);
 			this.grpNamingConventions.Name = "grpNamingConventions";
 			this.grpNamingConventions.Size = new System.Drawing.Size(546, 373);
-			this.grpNamingConventions.TabIndex = 4;
+			this.grpNamingConventions.TabIndex = 0;
 			this.grpNamingConventions.TabStop = false;
-			this.grpNamingConventions.Text = "Naming conventions";
+			this.grpNamingConventions.Text = "Naming suggestions";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(301, 143);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(158, 209);
+			this.label1.TabIndex = 0;
+			this.label1.Text = resources.GetString("label1.Text");
+			// 
+			// lblRoomTypeSuggestion
+			// 
+			this.lblRoomTypeSuggestion.AutoSize = true;
+			this.lblRoomTypeSuggestion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblRoomTypeSuggestion.Location = new System.Drawing.Point(241, 143);
+			this.lblRoomTypeSuggestion.Name = "lblRoomTypeSuggestion";
+			this.lblRoomTypeSuggestion.Size = new System.Drawing.Size(48, 209);
+			this.lblRoomTypeSuggestion.TabIndex = 0;
+			this.lblRoomTypeSuggestion.Text = ">>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>";
+			// 
+			// lblRoomType
+			// 
+			this.lblRoomType.AutoSize = true;
+			this.lblRoomType.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblRoomType.Location = new System.Drawing.Point(64, 143);
+			this.lblRoomType.Name = "lblRoomType";
+			this.lblRoomType.Size = new System.Drawing.Size(163, 209);
+			this.lblRoomType.TabIndex = 0;
+			this.lblRoomType.Text = resources.GetString("lblRoomType.Text");
 			// 
 			// lblNamingConventions
 			// 
@@ -121,46 +152,16 @@
     "ggestions can assist staff with assigning the appropriate rooms\r\nto the appropri" +
     "ate beneficiaries.";
 			// 
-			// lblRoomType
-			// 
-			this.lblRoomType.AutoSize = true;
-			this.lblRoomType.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblRoomType.Location = new System.Drawing.Point(64, 143);
-			this.lblRoomType.Name = "lblRoomType";
-			this.lblRoomType.Size = new System.Drawing.Size(163, 209);
-			this.lblRoomType.TabIndex = 1;
-			this.lblRoomType.Text = resources.GetString("lblRoomType.Text");
-			// 
-			// lblRoomTypeSuggestion
-			// 
-			this.lblRoomTypeSuggestion.AutoSize = true;
-			this.lblRoomTypeSuggestion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblRoomTypeSuggestion.Location = new System.Drawing.Point(241, 143);
-			this.lblRoomTypeSuggestion.Name = "lblRoomTypeSuggestion";
-			this.lblRoomTypeSuggestion.Size = new System.Drawing.Size(48, 209);
-			this.lblRoomTypeSuggestion.TabIndex = 2;
-			this.lblRoomTypeSuggestion.Text = ">>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>";
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(301, 143);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(158, 209);
-			this.label1.TabIndex = 3;
-			this.label1.Text = resources.GetString("label1.Text");
-			// 
 			// frmNewRoom
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(584, 600);
+			this.ClientSize = new System.Drawing.Size(584, 615);
 			this.Controls.Add(this.grpNamingConventions);
 			this.Controls.Add(this.btnAddRoom);
-			this.Controls.Add(this.textBox2);
+			this.Controls.Add(this.txtBedCount);
 			this.Controls.Add(this.lblBeds);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.txtRoom);
 			this.Controls.Add(this.lblRoom);
 			this.Controls.Add(this.lblHeader);
 			this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,9 +180,9 @@
 
 		private System.Windows.Forms.Label lblHeader;
 		private System.Windows.Forms.Label lblRoom;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox txtRoom;
 		private System.Windows.Forms.Label lblBeds;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox txtBedCount;
 		private System.Windows.Forms.Button btnAddRoom;
 		private System.Windows.Forms.GroupBox grpNamingConventions;
 		private System.Windows.Forms.Label lblNamingConventions;
