@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CMPG223_Project
@@ -49,7 +44,7 @@ namespace CMPG223_Project
 				btnGenerate.Enabled = false;
 				btnExportCsv.Enabled = false;
 				lblStatus.Text = "Generating reports...";
-				Application.DoEvents(); // keep UI responsive for small operations
+				Application.DoEvents(); // Keep UI responsive for small operations
 
 				// Determine date ranges (client-local). Use DateTime.Now
 				DateTime toDate = DateTime.Now;
@@ -179,8 +174,7 @@ namespace CMPG223_Project
 				string sqlDistinctCount = @"
                     SELECT COUNT(DISTINCT bk.Ben_Id) 
                     FROM Booking bk
-                    WHERE bk.Check_In BETWEEN @From AND @To
-                ";
+                    WHERE bk.Check_In BETWEEN @From AND @To";
 
 				using (SqlCommand cmd = new SqlCommand(sqlDistinctCount, conn))
 				{
@@ -212,7 +206,7 @@ namespace CMPG223_Project
 		#region Reports 2,3,4 - Beneficiary types (past year)
 		private void GenerateTypeReports(DateTime fromYear, DateTime toDate)
 		{
-			// 1) get counts (bookings) per beneficiary type in the past year
+			// 1) Get counts (bookings) per beneficiary type in the past year
 			DataTable dtCounts = GetVisitCountsPerType(fromYear, toDate);
 
 			// 2) Top types (max bookings)
@@ -223,7 +217,7 @@ namespace CMPG223_Project
 			}
 			else
 			{
-				// get max
+				// Get max
 				int maxCount = 0;
 				foreach (DataRow r in dtCounts.Rows)
 				{
@@ -231,7 +225,7 @@ namespace CMPG223_Project
 					if (c > maxCount) maxCount = c;
 				}
 
-				// select rows where VisitCount == maxCount
+				// Select rows where VisitCount == maxCount
 				DataTable dtTop = dtCounts.Clone();
 				foreach (DataRow r in dtCounts.Rows)
 					if (Convert.ToInt32(r["VisitCount"]) == maxCount)
@@ -239,7 +233,7 @@ namespace CMPG223_Project
 
 				dgvTopTypes.DataSource = dtTop;
 
-				// least (minimum > 0)
+				// Least (minimum > 0)
 				int minCount = int.MaxValue;
 				foreach (DataRow r in dtCounts.Rows)
 				{
@@ -254,7 +248,7 @@ namespace CMPG223_Project
 						if (Convert.ToInt32(r["VisitCount"]) == minCount)
 							dtLeast.ImportRow(r);
 				}
-				// if no rows have visits > 0, dtLeast remains empty
+				// If no rows have visits > 0, dtLeast remains empty
 				dgvLeastTypes.DataSource = dtLeast;
 			}
 
@@ -263,7 +257,7 @@ namespace CMPG223_Project
 			dgvZeroTypes.DataSource = dtZero;
 		}
 
-		// gets counts of bookings per Beneficiary_Type for the date range
+		// Gets counts of bookings per Beneficiary_Type for the date range
 		private DataTable GetVisitCountsPerType(DateTime from, DateTime to)
 		{
 			DataTable dt = new DataTable();
@@ -275,8 +269,7 @@ namespace CMPG223_Project
                 INNER JOIN Beneficiary_Type bt ON b.Ben_Type_Id = bt.Ben_Type_Id
                 WHERE bk.Check_In BETWEEN @From AND @To
                 GROUP BY bt.Ben_Type_Id, bt.Description
-                ORDER BY VisitCount DESC, bt.Description
-            ", conn))
+                ORDER BY VisitCount DESC, bt.Description", conn))
 			{
 				cmd.Parameters.Add("@From", SqlDbType.DateTime).Value = from;
 				cmd.Parameters.Add("@To", SqlDbType.DateTime).Value = to;
@@ -286,7 +279,7 @@ namespace CMPG223_Project
 			return dt;
 		}
 
-		// gets beneficiary types that had ZERO bookings in the date range
+		// Gets beneficiary types that had ZERO bookings in the date range
 		private DataTable GetTypesWithZeroVisits(DateTime from, DateTime to)
 		{
 			DataTable dt = new DataTable();
@@ -294,16 +287,12 @@ namespace CMPG223_Project
 			using (SqlCommand cmd = new SqlCommand(@"
                 SELECT bt.Ben_Type_Id, bt.Description
                 FROM Beneficiary_Type bt
-                LEFT JOIN (
-                    SELECT b.Ben_Type_Id, COUNT(*) AS VisitCount
-                    FROM Booking bk
-                    INNER JOIN Beneficiary b ON bk.Ben_Id = b.Ben_Id
-                    WHERE bk.Check_In BETWEEN @From AND @To
-                    GROUP BY b.Ben_Type_Id
-                ) t ON bt.Ben_Type_Id = t.Ben_Type_Id
-                WHERE ISNULL(t.VisitCount, 0) = 0
-                ORDER BY bt.Description
-            ", conn))
+                LEFT JOIN (SELECT b.Ben_Type_Id, COUNT(*) AS VisitCount
+							FROM Booking bk
+							INNER JOIN Beneficiary b ON bk.Ben_Id = b.Ben_Id
+							WHERE bk.Check_In BETWEEN @From AND @To
+							GROUP BY b.Ben_Type_Id) t ON bt.Ben_Type_Id = t.Ben_Type_Id
+                WHERE ISNULL(t.VisitCount, 0) = 0", conn))
 			{
 				cmd.Parameters.Add("@From", SqlDbType.DateTime).Value = from;
 				cmd.Parameters.Add("@To", SqlDbType.DateTime).Value = to;
@@ -323,7 +312,7 @@ namespace CMPG223_Project
 
 			var sb = new StringBuilder();
 
-			// headers (use column header text)
+			// Headers (use column header text)
 			for (int i = 0; i < dgv.Columns.Count; i++)
 			{
 				sb.Append(EscapeCsv(dgv.Columns[i].HeaderText ?? string.Empty));
@@ -331,7 +320,7 @@ namespace CMPG223_Project
 			}
 			sb.AppendLine();
 
-			// rows
+			// Rows
 			foreach (DataGridViewRow row in dgv.Rows)
 			{
 				if (row.IsNewRow) continue;

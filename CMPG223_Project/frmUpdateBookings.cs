@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CMPG223_Project
@@ -41,10 +34,10 @@ namespace CMPG223_Project
 			{
 				// Join with Beneficiary to get Name + Surname
 				string query = @"
-            SELECT b.Check_In, b.Check_Out, b.Ben_Id, ben.Name, ben.Surname
-            FROM BOOKING b
-            LEFT JOIN Beneficiary ben ON b.Ben_Id = ben.Ben_Id
-            WHERE b.Booking_Id = @BookingId";
+					SELECT b.Check_In, b.Check_Out, b.Ben_Id, ben.Name, ben.Surname
+					FROM BOOKING b
+					LEFT JOIN Beneficiary ben ON b.Ben_Id = ben.Ben_Id
+					WHERE b.Booking_Id = @BookingId";
 
 				using (SqlCommand cmd = new SqlCommand(query, conn))
 				{
@@ -122,10 +115,10 @@ namespace CMPG223_Project
 
 			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
 			{
-				string updateQuery = @"UPDATE BOOKING
-                               SET Check_In = @CheckIn,
-                                   Check_Out = @CheckOut
-                               WHERE Booking_Id = @BookingId";
+				string updateQuery = @"
+					UPDATE BOOKING
+                    SET Check_In = @CheckIn, Check_Out = @CheckOut
+                    WHERE Booking_Id = @BookingId";
 
 				using (SqlCommand cmd = new SqlCommand(updateQuery, conn))
 				{					

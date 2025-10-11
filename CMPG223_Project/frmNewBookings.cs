@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CMPG223_Project
@@ -17,7 +11,7 @@ namespace CMPG223_Project
         {
             InitializeComponent();
             LoadComboBoxes();
-            dtpMeal.Visible = lblMeal.Visible = false; //Hide Claimed date control if add meal ticket is not selected
+            dtpMeal.Visible = lblMeal.Visible = false; // Hide Claimed date control if add meal ticket is not selected
         }
 
         private void ClearFormFields()
@@ -43,11 +37,9 @@ namespace CMPG223_Project
 			// Populate Beneficiary ComboBox (Name + Surname as FullName)
 			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
 			{
-				conn.Open();
-				// Use ISNULL (or COALESCE) to avoid NULLs (order by surname then name)
+				conn.Open();				
 				string sqlBen = @"
-                    SELECT Ben_Id,
-                           LTRIM(RTRIM(ISNULL(Name, '') + ' ' + ISNULL(Surname, ''))) AS FullName
+                    SELECT Ben_Id, LTRIM(RTRIM(ISNULL(Name, '') + ' ' + ISNULL(Surname, ''))) AS FullName
                     FROM BENEFICIARY";
 				using (SqlCommand cmd = new SqlCommand(sqlBen, conn))
 				using (SqlDataReader reader = cmd.ExecuteReader())
@@ -90,7 +82,6 @@ namespace CMPG223_Project
 				}
 			}
 		}
-
 
 		private void chkMealTicket_CheckedChanged(object sender, EventArgs e)
         {

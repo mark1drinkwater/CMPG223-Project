@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace CMPG223_Project
 {
@@ -79,13 +72,12 @@ namespace CMPG223_Project
 
 			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
 			{
-				string updateSql = @"UPDATE Beneficiary
-                                     SET Name = @Name,
-                                         Surname = @Surname,
-                                         Id_Number = @IdNumber,
-                                         Cell_Number = @CellNumber,
-                                         Email_Address = @Email
-                                     WHERE Ben_Id = @BenId";
+				string updateSql = @"
+					UPDATE Beneficiary
+					SET Name = @Name, Surname = @Surname, Id_Number = @IdNumber, 
+								Cell_Number = @CellNumber,
+								Email_Address = @Email
+					WHERE Ben_Id = @BenId";
 				using (SqlCommand updateCmd = new SqlCommand(updateSql, conn))
 				{
 					updateCmd.Parameters.Add("@Name", SqlDbType.NVarChar, 50).Value = tbName.Text.Trim();

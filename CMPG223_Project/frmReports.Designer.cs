@@ -32,18 +32,29 @@ namespace CMPG223_Project
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.lblHeader = new System.Windows.Forms.Label();
 			this.btnGenerate = new System.Windows.Forms.Button();
 			this.btnExportCsv = new System.Windows.Forms.Button();
 			this.lblStatusStatic = new System.Windows.Forms.Label();
 			this.lblStatus = new System.Windows.Forms.Label();
 			this.grpDistinctVisits = new System.Windows.Forms.GroupBox();
-			this.lblPastYear = new System.Windows.Forms.Label();
-			this.lblPastYearCount = new System.Windows.Forms.Label();
-			this.lblPast6MonthsCount = new System.Windows.Forms.Label();
-			this.lblPast6Months = new System.Windows.Forms.Label();
 			this.lblPastMonthCount = new System.Windows.Forms.Label();
 			this.lblPastMonth = new System.Windows.Forms.Label();
+			this.lblPast6MonthsCount = new System.Windows.Forms.Label();
+			this.lblPast6Months = new System.Windows.Forms.Label();
+			this.lblPastYearCount = new System.Windows.Forms.Label();
+			this.lblPastYear = new System.Windows.Forms.Label();
 			this.grpMostVisited = new System.Windows.Forms.GroupBox();
 			this.dgvTopTypes = new System.Windows.Forms.DataGridView();
 			this.grpLeastVisited = new System.Windows.Forms.GroupBox();
@@ -126,25 +137,25 @@ namespace CMPG223_Project
 			this.grpDistinctVisits.TabStop = false;
 			this.grpDistinctVisits.Text = "Total distinct benefiaries visits";
 			// 
-			// lblPastYear
+			// lblPastMonthCount
 			// 
-			this.lblPastYear.AutoSize = true;
-			this.lblPastYear.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblPastYear.Location = new System.Drawing.Point(67, 43);
-			this.lblPastYear.Name = "lblPastYear";
-			this.lblPastYear.Size = new System.Drawing.Size(150, 19);
-			this.lblPastYear.TabIndex = 0;
-			this.lblPastYear.Text = "Total (Past Year)";
+			this.lblPastMonthCount.AutoSize = true;
+			this.lblPastMonthCount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblPastMonthCount.Location = new System.Drawing.Point(718, 72);
+			this.lblPastMonthCount.Name = "lblPastMonthCount";
+			this.lblPastMonthCount.Size = new System.Drawing.Size(140, 19);
+			this.lblPastMonthCount.TabIndex = 0;
+			this.lblPastMonthCount.Text = "Total (Past Month)";
 			// 
-			// lblPastYearCount
+			// lblPastMonth
 			// 
-			this.lblPastYearCount.AutoSize = true;
-			this.lblPastYearCount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblPastYearCount.Location = new System.Drawing.Point(67, 72);
-			this.lblPastYearCount.Name = "lblPastYearCount";
-			this.lblPastYearCount.Size = new System.Drawing.Size(128, 19);
-			this.lblPastYearCount.TabIndex = 0;
-			this.lblPastYearCount.Text = "Total (Past Year)";
+			this.lblPastMonth.AutoSize = true;
+			this.lblPastMonth.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblPastMonth.Location = new System.Drawing.Point(718, 43);
+			this.lblPastMonth.Name = "lblPastMonth";
+			this.lblPastMonth.Size = new System.Drawing.Size(163, 19);
+			this.lblPastMonth.TabIndex = 0;
+			this.lblPastMonth.Text = "Total (Past Month)";
 			// 
 			// lblPast6MonthsCount
 			// 
@@ -166,25 +177,25 @@ namespace CMPG223_Project
 			this.lblPast6Months.TabIndex = 0;
 			this.lblPast6Months.Text = "Total (Past 6 Months)";
 			// 
-			// lblPastMonthCount
+			// lblPastYearCount
 			// 
-			this.lblPastMonthCount.AutoSize = true;
-			this.lblPastMonthCount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblPastMonthCount.Location = new System.Drawing.Point(718, 72);
-			this.lblPastMonthCount.Name = "lblPastMonthCount";
-			this.lblPastMonthCount.Size = new System.Drawing.Size(140, 19);
-			this.lblPastMonthCount.TabIndex = 0;
-			this.lblPastMonthCount.Text = "Total (Past Month)";
+			this.lblPastYearCount.AutoSize = true;
+			this.lblPastYearCount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblPastYearCount.Location = new System.Drawing.Point(67, 72);
+			this.lblPastYearCount.Name = "lblPastYearCount";
+			this.lblPastYearCount.Size = new System.Drawing.Size(128, 19);
+			this.lblPastYearCount.TabIndex = 0;
+			this.lblPastYearCount.Text = "Total (Past Year)";
 			// 
-			// lblPastMonth
+			// lblPastYear
 			// 
-			this.lblPastMonth.AutoSize = true;
-			this.lblPastMonth.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblPastMonth.Location = new System.Drawing.Point(718, 43);
-			this.lblPastMonth.Name = "lblPastMonth";
-			this.lblPastMonth.Size = new System.Drawing.Size(163, 19);
-			this.lblPastMonth.TabIndex = 0;
-			this.lblPastMonth.Text = "Total (Past Month)";
+			this.lblPastYear.AutoSize = true;
+			this.lblPastYear.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblPastYear.Location = new System.Drawing.Point(67, 43);
+			this.lblPastYear.Name = "lblPastYear";
+			this.lblPastYear.Size = new System.Drawing.Size(150, 19);
+			this.lblPastYear.TabIndex = 0;
+			this.lblPastYear.Text = "Total (Past Year)";
 			// 
 			// grpMostVisited
 			// 
@@ -202,8 +213,26 @@ namespace CMPG223_Project
 			dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dgvTopTypes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.dgvTopTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvTopTypes.DefaultCellStyle = dataGridViewCellStyle2;
 			this.dgvTopTypes.Location = new System.Drawing.Point(7, 27);
 			this.dgvTopTypes.Name = "dgvTopTypes";
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvTopTypes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dgvTopTypes.RowsDefaultCellStyle = dataGridViewCellStyle4;
 			this.dgvTopTypes.Size = new System.Drawing.Size(940, 141);
 			this.dgvTopTypes.TabIndex = 0;
 			// 
@@ -220,11 +249,37 @@ namespace CMPG223_Project
 			// 
 			// dgvLeastTypes
 			// 
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dgvLeastTypes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dgvLeastTypes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvLeastTypes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
 			this.dgvLeastTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvLeastTypes.DefaultCellStyle = dataGridViewCellStyle7;
 			this.dgvLeastTypes.Location = new System.Drawing.Point(7, 27);
 			this.dgvLeastTypes.Name = "dgvLeastTypes";
+			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvLeastTypes.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+			dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dgvLeastTypes.RowsDefaultCellStyle = dataGridViewCellStyle9;
 			this.dgvLeastTypes.Size = new System.Drawing.Size(940, 141);
 			this.dgvLeastTypes.TabIndex = 0;
 			// 
@@ -241,11 +296,37 @@ namespace CMPG223_Project
 			// 
 			// dgvZeroTypes
 			// 
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dgvZeroTypes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dgvZeroTypes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+			dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvZeroTypes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
 			this.dgvZeroTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvZeroTypes.DefaultCellStyle = dataGridViewCellStyle12;
 			this.dgvZeroTypes.Location = new System.Drawing.Point(7, 27);
 			this.dgvZeroTypes.Name = "dgvZeroTypes";
+			dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle13.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvZeroTypes.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+			dataGridViewCellStyle14.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dgvZeroTypes.RowsDefaultCellStyle = dataGridViewCellStyle14;
 			this.dgvZeroTypes.Size = new System.Drawing.Size(940, 141);
 			this.dgvZeroTypes.TabIndex = 0;
 			// 

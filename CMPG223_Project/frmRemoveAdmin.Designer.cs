@@ -29,6 +29,8 @@ namespace CMPG223_Project
         /// </summary>
         private void InitializeComponent()
         {
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.lblHeader = new System.Windows.Forms.Label();
 			this.lblAminID = new System.Windows.Forms.Label();
 			this.txtAdminID = new System.Windows.Forms.TextBox();
@@ -70,11 +72,15 @@ namespace CMPG223_Project
 			// 
 			// dgvAdmin
 			// 
-			this.dgvAdmin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dgvAdmin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			this.dgvAdmin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvAdmin.Location = new System.Drawing.Point(18, 70);
 			this.dgvAdmin.Margin = new System.Windows.Forms.Padding(4);
 			this.dgvAdmin.Name = "dgvAdmin";
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dgvAdmin.RowsDefaultCellStyle = dataGridViewCellStyle2;
 			this.dgvAdmin.Size = new System.Drawing.Size(553, 374);
 			this.dgvAdmin.TabIndex = 0;
 			// 
@@ -88,6 +94,7 @@ namespace CMPG223_Project
 			this.btnFilter.TabIndex = 2;
 			this.btnFilter.Text = "Filter by Admin ID";
 			this.btnFilter.UseVisualStyleBackColor = true;
+			this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
 			// 
 			// btnShowAll
 			// 
@@ -99,6 +106,7 @@ namespace CMPG223_Project
 			this.btnShowAll.TabIndex = 3;
 			this.btnShowAll.Text = "Show All Users";
 			this.btnShowAll.UseVisualStyleBackColor = true;
+			this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
 			// 
 			// btnDelete
 			// 
@@ -110,6 +118,7 @@ namespace CMPG223_Project
 			this.btnDelete.TabIndex = 4;
 			this.btnDelete.Text = "Delete User";
 			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
 			// frmRemoveAdmin
 			// 

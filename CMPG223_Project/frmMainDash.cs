@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace CMPG223_Project
 {
@@ -17,7 +13,8 @@ namespace CMPG223_Project
         {
             InitializeComponent();
             this.Activated += frmMainDash_Activated;
-        }
+			this.FormClosing += frmMainDash_FormClosing;
+		}
 
         private void frmMainDash_Load(object sender, EventArgs e)
         {
@@ -39,16 +36,10 @@ namespace CMPG223_Project
 					conn.Open();
 
 					string query = @"
-						SELECT 
-							b.Booking_Id,
-							b.Check_In,
-							b.Check_Out,
-							b.Ben_Id,
-							b.Admin_Id,
-							b.Room_Id,
-							(ben.Name + ' ' + ben.Surname) AS BeneficiaryFullName,
-							a.Username AS AdminUsername,
-							r.Room_Number AS RoomNumber
+						SELECT b.Booking_Id, b.Check_In, b.Check_Out, b.Ben_Id, b.Admin_Id, 
+							   b.Room_Id, (ben.Name + ' ' + ben.Surname) AS BeneficiaryFullName, 
+							   a.Username AS AdminUsername,
+							   r.Room_Number AS RoomNumber
 						FROM Booking b
 						LEFT JOIN Beneficiary ben ON b.Ben_Id = ben.Ben_Id
 						LEFT JOIN Admin_Login a ON b.Admin_Id = a.Admin_Id
@@ -186,10 +177,7 @@ namespace CMPG223_Project
 
 		private void exitTSMI_Click(object sender, EventArgs e)
 		{
-            var confirm = MessageBox.Show("Are you sure you want to exit?",
-                                          "Exit Confirmation",
-                                          MessageBoxButtons.YesNo,
-                                          MessageBoxIcon.Question);
+            var confirm = MessageBox.Show("Are you sure you want to exit the application?", "Exit confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
                 Application.Exit();
         }
@@ -387,6 +375,23 @@ namespace CMPG223_Project
 		{
 			LoadBookings();
             txtFilter.Clear();
-		}		
+		}
+
+		private void frmMainDash_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			// Only prompt when the user manually requested close
+			if (e.CloseReason != CloseReason.UserClosing)
+				return;
+
+			// Ask user to confirm
+			if (MessageBox.Show("Are you sure you want to exit the application?", "Exit confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+				== DialogResult.No)
+			{
+				e.Cancel = true;
+				return;
+			}
+
+			Application.Exit();
+		}
 	}
 }

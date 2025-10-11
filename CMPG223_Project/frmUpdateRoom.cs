@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CMPG223_Project
@@ -134,7 +128,7 @@ namespace CMPG223_Project
 						}
 					}
 
-					// Build update command depending on whether Room_Number changed
+					// Update depending on whether Room_Number changed
 					string updateSql;
 					if (roomNumberChanged)
 					{

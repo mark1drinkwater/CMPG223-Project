@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -16,7 +9,8 @@ namespace CMPG223_Project
         public frmEntryLogin()
         {
             InitializeComponent();
-        }
+			this.FormClosing += frmEntryLogin_FormClosing;
+		}
 
 		private void btnSubmit_Click(object sender, EventArgs e)
 		{
@@ -66,5 +60,22 @@ namespace CMPG223_Project
 
             }
         }
+
+		private void frmEntryLogin_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			// Only prompt when the user manually requested close
+			if (e.CloseReason != CloseReason.UserClosing)
+				return;
+
+			// User to confirm
+			if (MessageBox.Show("Are you sure you want to exit the application?", "Exit confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+				== DialogResult.No)
+			{
+				e.Cancel = true;
+				return;
+			}
+
+            Application.Exit();
+		}
 	}
 }
