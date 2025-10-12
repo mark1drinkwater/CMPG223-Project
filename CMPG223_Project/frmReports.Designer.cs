@@ -29,86 +29,334 @@ namespace CMPG223_Project
         /// </summary>
         private void InitializeComponent()
         {
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.lblHeader = new System.Windows.Forms.Label();
-			this.rdoNumOfBen = new System.Windows.Forms.RadioButton();
-			this.rdoNumOfBenTypes = new System.Windows.Forms.RadioButton();
-			this.lstReport = new System.Windows.Forms.ListBox();
-			this.btnReport = new System.Windows.Forms.Button();
+			this.btnGenerate = new System.Windows.Forms.Button();
+			this.btnExportCsv = new System.Windows.Forms.Button();
+			this.lblStatusStatic = new System.Windows.Forms.Label();
+			this.lblStatus = new System.Windows.Forms.Label();
+			this.grpDistinctVisits = new System.Windows.Forms.GroupBox();
+			this.lblPastMonthCount = new System.Windows.Forms.Label();
+			this.lblPastMonth = new System.Windows.Forms.Label();
+			this.lblPast6MonthsCount = new System.Windows.Forms.Label();
+			this.lblPast6Months = new System.Windows.Forms.Label();
+			this.lblPastYearCount = new System.Windows.Forms.Label();
+			this.lblPastYear = new System.Windows.Forms.Label();
+			this.grpMostVisited = new System.Windows.Forms.GroupBox();
+			this.dgvTopTypes = new System.Windows.Forms.DataGridView();
+			this.grpLeastVisited = new System.Windows.Forms.GroupBox();
+			this.dgvLeastTypes = new System.Windows.Forms.DataGridView();
+			this.grpZeroVisited = new System.Windows.Forms.GroupBox();
+			this.dgvZeroTypes = new System.Windows.Forms.DataGridView();
+			this.grpDistinctVisits.SuspendLayout();
+			this.grpMostVisited.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgvTopTypes)).BeginInit();
+			this.grpLeastVisited.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgvLeastTypes)).BeginInit();
+			this.grpZeroVisited.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgvZeroTypes)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// lblHeader
 			// 
 			this.lblHeader.AutoSize = true;
 			this.lblHeader.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblHeader.Location = new System.Drawing.Point(13, 9);
+			this.lblHeader.Location = new System.Drawing.Point(360, 9);
 			this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblHeader.Name = "lblHeader";
-			this.lblHeader.Size = new System.Drawing.Size(397, 33);
+			this.lblHeader.Size = new System.Drawing.Size(227, 33);
 			this.lblHeader.TabIndex = 0;
-			this.lblHeader.Text = "Pick report type to generate";
+			this.lblHeader.Text = "Shelter Reports";
 			// 
-			// rdoNumOfBen
+			// btnGenerate
 			// 
-			this.rdoNumOfBen.AutoSize = true;
-			this.rdoNumOfBen.Location = new System.Drawing.Point(18, 75);
-			this.rdoNumOfBen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.rdoNumOfBen.Name = "rdoNumOfBen";
-			this.rdoNumOfBen.Size = new System.Drawing.Size(245, 23);
-			this.rdoNumOfBen.TabIndex = 1;
-			this.rdoNumOfBen.TabStop = true;
-			this.rdoNumOfBen.Text = "Number of beneficiaries visited";
-			this.rdoNumOfBen.UseVisualStyleBackColor = true;
-			this.rdoNumOfBen.CheckedChanged += new System.EventHandler(this.rbNumBeneficiaries_CheckedChanged);
+			this.btnGenerate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnGenerate.Location = new System.Drawing.Point(19, 65);
+			this.btnGenerate.Name = "btnGenerate";
+			this.btnGenerate.Size = new System.Drawing.Size(165, 35);
+			this.btnGenerate.TabIndex = 1;
+			this.btnGenerate.Text = "Generate reports";
+			this.btnGenerate.UseVisualStyleBackColor = true;
+			this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
 			// 
-			// rdoNumOfBenTypes
+			// btnExportCsv
 			// 
-			this.rdoNumOfBenTypes.AutoSize = true;
-			this.rdoNumOfBenTypes.Location = new System.Drawing.Point(18, 110);
-			this.rdoNumOfBenTypes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.rdoNumOfBenTypes.Name = "rdoNumOfBenTypes";
-			this.rdoNumOfBenTypes.Size = new System.Drawing.Size(276, 23);
-			this.rdoNumOfBenTypes.TabIndex = 2;
-			this.rdoNumOfBenTypes.TabStop = true;
-			this.rdoNumOfBenTypes.Text = "Number of beneficiary types visited";
-			this.rdoNumOfBenTypes.UseVisualStyleBackColor = true;
-			this.rdoNumOfBenTypes.CheckedChanged += new System.EventHandler(this.rbNumBeneficiaries_CheckedChanged);
+			this.btnExportCsv.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnExportCsv.Location = new System.Drawing.Point(200, 65);
+			this.btnExportCsv.Name = "btnExportCsv";
+			this.btnExportCsv.Size = new System.Drawing.Size(165, 35);
+			this.btnExportCsv.TabIndex = 2;
+			this.btnExportCsv.Text = "Export to CSV";
+			this.btnExportCsv.UseVisualStyleBackColor = true;
+			this.btnExportCsv.Click += new System.EventHandler(this.btnExportCsv_Click);
 			// 
-			// lstReport
+			// lblStatusStatic
 			// 
-			this.lstReport.FormattingEnabled = true;
-			this.lstReport.ItemHeight = 19;
-			this.lstReport.Location = new System.Drawing.Point(13, 150);
-			this.lstReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.lstReport.Name = "lstReport";
-			this.lstReport.Size = new System.Drawing.Size(558, 593);
-			this.lstReport.TabIndex = 4;
+			this.lblStatusStatic.AutoSize = true;
+			this.lblStatusStatic.Location = new System.Drawing.Point(625, 73);
+			this.lblStatusStatic.Name = "lblStatusStatic";
+			this.lblStatusStatic.Size = new System.Drawing.Size(63, 19);
+			this.lblStatusStatic.TabIndex = 0;
+			this.lblStatusStatic.Text = "Status: ";
 			// 
-			// btnReport
+			// lblStatus
 			// 
-			this.btnReport.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnReport.Location = new System.Drawing.Point(321, 78);
-			this.btnReport.Margin = new System.Windows.Forms.Padding(4);
-			this.btnReport.Name = "btnReport";
-			this.btnReport.Size = new System.Drawing.Size(250, 55);
-			this.btnReport.TabIndex = 3;
-			this.btnReport.Text = "Generate Report";
-			this.btnReport.UseVisualStyleBackColor = true;
+			this.lblStatus.AutoSize = true;
+			this.lblStatus.Location = new System.Drawing.Point(694, 73);
+			this.lblStatus.Name = "lblStatus";
+			this.lblStatus.Size = new System.Drawing.Size(67, 19);
+			this.lblStatus.TabIndex = 0;
+			this.lblStatus.Text = "Ready...";
+			// 
+			// grpDistinctVisits
+			// 
+			this.grpDistinctVisits.Controls.Add(this.lblPastMonthCount);
+			this.grpDistinctVisits.Controls.Add(this.lblPastMonth);
+			this.grpDistinctVisits.Controls.Add(this.lblPast6MonthsCount);
+			this.grpDistinctVisits.Controls.Add(this.lblPast6Months);
+			this.grpDistinctVisits.Controls.Add(this.lblPastYearCount);
+			this.grpDistinctVisits.Controls.Add(this.lblPastYear);
+			this.grpDistinctVisits.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.grpDistinctVisits.Location = new System.Drawing.Point(19, 120);
+			this.grpDistinctVisits.Name = "grpDistinctVisits";
+			this.grpDistinctVisits.Size = new System.Drawing.Size(953, 120);
+			this.grpDistinctVisits.TabIndex = 0;
+			this.grpDistinctVisits.TabStop = false;
+			this.grpDistinctVisits.Text = "Total distinct benefiaries visits";
+			// 
+			// lblPastMonthCount
+			// 
+			this.lblPastMonthCount.AutoSize = true;
+			this.lblPastMonthCount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblPastMonthCount.Location = new System.Drawing.Point(718, 72);
+			this.lblPastMonthCount.Name = "lblPastMonthCount";
+			this.lblPastMonthCount.Size = new System.Drawing.Size(140, 19);
+			this.lblPastMonthCount.TabIndex = 0;
+			this.lblPastMonthCount.Text = "Total (Past Month)";
+			// 
+			// lblPastMonth
+			// 
+			this.lblPastMonth.AutoSize = true;
+			this.lblPastMonth.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblPastMonth.Location = new System.Drawing.Point(718, 43);
+			this.lblPastMonth.Name = "lblPastMonth";
+			this.lblPastMonth.Size = new System.Drawing.Size(163, 19);
+			this.lblPastMonth.TabIndex = 0;
+			this.lblPastMonth.Text = "Total (Past Month)";
+			// 
+			// lblPast6MonthsCount
+			// 
+			this.lblPast6MonthsCount.AutoSize = true;
+			this.lblPast6MonthsCount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblPast6MonthsCount.Location = new System.Drawing.Point(407, 72);
+			this.lblPast6MonthsCount.Name = "lblPast6MonthsCount";
+			this.lblPast6MonthsCount.Size = new System.Drawing.Size(161, 19);
+			this.lblPast6MonthsCount.TabIndex = 0;
+			this.lblPast6MonthsCount.Text = "Total (Past 6 Months)";
+			// 
+			// lblPast6Months
+			// 
+			this.lblPast6Months.AutoSize = true;
+			this.lblPast6Months.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblPast6Months.Location = new System.Drawing.Point(407, 43);
+			this.lblPast6Months.Name = "lblPast6Months";
+			this.lblPast6Months.Size = new System.Drawing.Size(186, 19);
+			this.lblPast6Months.TabIndex = 0;
+			this.lblPast6Months.Text = "Total (Past 6 Months)";
+			// 
+			// lblPastYearCount
+			// 
+			this.lblPastYearCount.AutoSize = true;
+			this.lblPastYearCount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblPastYearCount.Location = new System.Drawing.Point(67, 72);
+			this.lblPastYearCount.Name = "lblPastYearCount";
+			this.lblPastYearCount.Size = new System.Drawing.Size(128, 19);
+			this.lblPastYearCount.TabIndex = 0;
+			this.lblPastYearCount.Text = "Total (Past Year)";
+			// 
+			// lblPastYear
+			// 
+			this.lblPastYear.AutoSize = true;
+			this.lblPastYear.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblPastYear.Location = new System.Drawing.Point(67, 43);
+			this.lblPastYear.Name = "lblPastYear";
+			this.lblPastYear.Size = new System.Drawing.Size(150, 19);
+			this.lblPastYear.TabIndex = 0;
+			this.lblPastYear.Text = "Total (Past Year)";
+			// 
+			// grpMostVisited
+			// 
+			this.grpMostVisited.Controls.Add(this.dgvTopTypes);
+			this.grpMostVisited.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.grpMostVisited.Location = new System.Drawing.Point(19, 255);
+			this.grpMostVisited.Name = "grpMostVisited";
+			this.grpMostVisited.Size = new System.Drawing.Size(953, 174);
+			this.grpMostVisited.TabIndex = 0;
+			this.grpMostVisited.TabStop = false;
+			this.grpMostVisited.Text = "Most visited beneficiary types (past year)";
+			// 
+			// dgvTopTypes
+			// 
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dgvTopTypes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			this.dgvTopTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvTopTypes.DefaultCellStyle = dataGridViewCellStyle2;
+			this.dgvTopTypes.Location = new System.Drawing.Point(7, 27);
+			this.dgvTopTypes.Name = "dgvTopTypes";
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvTopTypes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dgvTopTypes.RowsDefaultCellStyle = dataGridViewCellStyle4;
+			this.dgvTopTypes.Size = new System.Drawing.Size(940, 141);
+			this.dgvTopTypes.TabIndex = 0;
+			// 
+			// grpLeastVisited
+			// 
+			this.grpLeastVisited.Controls.Add(this.dgvLeastTypes);
+			this.grpLeastVisited.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.grpLeastVisited.Location = new System.Drawing.Point(19, 440);
+			this.grpLeastVisited.Name = "grpLeastVisited";
+			this.grpLeastVisited.Size = new System.Drawing.Size(953, 174);
+			this.grpLeastVisited.TabIndex = 0;
+			this.grpLeastVisited.TabStop = false;
+			this.grpLeastVisited.Text = "Least visited beneficiary types (past year) (min 1 visit)";
+			// 
+			// dgvLeastTypes
+			// 
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dgvLeastTypes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvLeastTypes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+			this.dgvLeastTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvLeastTypes.DefaultCellStyle = dataGridViewCellStyle7;
+			this.dgvLeastTypes.Location = new System.Drawing.Point(7, 27);
+			this.dgvLeastTypes.Name = "dgvLeastTypes";
+			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvLeastTypes.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+			dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dgvLeastTypes.RowsDefaultCellStyle = dataGridViewCellStyle9;
+			this.dgvLeastTypes.Size = new System.Drawing.Size(940, 141);
+			this.dgvLeastTypes.TabIndex = 0;
+			// 
+			// grpZeroVisited
+			// 
+			this.grpZeroVisited.Controls.Add(this.dgvZeroTypes);
+			this.grpZeroVisited.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.grpZeroVisited.Location = new System.Drawing.Point(19, 625);
+			this.grpZeroVisited.Name = "grpZeroVisited";
+			this.grpZeroVisited.Size = new System.Drawing.Size(953, 174);
+			this.grpZeroVisited.TabIndex = 0;
+			this.grpZeroVisited.TabStop = false;
+			this.grpZeroVisited.Text = "Beneficiary types with ZERO visits (past year)";
+			// 
+			// dgvZeroTypes
+			// 
+			dataGridViewCellStyle10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dgvZeroTypes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+			dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvZeroTypes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+			this.dgvZeroTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvZeroTypes.DefaultCellStyle = dataGridViewCellStyle12;
+			this.dgvZeroTypes.Location = new System.Drawing.Point(7, 27);
+			this.dgvZeroTypes.Name = "dgvZeroTypes";
+			dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle13.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvZeroTypes.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+			dataGridViewCellStyle14.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dgvZeroTypes.RowsDefaultCellStyle = dataGridViewCellStyle14;
+			this.dgvZeroTypes.Size = new System.Drawing.Size(940, 141);
+			this.dgvZeroTypes.TabIndex = 0;
 			// 
 			// frmReports
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(584, 761);
-			this.Controls.Add(this.btnReport);
-			this.Controls.Add(this.lstReport);
-			this.Controls.Add(this.rdoNumOfBenTypes);
-			this.Controls.Add(this.rdoNumOfBen);
+			this.ClientSize = new System.Drawing.Size(984, 811);
+			this.Controls.Add(this.grpZeroVisited);
+			this.Controls.Add(this.grpLeastVisited);
+			this.Controls.Add(this.grpMostVisited);
+			this.Controls.Add(this.grpDistinctVisits);
+			this.Controls.Add(this.lblStatus);
+			this.Controls.Add(this.lblStatusStatic);
+			this.Controls.Add(this.btnExportCsv);
+			this.Controls.Add(this.btnGenerate);
 			this.Controls.Add(this.lblHeader);
 			this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "frmReports";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Reports";
+			this.grpDistinctVisits.ResumeLayout(false);
+			this.grpDistinctVisits.PerformLayout();
+			this.grpMostVisited.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dgvTopTypes)).EndInit();
+			this.grpLeastVisited.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dgvLeastTypes)).EndInit();
+			this.grpZeroVisited.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dgvZeroTypes)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -117,9 +365,22 @@ namespace CMPG223_Project
         #endregion
 
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.RadioButton rdoNumOfBen;
-        private System.Windows.Forms.RadioButton rdoNumOfBenTypes;
-        private System.Windows.Forms.ListBox lstReport;
-		private System.Windows.Forms.Button btnReport;
+		private System.Windows.Forms.Button btnGenerate;
+		private System.Windows.Forms.Button btnExportCsv;
+		private System.Windows.Forms.Label lblStatusStatic;
+		private System.Windows.Forms.Label lblStatus;
+		private System.Windows.Forms.GroupBox grpDistinctVisits;
+		private System.Windows.Forms.Label lblPast6MonthsCount;
+		private System.Windows.Forms.Label lblPast6Months;
+		private System.Windows.Forms.Label lblPastYearCount;
+		private System.Windows.Forms.Label lblPastYear;
+		private System.Windows.Forms.Label lblPastMonthCount;
+		private System.Windows.Forms.Label lblPastMonth;
+		private System.Windows.Forms.GroupBox grpMostVisited;
+		private System.Windows.Forms.DataGridView dgvTopTypes;
+		private System.Windows.Forms.GroupBox grpLeastVisited;
+		private System.Windows.Forms.DataGridView dgvLeastTypes;
+		private System.Windows.Forms.GroupBox grpZeroVisited;
+		private System.Windows.Forms.DataGridView dgvZeroTypes;
 	}
 }

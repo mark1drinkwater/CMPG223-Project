@@ -31,17 +31,17 @@ namespace CMPG223_Project
         {
 			this.dgvBookings = new System.Windows.Forms.DataGridView();
 			this.mnsOptions = new System.Windows.Forms.MenuStrip();
+			this.adminTSMI = new System.Windows.Forms.ToolStripMenuItem();
+			this.newAdminTSMI = new System.Windows.Forms.ToolStripMenuItem();
+			this.removeAdminTSMI = new System.Windows.Forms.ToolStripMenuItem();
+			this.updateAdminTSMI = new System.Windows.Forms.ToolStripMenuItem();
+			this.beneficiaryTSMI = new System.Windows.Forms.ToolStripMenuItem();
+			this.newBeneficiaryTSMI = new System.Windows.Forms.ToolStripMenuItem();
+			this.removeBeneficiaryTSMI = new System.Windows.Forms.ToolStripMenuItem();
+			this.updateBeneficiariesTSMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.bookingsTSMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.newBookingsTSMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.updateBookingsTSMI = new System.Windows.Forms.ToolStripMenuItem();
-			this.beneficiaryTSMI = new System.Windows.Forms.ToolStripMenuItem();
-			this.newBeneficiaryTSMI = new System.Windows.Forms.ToolStripMenuItem();
-			this.updateBeneficiariesTSMI = new System.Windows.Forms.ToolStripMenuItem();
-			this.removeBeneficiaryTSMI = new System.Windows.Forms.ToolStripMenuItem();
-			this.adminTSMI = new System.Windows.Forms.ToolStripMenuItem();
-			this.newAdminTSMI = new System.Windows.Forms.ToolStripMenuItem();
-			this.updateAdminTSMI = new System.Windows.Forms.ToolStripMenuItem();
-			this.removeAdminTSMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.reportsTSMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.generateReportsTSMI = new System.Windows.Forms.ToolStripMenuItem();
 			this.exitTSMI = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +49,11 @@ namespace CMPG223_Project
 			this.txtFilter = new System.Windows.Forms.TextBox();
 			this.btnFilter = new System.Windows.Forms.Button();
 			this.btnDeleteBooking = new System.Windows.Forms.Button();
+			this.btnShowAll = new System.Windows.Forms.Button();
+			this.roomsTSMI = new System.Windows.Forms.ToolStripMenuItem();
+			this.newRoomTSMI = new System.Windows.Forms.ToolStripMenuItem();
+			this.removeRoomTSMI = new System.Windows.Forms.ToolStripMenuItem();
+			this.updateRoomTSMI = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.dgvBookings)).BeginInit();
 			this.mnsOptions.SuspendLayout();
 			this.SuspendLayout();
@@ -58,23 +63,88 @@ namespace CMPG223_Project
 			this.dgvBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvBookings.Location = new System.Drawing.Point(12, 31);
 			this.dgvBookings.Name = "dgvBookings";
-			this.dgvBookings.Size = new System.Drawing.Size(1038, 563);
+			this.dgvBookings.RowHeadersWidth = 62;
+			this.dgvBookings.Size = new System.Drawing.Size(1060, 563);
 			this.dgvBookings.TabIndex = 0;
 			// 
 			// mnsOptions
 			// 
 			this.mnsOptions.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.mnsOptions.ImageScalingSize = new System.Drawing.Size(24, 24);
 			this.mnsOptions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bookingsTSMI,
-            this.beneficiaryTSMI,
             this.adminTSMI,
+            this.beneficiaryTSMI,
+            this.roomsTSMI,
+            this.bookingsTSMI,
             this.reportsTSMI,
             this.exitTSMI});
 			this.mnsOptions.Location = new System.Drawing.Point(0, 0);
 			this.mnsOptions.Name = "mnsOptions";
-			this.mnsOptions.Size = new System.Drawing.Size(1062, 27);
+			this.mnsOptions.Size = new System.Drawing.Size(1084, 27);
 			this.mnsOptions.TabIndex = 0;
 			this.mnsOptions.Text = "menuStrip1";
+			// 
+			// adminTSMI
+			// 
+			this.adminTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newAdminTSMI,
+            this.removeAdminTSMI,
+            this.updateAdminTSMI});
+			this.adminTSMI.Name = "adminTSMI";
+			this.adminTSMI.Size = new System.Drawing.Size(68, 23);
+			this.adminTSMI.Text = "Admin";
+			// 
+			// newAdminTSMI
+			// 
+			this.newAdminTSMI.Name = "newAdminTSMI";
+			this.newAdminTSMI.Size = new System.Drawing.Size(187, 24);
+			this.newAdminTSMI.Text = "New Admin";
+			this.newAdminTSMI.Click += new System.EventHandler(this.newAdminTSMI_Click);
+			// 
+			// removeAdminTSMI
+			// 
+			this.removeAdminTSMI.Name = "removeAdminTSMI";
+			this.removeAdminTSMI.Size = new System.Drawing.Size(187, 24);
+			this.removeAdminTSMI.Text = "Remove Admin";
+			this.removeAdminTSMI.Click += new System.EventHandler(this.removeAdminTSMI_Click);
+			// 
+			// updateAdminTSMI
+			// 
+			this.updateAdminTSMI.Name = "updateAdminTSMI";
+			this.updateAdminTSMI.Size = new System.Drawing.Size(187, 24);
+			this.updateAdminTSMI.Text = "Update Admin";
+			this.updateAdminTSMI.Click += new System.EventHandler(this.updateAdminTSMI_Click);
+			// 
+			// beneficiaryTSMI
+			// 
+			this.beneficiaryTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newBeneficiaryTSMI,
+            this.removeBeneficiaryTSMI,
+            this.updateBeneficiariesTSMI});
+			this.beneficiaryTSMI.Name = "beneficiaryTSMI";
+			this.beneficiaryTSMI.Size = new System.Drawing.Size(108, 23);
+			this.beneficiaryTSMI.Text = "Beneficiaries";
+			// 
+			// newBeneficiaryTSMI
+			// 
+			this.newBeneficiaryTSMI.Name = "newBeneficiaryTSMI";
+			this.newBeneficiaryTSMI.Size = new System.Drawing.Size(220, 24);
+			this.newBeneficiaryTSMI.Text = "New Beneficiary";
+			this.newBeneficiaryTSMI.Click += new System.EventHandler(this.newBeneficiaryTSMI_Click);
+			// 
+			// removeBeneficiaryTSMI
+			// 
+			this.removeBeneficiaryTSMI.Name = "removeBeneficiaryTSMI";
+			this.removeBeneficiaryTSMI.Size = new System.Drawing.Size(220, 24);
+			this.removeBeneficiaryTSMI.Text = "Remove Beneficiary";
+			this.removeBeneficiaryTSMI.Click += new System.EventHandler(this.removeBeneficiaryTSMI_Click);
+			// 
+			// updateBeneficiariesTSMI
+			// 
+			this.updateBeneficiariesTSMI.Name = "updateBeneficiariesTSMI";
+			this.updateBeneficiariesTSMI.Size = new System.Drawing.Size(220, 24);
+			this.updateBeneficiariesTSMI.Text = "Update Beneficiaries";
+			this.updateBeneficiariesTSMI.Click += new System.EventHandler(this.updateBeneficiariesTSMI_Click);
 			// 
 			// bookingsTSMI
 			// 
@@ -98,68 +168,6 @@ namespace CMPG223_Project
 			this.updateBookingsTSMI.Size = new System.Drawing.Size(197, 24);
 			this.updateBookingsTSMI.Text = "Update Bookings";
 			this.updateBookingsTSMI.Click += new System.EventHandler(this.updateBookingsTSMI_Click);
-			// 
-			// beneficiaryTSMI
-			// 
-			this.beneficiaryTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newBeneficiaryTSMI,
-            this.updateBeneficiariesTSMI,
-            this.removeBeneficiaryTSMI});
-			this.beneficiaryTSMI.Name = "beneficiaryTSMI";
-			this.beneficiaryTSMI.Size = new System.Drawing.Size(108, 23);
-			this.beneficiaryTSMI.Text = "Beneficiaries";
-			// 
-			// newBeneficiaryTSMI
-			// 
-			this.newBeneficiaryTSMI.Name = "newBeneficiaryTSMI";
-			this.newBeneficiaryTSMI.Size = new System.Drawing.Size(220, 24);
-			this.newBeneficiaryTSMI.Text = "New Beneficiary";
-			this.newBeneficiaryTSMI.Click += new System.EventHandler(this.newBeneficiaryTSMI_Click);
-			// 
-			// updateBeneficiariesTSMI
-			// 
-			this.updateBeneficiariesTSMI.Name = "updateBeneficiariesTSMI";
-			this.updateBeneficiariesTSMI.Size = new System.Drawing.Size(220, 24);
-			this.updateBeneficiariesTSMI.Text = "Update Beneficiaries";
-			this.updateBeneficiariesTSMI.Click += new System.EventHandler(this.updateBeneficiariesTSMI_Click);
-			// 
-			// removeBeneficiaryTSMI
-			// 
-			this.removeBeneficiaryTSMI.Name = "removeBeneficiaryTSMI";
-			this.removeBeneficiaryTSMI.Size = new System.Drawing.Size(220, 24);
-			this.removeBeneficiaryTSMI.Text = "Remove Beneficiary";
-			this.removeBeneficiaryTSMI.Click += new System.EventHandler(this.removeBeneficiaryTSMI_Click);
-			// 
-			// adminTSMI
-			// 
-			this.adminTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newAdminTSMI,
-            this.updateAdminTSMI,
-            this.removeAdminTSMI});
-			this.adminTSMI.Name = "adminTSMI";
-			this.adminTSMI.Size = new System.Drawing.Size(68, 23);
-			this.adminTSMI.Text = "Admin";
-			// 
-			// newAdminTSMI
-			// 
-			this.newAdminTSMI.Name = "newAdminTSMI";
-			this.newAdminTSMI.Size = new System.Drawing.Size(187, 24);
-			this.newAdminTSMI.Text = "New Admin";
-			this.newAdminTSMI.Click += new System.EventHandler(this.newAdminTSMI_Click);
-			// 
-			// updateAdminTSMI
-			// 
-			this.updateAdminTSMI.Name = "updateAdminTSMI";
-			this.updateAdminTSMI.Size = new System.Drawing.Size(187, 24);
-			this.updateAdminTSMI.Text = "Update Admin";
-			this.updateAdminTSMI.Click += new System.EventHandler(this.updateAdminTSMI_Click);
-			// 
-			// removeAdminTSMI
-			// 
-			this.removeAdminTSMI.Name = "removeAdminTSMI";
-			this.removeAdminTSMI.Size = new System.Drawing.Size(187, 24);
-			this.removeAdminTSMI.Text = "Remove Admin";
-			this.removeAdminTSMI.Click += new System.EventHandler(this.removeAdminTSMI_Click);
 			// 
 			// reportsTSMI
 			// 
@@ -189,16 +197,16 @@ namespace CMPG223_Project
 			this.lblFilter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblFilter.Location = new System.Drawing.Point(12, 619);
 			this.lblFilter.Name = "lblFilter";
-			this.lblFilter.Size = new System.Drawing.Size(119, 19);
+			this.lblFilter.Size = new System.Drawing.Size(225, 19);
 			this.lblFilter.TabIndex = 0;
-			this.lblFilter.Text = "Filter bookings:";
+			this.lblFilter.Text = "Filter bookings by Booking ID:";
 			// 
 			// txtFilter
 			// 
 			this.txtFilter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtFilter.Location = new System.Drawing.Point(137, 616);
+			this.txtFilter.Location = new System.Drawing.Point(243, 616);
 			this.txtFilter.Name = "txtFilter";
-			this.txtFilter.Size = new System.Drawing.Size(254, 27);
+			this.txtFilter.Size = new System.Drawing.Size(174, 27);
 			this.txtFilter.TabIndex = 1;
 			// 
 			// btnFilter
@@ -210,22 +218,67 @@ namespace CMPG223_Project
 			this.btnFilter.TabIndex = 2;
 			this.btnFilter.Text = "Filter booking";
 			this.btnFilter.UseVisualStyleBackColor = true;
+			this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
 			// 
 			// btnDeleteBooking
 			// 
 			this.btnDeleteBooking.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnDeleteBooking.Location = new System.Drawing.Point(820, 610);
+			this.btnDeleteBooking.Location = new System.Drawing.Point(687, 610);
 			this.btnDeleteBooking.Name = "btnDeleteBooking";
 			this.btnDeleteBooking.Size = new System.Drawing.Size(175, 37);
 			this.btnDeleteBooking.TabIndex = 3;
 			this.btnDeleteBooking.Text = "Delete booking";
 			this.btnDeleteBooking.UseVisualStyleBackColor = true;
+			this.btnDeleteBooking.Click += new System.EventHandler(this.btnDeleteBooking_Click);
+			// 
+			// btnShowAll
+			// 
+			this.btnShowAll.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnShowAll.Location = new System.Drawing.Point(897, 610);
+			this.btnShowAll.Name = "btnShowAll";
+			this.btnShowAll.Size = new System.Drawing.Size(175, 37);
+			this.btnShowAll.TabIndex = 4;
+			this.btnShowAll.Text = "Show all bookings";
+			this.btnShowAll.UseVisualStyleBackColor = true;
+			this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
+			// 
+			// roomsTSMI
+			// 
+			this.roomsTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newRoomTSMI,
+            this.removeRoomTSMI,
+            this.updateRoomTSMI});
+			this.roomsTSMI.Name = "roomsTSMI";
+			this.roomsTSMI.Size = new System.Drawing.Size(70, 23);
+			this.roomsTSMI.Text = "Rooms";
+			// 
+			// newRoomTSMI
+			// 
+			this.newRoomTSMI.Name = "newRoomTSMI";
+			this.newRoomTSMI.Size = new System.Drawing.Size(182, 24);
+			this.newRoomTSMI.Text = "New Room";
+			this.newRoomTSMI.Click += new System.EventHandler(this.newRoomTSMI_Click);
+			// 
+			// removeRoomTSMI
+			// 
+			this.removeRoomTSMI.Name = "removeRoomTSMI";
+			this.removeRoomTSMI.Size = new System.Drawing.Size(182, 24);
+			this.removeRoomTSMI.Text = "Remove Room";
+			this.removeRoomTSMI.Click += new System.EventHandler(this.removeRoomTSMI_Click);
+			// 
+			// updateRoomTSMI
+			// 
+			this.updateRoomTSMI.Name = "updateRoomTSMI";
+			this.updateRoomTSMI.Size = new System.Drawing.Size(182, 24);
+			this.updateRoomTSMI.Text = "Update Room";
+			this.updateRoomTSMI.Click += new System.EventHandler(this.updateRoomTSMI_Click);
 			// 
 			// frmMainDash
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1062, 661);
+			this.ClientSize = new System.Drawing.Size(1084, 661);
+			this.Controls.Add(this.btnShowAll);
 			this.Controls.Add(this.btnDeleteBooking);
 			this.Controls.Add(this.btnFilter);
 			this.Controls.Add(this.txtFilter);
@@ -237,6 +290,7 @@ namespace CMPG223_Project
 			this.Name = "frmMainDash";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Bookings Dashboard";
+			this.Load += new System.EventHandler(this.frmMainDash_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvBookings)).EndInit();
 			this.mnsOptions.ResumeLayout(false);
 			this.mnsOptions.PerformLayout();
@@ -267,5 +321,10 @@ namespace CMPG223_Project
         private System.Windows.Forms.ToolStripMenuItem removeBeneficiaryTSMI;
         private System.Windows.Forms.ToolStripMenuItem removeAdminTSMI;
 		private System.Windows.Forms.Button btnDeleteBooking;
+		private System.Windows.Forms.Button btnShowAll;
+		private System.Windows.Forms.ToolStripMenuItem roomsTSMI;
+		private System.Windows.Forms.ToolStripMenuItem newRoomTSMI;
+		private System.Windows.Forms.ToolStripMenuItem removeRoomTSMI;
+		private System.Windows.Forms.ToolStripMenuItem updateRoomTSMI;
 	}
 }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -13,45 +6,20 @@ namespace CMPG223_Project
 {
     public partial class frmNewAdmin : Form
     {
-
-        // Connection string
-
-        private string connString = "Data Source=DESKTOP-79PMUBS;Initial Catalog = Shelter; Integrated Security = True; TrustServerCertificate=True";
-
         public frmNewAdmin()
         {
             InitializeComponent();
         }
 
-        private void lblHeader_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbRole_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbName_TextChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            // Validate input
-            // Check for empty
-            // Password -> tbSurname
-
-            if (string.IsNullOrWhiteSpace(tbName.Text))
+            if (string.IsNullOrWhiteSpace(txtName.Text))
             {
-                MessageBox.Show("Name cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Username cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(tbSurname.Text))
+            if (string.IsNullOrWhiteSpace(txtSurname.Text))
             {
                 MessageBox.Show("Password cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -59,13 +27,13 @@ namespace CMPG223_Project
 
             // check for password length and spaces
 
-            if (tbSurname.Text.Length < 7)
+            if (txtSurname.Text.Length < 7)
             {
                 MessageBox.Show("Password must be at least 7 characters long.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (tbSurname.Text.Contains(" "))
+            if (txtSurname.Text.Contains(" "))
             {
                 MessageBox.Show("Password cannot contain spaces.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -81,13 +49,13 @@ namespace CMPG223_Project
 
             // Consider checking for duplicate names, but it's hard. Maybe later. "SELECT COUNT(*) FROM ADMIN_LOGIN WHERE Username = @Username"
 
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
             {
                 string sql = "INSERT INTO ADMIN_LOGIN (Username, Password, Role) VALUES (@Username, @Password, @Role)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
-                cmd.Parameters.AddWithValue("@Username", tbName.Text.Trim());
-                cmd.Parameters.AddWithValue("@Password", tbSurname.Text.Trim());
+                cmd.Parameters.AddWithValue("@Username", txtName.Text.Trim());
+                cmd.Parameters.AddWithValue("@Password", txtSurname.Text.Trim());
                 cmd.Parameters.AddWithValue("@Role", cmbRole.SelectedItem.ToString());
 
                 try
@@ -95,19 +63,21 @@ namespace CMPG223_Project
                     conn.Open();
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("New admin added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("New user added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // clear fields
 
-                    tbName.Clear();
-                    tbSurname.Clear();
+                    txtName.Clear();
+                    txtSurname.Clear();
                     cmbRole.SelectedIndex = -1;
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show("An error occurred while adding the new admin: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("An error occurred while adding the new user: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+            this.Close();
         }
     }
 }

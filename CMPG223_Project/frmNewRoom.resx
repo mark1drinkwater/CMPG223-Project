@@ -117,10 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="mnsOptions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
-  </metadata>
+  <data name="label1.Text" xml:space="preserve">
+    <value>FYD01, FYD02, etc.
+MYD01, MYD02, etc.
+FAD01, FAD02, etc.
+MAD01, MAD02, etc.
+FSD01, FSD02, etc.
+MSD01, MSD02, etc.
+SPE01, SPE02, etc.
+COP01, COP02, etc.
+FSP01, FSP02, etc.
+MSP01, MSP02, etc.
+FAM01, FAM02, etc.</value>
+  </data>
+  <data name="lblRoomType.Text" xml:space="preserve">
+    <value>Female youth dorm
+Male youth dorm
+Female adult dorm
+Male adult dorm
+Female senior dorm
+Male senior dorm
+Single/Special rooms
+Couple (no children)
+Female Single Parent
+Male Single Parent
+Family (with children)</value>
+  </data>
 </root>

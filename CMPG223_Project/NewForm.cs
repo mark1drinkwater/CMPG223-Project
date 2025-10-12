@@ -1,6 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CMPG223_Project
@@ -101,6 +107,15 @@ namespace CMPG223_Project
             }
 
             txtAdminID.Clear();
+        }
+
+        // Wire up events in constructor or designer if not already done
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            btnShowAll.Click += btnShowAll_Click;
+            btnFilter.Click += btnFilter_Click;
+            btnDelete.Click += btnDelete_Click;
         }
     }
 }

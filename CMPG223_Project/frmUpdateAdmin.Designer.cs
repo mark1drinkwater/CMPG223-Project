@@ -36,8 +36,8 @@ namespace CMPG223_Project
 			this.lblAdminID = new System.Windows.Forms.Label();
 			this.txtAdminID = new System.Windows.Forms.TextBox();
 			this.lblPassword = new System.Windows.Forms.Label();
-			this.tbUsername = new System.Windows.Forms.TextBox();
-			this.tbPassword = new System.Windows.Forms.TextBox();
+			this.txtUsername = new System.Windows.Forms.TextBox();
+			this.txtPassword = new System.Windows.Forms.TextBox();
 			this.lblRole = new System.Windows.Forms.Label();
 			this.cmbRole = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
@@ -45,24 +45,26 @@ namespace CMPG223_Project
 			// btnSearch
 			// 
 			this.btnSearch.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSearch.Location = new System.Drawing.Point(396, 86);
-			this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btnSearch.Location = new System.Drawing.Point(319, 86);
+			this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
 			this.btnSearch.Name = "btnSearch";
-			this.btnSearch.Size = new System.Drawing.Size(175, 37);
+			this.btnSearch.Size = new System.Drawing.Size(186, 37);
 			this.btnSearch.TabIndex = 2;
-			this.btnSearch.Text = "Search admin";
+			this.btnSearch.Text = "Filter by Admin ID";
 			this.btnSearch.UseVisualStyleBackColor = true;
+			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
 			// 
 			// btnUpdate
 			// 
 			this.btnUpdate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnUpdate.Location = new System.Drawing.Point(175, 332);
-			this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btnUpdate.Location = new System.Drawing.Point(133, 331);
+			this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
 			this.btnUpdate.Name = "btnUpdate";
 			this.btnUpdate.Size = new System.Drawing.Size(250, 55);
 			this.btnUpdate.TabIndex = 6;
-			this.btnUpdate.Text = "Update Admin";
+			this.btnUpdate.Text = "Update User Details";
 			this.btnUpdate.UseVisualStyleBackColor = true;
+			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
 			// lblUsername
 			// 
@@ -81,9 +83,9 @@ namespace CMPG223_Project
 			this.lblHeader.Location = new System.Drawing.Point(13, 9);
 			this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblHeader.Name = "lblHeader";
-			this.lblHeader.Size = new System.Drawing.Size(206, 33);
+			this.lblHeader.Size = new System.Drawing.Size(283, 33);
 			this.lblHeader.TabIndex = 0;
-			this.lblHeader.Text = "Update Admin";
+			this.lblHeader.Text = "Update User Details";
 			// 
 			// lblAdminID
 			// 
@@ -98,9 +100,9 @@ namespace CMPG223_Project
 			// txtAdminID
 			// 
 			this.txtAdminID.Location = new System.Drawing.Point(133, 92);
-			this.txtAdminID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.txtAdminID.Margin = new System.Windows.Forms.Padding(4);
 			this.txtAdminID.Name = "txtAdminID";
-			this.txtAdminID.Size = new System.Drawing.Size(255, 27);
+			this.txtAdminID.Size = new System.Drawing.Size(178, 27);
 			this.txtAdminID.TabIndex = 1;
 			// 
 			// lblPassword
@@ -113,22 +115,21 @@ namespace CMPG223_Project
 			this.lblPassword.TabIndex = 0;
 			this.lblPassword.Text = "Password:";
 			// 
-			// tbUsername
+			// txtUsername
 			// 
-			this.tbUsername.Location = new System.Drawing.Point(133, 167);
-			this.tbUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.tbUsername.Name = "tbUsername";
-			this.tbUsername.Size = new System.Drawing.Size(255, 27);
-			this.tbUsername.TabIndex = 3;
+			this.txtUsername.Location = new System.Drawing.Point(133, 167);
+			this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
+			this.txtUsername.Name = "txtUsername";
+			this.txtUsername.Size = new System.Drawing.Size(314, 27);
+			this.txtUsername.TabIndex = 3;
 			// 
-			// tbPassword
+			// txtPassword
 			// 
-			this.tbPassword.Location = new System.Drawing.Point(133, 217);
-			this.tbPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.tbPassword.Name = "tbPassword";
-			this.tbPassword.Size = new System.Drawing.Size(255, 27);
-			this.tbPassword.TabIndex = 4;
-			this.tbPassword.TextChanged += new System.EventHandler(this.tbPassword_TextChanged);
+			this.txtPassword.Location = new System.Drawing.Point(133, 217);
+			this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+			this.txtPassword.Name = "txtPassword";
+			this.txtPassword.Size = new System.Drawing.Size(314, 27);
+			this.txtPassword.TabIndex = 4;
 			// 
 			// lblRole
 			// 
@@ -149,7 +150,7 @@ namespace CMPG223_Project
 			this.cmbRole.Location = new System.Drawing.Point(133, 267);
 			this.cmbRole.Margin = new System.Windows.Forms.Padding(4);
 			this.cmbRole.Name = "cmbRole";
-			this.cmbRole.Size = new System.Drawing.Size(255, 27);
+			this.cmbRole.Size = new System.Drawing.Size(314, 27);
 			this.cmbRole.TabIndex = 5;
 			this.cmbRole.Text = "Select role";
 			// 
@@ -157,7 +158,7 @@ namespace CMPG223_Project
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(584, 421);
+			this.ClientSize = new System.Drawing.Size(518, 421);
 			this.Controls.Add(this.cmbRole);
 			this.Controls.Add(this.btnSearch);
 			this.Controls.Add(this.btnUpdate);
@@ -167,10 +168,10 @@ namespace CMPG223_Project
 			this.Controls.Add(this.lblAdminID);
 			this.Controls.Add(this.txtAdminID);
 			this.Controls.Add(this.lblPassword);
-			this.Controls.Add(this.tbUsername);
-			this.Controls.Add(this.tbPassword);
+			this.Controls.Add(this.txtUsername);
+			this.Controls.Add(this.txtPassword);
 			this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "frmUpdateAdmin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Update Admin";
@@ -188,8 +189,8 @@ namespace CMPG223_Project
         private System.Windows.Forms.Label lblAdminID;
         private System.Windows.Forms.TextBox txtAdminID;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox tbUsername;
-        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblRole;
 		private System.Windows.Forms.ComboBox cmbRole;
 	}

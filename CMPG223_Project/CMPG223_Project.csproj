@@ -15,6 +15,21 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -92,6 +107,24 @@
     <Compile Include="frmNewBookings.Designer.cs">
       <DependentUpon>frmNewBookings.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNewRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewRoom.Designer.cs">
+      <DependentUpon>frmNewRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRemoveRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRemoveRoom.Designer.cs">
+      <DependentUpon>frmRemoveRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdateRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateRoom.Designer.cs">
+      <DependentUpon>frmUpdateRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmRemoveAdmin.cs">
@@ -130,6 +163,7 @@
     <Compile Include="frmUpdateBookings.Designer.cs">
       <DependentUpon>frmUpdateBookings.cs</DependentUpon>
     </Compile>
+    <Compile Include="SharedConstants.cs" />
     <EmbeddedResource Include="frmMainDash.resx">
       <DependentUpon>frmMainDash.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +178,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewBookings.resx">
       <DependentUpon>frmNewBookings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewRoom.resx">
+      <DependentUpon>frmNewRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRemoveRoom.resx">
+      <DependentUpon>frmRemoveRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateRoom.resx">
+      <DependentUpon>frmUpdateRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -185,6 +228,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
