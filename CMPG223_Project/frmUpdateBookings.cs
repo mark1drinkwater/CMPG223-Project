@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CMPG223_Project
 {
     public partial class frmUpdateBookings : Form
     {
-        private readonly string connectionString = "......";
-
         public frmUpdateBookings()
         {
             InitializeComponent();
@@ -25,110 +16,139 @@ namespace CMPG223_Project
             ClearFields();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtBookingID.Text))
-            {
-                MessageBox.Show("Please enter a Booking ID to search.");
-                return;
-            }
+		private void btnSearch_Click(object sender, EventArgs e)
+		{
+			if (string.IsNullOrWhiteSpace(txtBookingID.Text))
+			{
+				MessageBox.Show("Please enter a Booking ID to search.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
 
-            int bookingId;
-            if (!int.TryParse(txtBookingID.Text, out bookingId))
-            {
-                MessageBox.Show("Booking ID must be a number.");
-                return;
-            }
+			if (!int.TryParse(txtBookingID.Text, out int bookingId))
+			{
+				MessageBox.Show("Booking ID must be a number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                string query = "SELECT Check_In, Check_Out, Ben_Id, Admin_Id, Room_Id FROM BOOKING WHERE Booking_Id = @BookingId";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@BookingId", bookingId);
-                    conn.Open();
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            dtpCheckIn.Value = reader.GetDateTime(0);
-                            dtpCheckOut.Value = reader.GetDateTime(1);
-                            txtBenID.Text = reader.GetInt32(2).ToString();
-                            tbAdmin.Text = reader.GetInt32(3).ToString();
-                            tbRoom.Text = reader.GetInt32(4).ToString();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Booking not found.");
-                            ClearFields();
-                        }
-                    }
-                }
-            }
-        }
+			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
+			{
+				// Join with Beneficiary to get Name + Surname
+				string query = @"
+					SELECT b.Check_In, b.Check_Out, b.Ben_Id, ben.Name, ben.Surname
+					FROM BOOKING b
+					LEFT JOIN Beneficiary ben ON b.Ben_Id = ben.Ben_Id
+					WHERE b.Booking_Id = @BookingId";
 
-        private void btnUpdateBooking_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtBookingID.Text))
-            {
-                MessageBox.Show("Please enter a Booking ID.");
-                return;
-            }
+				using (SqlCommand cmd = new SqlCommand(query, conn))
+				{
+					cmd.Parameters.Add("@BookingId", System.Data.SqlDbType.Int).Value = bookingId;
+					conn.Open();
+					using (SqlDataReader reader = cmd.ExecuteReader())
+					{
+						if (reader.Read())
+						{
+							// Dates (guard against NULL)
+							if (!reader.IsDBNull(0))
+								dtpCheckIn.Value = reader.GetDateTime(0);
+							else
+								dtpCheckIn.Value = DateTime.Today;
 
-            int bookingId, benId, adminId, roomId;
-            if (!int.TryParse(txtBookingID.Text, out bookingId) ||
-                !int.TryParse(txtBenID.Text, out benId) ||
-                !int.TryParse(tbAdmin.Text, out adminId) ||
-                !int.TryParse(tbRoom.Text, out roomId))
-            {
-                MessageBox.Show("Booking ID, Beneficiary ID, Admin ID, and Room ID must be numbers.");
-                return;
-            }
+							if (!reader.IsDBNull(1))
+								dtpCheckOut.Value = reader.GetDateTime(1);
+							else
+								dtpCheckOut.Value = DateTime.Today;
 
-            DateTime checkIn = dtpCheckIn.Value;
-            DateTime checkOut = dtpCheckOut.Value;
+							// Ben_Id (may be bigint in DB) - store in Tag for later use
+							long? benId = reader.IsDBNull(2) ? (long?)null : reader.GetInt64(2);
+							txtBenID.Tag = benId;
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                string updateQuery = @"UPDATE BOOKING
-                                       SET Check_In = @CheckIn,
-                                           Check_Out = @CheckOut,
-                                           Ben_Id = @BenId,
-                                           Admin_Id = @AdminId,
-                                           Room_Id = @RoomId
-                                       WHERE Booking_Id = @BookingId";
-                using (SqlCommand cmd = new SqlCommand(updateQuery, conn))
-                {
-                    cmd.Parameters.AddWithValue("@CheckIn", checkIn);
-                    cmd.Parameters.AddWithValue("@CheckOut", checkOut);
-                    cmd.Parameters.AddWithValue("@BenId", benId);
-                    cmd.Parameters.AddWithValue("@AdminId", adminId);
-                    cmd.Parameters.AddWithValue("@RoomId", roomId);
-                    cmd.Parameters.AddWithValue("@BookingId", bookingId);
+							// Name and surname columns
+							string firstName = reader.IsDBNull(3) ? string.Empty : reader.GetString(3);
+							string lastName = reader.IsDBNull(4) ? string.Empty : reader.GetString(4);
 
-                    conn.Open();
-                    int rows = cmd.ExecuteNonQuery();
-                    if (rows > 0)
-                    {
-                        MessageBox.Show("Booking updated successfully.");
-                        ClearFields();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Update failed. Booking not found.");
-                    }
-                }
-            }
-        }
+							// If we have names, show "Name Surname"; otherwise fallback to the ID (or empty)
+							string display;
+							if (!string.IsNullOrWhiteSpace(firstName) || !string.IsNullOrWhiteSpace(lastName))
+							{
+								display = $"{firstName} {lastName}".Trim();
+							}
+							else
+							{
+								display = benId.HasValue ? benId.Value.ToString() : string.Empty;
+							}
 
-        private void ClearFields()
-        {
-            txtBookingID.Clear();
-            dtpCheckIn.Value = DateTime.Today;
-            dtpCheckOut.Value = DateTime.Today;
-            txtBenID.Clear();
-            tbAdmin.Clear();
-            tbRoom.Clear();
-        }
-    }
+							txtBenID.Text = display;
+						}
+						else
+						{
+							MessageBox.Show("Booking not found.", "No booking", MessageBoxButtons.OK, MessageBoxIcon.Error);
+							ClearFields();
+						}
+					}
+				}
+			}
+		}
+
+		private void btnUpdateBooking_Click(object sender, EventArgs e)
+		{
+			if (string.IsNullOrWhiteSpace(txtBookingID.Text))
+			{
+				MessageBox.Show("Please enter a Booking ID.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+
+			// Parse Booking ID
+			if (!int.TryParse(txtBookingID.Text, out int bookingId))
+			{
+				MessageBox.Show("Booking ID must be a number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+
+			DateTime checkIn = dtpCheckIn.Value.Date;
+			DateTime checkOut = dtpCheckOut.Value.Date;
+
+			if (checkOut < checkIn)
+			{
+				MessageBox.Show("Check-out date cannot be earlier than check-in date.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+
+			using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
+			{
+				string updateQuery = @"
+					UPDATE BOOKING
+                    SET Check_In = @CheckIn, Check_Out = @CheckOut
+                    WHERE Booking_Id = @BookingId";
+
+				using (SqlCommand cmd = new SqlCommand(updateQuery, conn))
+				{					
+					cmd.Parameters.Add("@CheckIn", System.Data.SqlDbType.DateTime).Value = checkIn;
+					cmd.Parameters.Add("@CheckOut", System.Data.SqlDbType.DateTime).Value = checkOut;				
+					cmd.Parameters.Add("@BookingId", System.Data.SqlDbType.Int).Value = bookingId;				
+
+					conn.Open();
+					int rows = cmd.ExecuteNonQuery();
+					if (rows > 0)
+					{
+						MessageBox.Show("Booking updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						ClearFields();
+					}
+					else
+					{
+						MessageBox.Show("Update failed. Booking not found.", "Update failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+				}
+			}
+		}
+
+
+		private void ClearFields()
+		{
+			txtBookingID.Clear();
+			dtpCheckIn.Value = DateTime.Today;
+			dtpCheckOut.Value = DateTime.Today;
+			txtBenID.Clear();
+			txtBenID.Tag = null;
+		}
+	}
 }

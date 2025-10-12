@@ -1,21 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CMPG223_Project
 {
     public partial class frmRemoveBeneficiaries : Form
     {
-        // TODO: Update connection string for final deployment
-        private string connString = @"Data Source=HAHLOLWE;Initial Catalog=Shelter;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
         public frmRemoveBeneficiaries()
         {
             InitializeComponent();

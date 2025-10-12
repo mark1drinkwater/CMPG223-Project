@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -13,20 +6,14 @@ namespace CMPG223_Project
 {
     public partial class frmEntryLogin : Form
     {
-
         public frmEntryLogin()
         {
             InitializeComponent();
-        }
+			this.FormClosing += frmEntryLogin_FormClosing;
+		}
 
 		private void btnSubmit_Click(object sender, EventArgs e)
 		{
-			// making a comment - wil lcheck for validation
-			//Change as necessary for validating login details etc.
-			//this.Hide();
-			//frmMainDash mainForm = new frmMainDash();
-			//mainForm.Show();
-
 			if(string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text))
             {
                 MessageBox.Show("Please enter both username and password.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -35,7 +22,7 @@ namespace CMPG223_Project
 
             using (SqlConnection conn = new SqlConnection(SharedConstants.connString))
             {
-                string sql = "SELECT Username FROM ADMIN_LOGIN WHERE Username = @username AND Password = @password";
+                string sql = "SELECT Username FROM ADMIN_LOGIN WHERE Username = @Username AND Password = @Password";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim());
@@ -73,5 +60,22 @@ namespace CMPG223_Project
 
             }
         }
+
+		private void frmEntryLogin_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			// Only prompt when the user manually requested close
+			if (e.CloseReason != CloseReason.UserClosing)
+				return;
+
+			// User to confirm
+			if (MessageBox.Show("Are you sure you want to exit the application?", "Exit confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+				== DialogResult.No)
+			{
+				e.Cancel = true;
+				return;
+			}
+
+            Application.Exit();
+		}
 	}
 }
